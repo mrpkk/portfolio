@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Chain AI Agent Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+        .header { padding: 20px 40px; background: #111; border-bottom: 1px solid #222; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 1.3rem; color: #fff; }
+        .header .status { color: #00ff88; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+        .card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; }
+        .card h3 { color: #888; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .card .value { font-size: 2rem; color: #fff; font-weight: bold; }
+        .card .change { font-size: 0.9rem; margin-top: 4px; }
+        .card .change.up { color: #00ff88; }
+        .card .change.down { color: #ff4444; }
+        .agent-list { padding: 0 40px 40px; }
+        .agent-list h2 { color: #fff; margin-bottom: 16px; }
+        table { width: 100%; border-collapse: collapse; background: #111; border-radius: 12px; overflow: hidden; }
+        th { background: #1a1a2e; color: #888; text-align: left; padding: 12px 16px; font-size: 0.8rem; text-transform: uppercase; }
+        td { padding: 12px 16px; border-top: 1px solid #222; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; }
+        .badge.running { background: #003322; color: #00ff88; }
+        .badge.idle { background: #333300; color: #ffcc00; }
+        .badge.error { background: #330000; color: #ff4444; }
+        .progress-bar { width: 100%; height: 6px; background: #222; border-radius: 3px; overflow: hidden; }
+        .progress-bar .fill { height: 100%; background: linear-gradient(90deg, #3a7bd5, #00d2ff); border-radius: 3px; }
+        .contract-card { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 16px; margin-top: 12px; font-family: 'SF Mono', monospace; font-size: 0.85rem; color: #c9d1d9; line-height: 1.5; }
+        .contract-card .keyword { color: #ff7b72; }
+        .contract-card .type { color: #79c0ff; }
+        .contract-card .string { color: #a5d6ff; }
+        .contract-card .comment { color: #8b949e; }
+        .tx-log { max-height: 300px; overflow-y: auto; }
+        .tx-log .tx { padding: 8px 0; border-bottom: 1px solid #222; font-size: 0.85rem; }
+        .tx-log .tx-hash { color: #3a7bd5; font-family: monospace; }
+        .tx-log .tx-time { color: #666; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>On-Chain AI Agent Dashboard</h1>
+        <div class="status">● System Online — 3 agents active</div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Total Value Managed</h3>
+            <div class="value">$12,847</div>
+            <div class="change up">+5.2% today</div>
+        </div>
+        <div class="card">
+            <h3>Active Agents</h3>
+            <div class="value">3</div>
+            <div class="change up">All healthy</div>
+        </div>
+        <div class="card">
+            <h3>Transactions (24h)</h3>
+            <div class="value">47</div>
+            <div class="change up">98.2% success rate</div>
+        </div>
+        <div class="card">
+            <h3>Gas Spent (24h)</h3>
+            <div class="value">0.08 ETH</div>
+            <div class="change down">-$2.10 vs yesterday</div>
+        </div>
+    </div>
+
+    <div class="agent-list">
+        <h2>Active Agents</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Agent</th>
+                    <th>Chain</th>
+                    <th>Status</th>
+                    <th>Balance</th>
+                    <th>Progress</th>
+                    <th>Last Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>YieldBot</strong><br><span style="color:#666;font-size:0.8rem">Autonomous yield optimizer</span></td>
+                    <td>Ethereum</td>
+                    <td><span class="badge running">RUNNING</span></td>
+                    <td>2.45 ETH</td>
+                    <td>
+                        <div class="progress-bar"><div class="fill" style="width:75%"></div></div>
+                        <span style="color:#666;font-size:0.8rem">75% — Depositing into Aave</span>
+                    </td>
+                    <td style="color:#666">2 min ago</td>
+                </tr>
+                <tr>
+                    <td><strong>ArbScanner</strong><br><span style="color:#666;font-size:0.8rem">Cross-chain arbitrage</span></td>
+                    <td>BSC → ETH</td>
+                    <td><span class="badge idle">SCANNING</span></td>
+                    <td>1.2 ETH + 5.8 BNB</td>
+                    <td>
+                        <div class="progress-bar"><div class="fill" style="width:30%"></div></div>
+                        <span style="color:#666;font-size:0.8rem">30% — Monitoring prices</span>
+                    </td>
+                    <td style="color:#666">12 min ago</td>
+                </tr>
+                <tr>
+                    <td><strong>ContractDeployer</strong><br><span style="color:#666;font-size:0.8rem">Ricardian contract manager</span></td>
+                    <td>Polygon</td>
+                    <td><span class="badge running">EXECUTING</span></td>
+                    <td>150 MATIC</td>
+                    <td>
+                        <div class="progress-bar"><div class="fill" style="width:100%"></div></div>
+                        <span style="color:#666;font-size:0.8rem">100% — Milestone 2 verified</span>
+                    </td>
+                    <td style="color:#666">Just now</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Ricardian Agreement #47</h3>
+            <div class="contract-card">
+                <span class="keyword">Status:</span> <span class="type">Active</span><br>
+                <span class="keyword">Parties:</span> <span class="string">0x7a25...f3e1</span>, <span class="string">0x3c9b...a8d2</span><br>
+                <span class="keyword">Amount:</span> <span class="type">5,000 USDC</span><br>
+                <span class="keyword">Milestone 1:</span> <span class="type">✅ Completed</span> (2,500 USDC released)<br>
+                <span class="keyword">Milestone 2:</span> <span class="type">✅ Completed</span> (1,500 USDC released)<br>
+                <span class="keyword">Milestone 3:</span> <span class="string">⏳ Pending</span> (1,000 USDC)<br>
+                <span class="comment">// Auto-executes when conditions are met</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Recent Transactions</h3>
+            <div class="tx-log">
+                <div class="tx">
+                    <span class="tx-hash">0x8f3a...2b1c</span><br>
+                    <span class="tx-time">Deposit 0.5 ETH → Aave v3 &nbsp;|&nbsp; ✅ Confirmed</span>
+                </div>
+                <div class="tx">
+                    <span class="tx-hash">0x1d7e...9f4a</span><br>
+                    <span class="tx-time">Swap 100 USDC → ETH via Uniswap &nbsp;|&nbsp; ✅ Confirmed</span>
+                </div>
+                <div class="tx">
+                    <span class="tx-hash">0x4c2b...e8d3</span><br>
+                    <span class="tx-time">Bridge 0.2 ETH → Polygon &nbsp;|&nbsp; ✅ Confirmed</span>
+                </div>
+                <div class="tx">
+                    <span class="tx-hash">0x9a1f...5c7e</span><br>
+                    <span class="tx-time">Deploy RicardianAgreement.sol &nbsp;|&nbsp; ✅ Confirmed</span>
+                </div>
+                <div class="tx">
+                    <span class="tx-hash">0x6e8d...3a2b</span><br>
+                    <span class="tx-time">Execute milestone 2 — transfer 1,500 USDC &nbsp;|&nbsp; ✅ Confirmed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid" style="padding-top:0">
+        <div class="card">
+            <h3>AI Decision Log</h3>
+            <div style="font-size:0.85rem;line-height:1.8">
+                <div style="padding:8px 0;border-bottom:1px solid #222">
+                    <span style="color:#00ff88">14:32:15</span> — <strong>Reasoning:</strong> Aave APY increased to 8.2% (was 6.8%). Gas price low at 12 gwei. Decision: <span style="color:#00ff88">DEPOSIT 0.5 ETH</span> (confidence: 0.94)
+                </div>
+                <div style="padding:8px 0;border-bottom:1px solid #222">
+                    <span style="color:#00ff88">14:28:41</span> — <strong>Reasoning:</strong> ETH/BSC spread detected: -0.3% on BSC. Below profit threshold. Decision: <span style="color:#ffcc00">HOLD</span> (confidence: 0.87)
+                </div>
+                <div style="padding:8px 0;border-bottom:1px solid #222">
+                    <span style="color:#00ff88">14:15:03</span> — <strong>Reasoning:</strong> Milestone 2 conditions verified. Counterparty confirmed delivery. Decision: <span style="color:#00ff88">EXECUTE MILESTONE</span> (confidence: 0.99)
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Security Status</h3>
+            <div style="font-size:0.9rem;line-height:2">
+                <div>✅ Spending limits: 5 ETH/day, 1 ETH/tx</div>
+                <div>✅ Kill switch: Armed (disabled)</div>
+                <div>✅ Simulation mode: OFF (live trading)</div>
+                <div>✅ Audit log: 47 entries (24h)</div>
+                <div>✅ Contract whitelist: 12 approved</div>
+                <div>⚠️ Daily spend: 0.8/5.0 ETH (16%)</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;padding:40px;color:#444">
+        <p>On-Chain AI Agent Framework — <a href="https://github.com/mrpkk/portfolio" style="color:#3a7bd5">View on GitHub</a></p>
+    </div>
+</body>
+</html>

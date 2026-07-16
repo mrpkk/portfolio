@@ -1,0 +1,509 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<title>Иша-упанишад</title>
+<meta property="og:image" content="images/header_vk.jpg">
+<style>
+  body { margin: 0px 0px 0px 0px; background: url('images/books1.jpg') left top; }
+  /* основные блоки */
+  .wrapper { margin: 0 auto; width: 1200px; }
+  .div_top { width: 1200px; }
+  .div_top_small { width: 100%; text-align: center; display: none; }
+  .div_main { width: 1196px; border-left: 2px solid #3c2012; border-right: 2px solid #3c2012; }
+  .soder { padding: 8px 10px; background-color: #FCF5C9; font: 13pt cambria, Verdana; color: #786A4E; border-radius: 10px; border: #786A4E 1px dashed; }
+  summary { cursor: pointer; }
+  /* строка залипающего меню */
+  .navbarclass_small { width: 1196px; border-left: 2px solid #3c2012; border-right: 2px solid #3c2012; overflow: hidden; background-color: #a2573a; }
+  .navbarclass_small .btnnav, .navbarclass_small .btnnav_menu { float: left; display: block; color: #fbefc9; text-align: center; text-decoration: none; font-family: Century Gothic, Verdana; font-size: 18px; }
+  .navbarclass_small .btnnav { padding: 10px 14px; }
+  .navbarclass_small .btnnav_menu { padding: 0px 8px 0px 8px; }
+  .navbarclass_small .btnnav:hover, .navbarclass_small .btnnav_menu:hover { background-color: #fbefc9; color: #271507; }
+  .sticky { position: fixed; top: 0; }
+  .sticky2 { height: 240px; }
+  .prokrutka { position: fixed; left: 20px; bottom: 20px; z-index: 1; width: 34px; background-color: #ffffff; padding: 10px; font: 12pt Georgia, Verdana; color: #676767;}
+  
+  p {font: 18pt cambria, Verdana; color: #000000; }
+  .list {font: 17pt Century Gothic, cambria, Verdana; color: #43230C; }
+  .ltl_text {font: 14pt Century Gothic, cambria, Verdana; color: #43230C; }
+  h1 {font: 28pt Georgia, Verdana; text-align: center; color: #43230C; }
+  h2 {font: 20pt Georgia, Verdana; text-align: left; font-weight: bold; color: #43230C; }
+  h3 {font: 18pt cambria, Verdana; text-align: left; font-weight: bold; color: #000000; }
+  a.lnk_main { color: #880000; text-decoration: underline; }
+  a.lnk_main:hover { color: #880000; text-decoration: underline; }
+  a.lnk1 { color: #775500; text-decoration: underline; }
+  a.lnk1:hover { color: #555500; text-decoration: none; }
+  a.lnk_soder { font: 11pt cambria, Verdana; color: #a2573a; text-decoration: none; }
+  a.lnk_soder:hover { color: #555500; text-decoration: none; border-bottom: 1px dashed #555500; }
+  a.lnk2 { font: 15pt cambria, Verdana; color: #a2573a; text-decoration: none; border-bottom: 1px dashed #a2573a; }
+  a.lnk2:hover { color: #555500; text-decoration: none; border-bottom: 0px;}
+  .img_small { display: none; }
+  .img_menu { width: 42px; }
+  .tbl_soder { width: 400px; }
+
+  TD.d1 { width: 108px; background: url('images/brd_left.jpg') left top; border-right: 2px solid #ded7a3; }
+  TD.d2 { background: #FFFBC4 url(images/paper.jpg) left top; border-left: 2px solid #271507; border-right: 2px solid #271507; padding: 40px 45px 40px 45px; }
+  TD.d3 { width: 108px; background: url('images/brd_right.jpg') left top; border-left: 2px solid #ded7a3; }
+  TD.c1 { border: 2px solid #271507; padding: 3px; }
+  
+/* меню боковой панели */
+  .menuLeft_class { width: 0; height: 100%; position: fixed; z-index: 4; float: left; top: 0; left: 0; background-color: #532C0F; overflow-x: hidden; padding-top: 60px; transition: 0.5s; box-shadow: 10px 0 20px rgba(83,44,15,0.9); }
+  .menuLeft_class a, .menuLeft_dropdown_btn { text-align: left; padding: 5px 8px 5px 16px; text-decoration: none; font-family: Tahoma, Serif, Times, Georgia, Verdana; font-size: 20px; color: #f1f1f1; display: block; transition: 0.5s; cursor: pointer; border: none; background: none; outline: none; border-bottom: 1px solid #a2573a; }
+  .menuLeft_dropdown_btn { width: 100%; position: relative; }
+  .menuLeft_class a:hover, .menuLeft_dropdown_btn:hover { color: #f1f1f1; background-color: #a2573a; }
+  .menuLeft_class a.omkara { text-align: center; padding: 25px 5px 5px 5px; text-decoration: none; border: none; background: none; outline: none; }
+  .menuLeft_class a.omkara:hover { background-color: #532C0F; }
+  .menuLeft_dropdown_btn:after { content: ""; width: 0; height: 0; top: 50%; right: 30px; position: absolute; margin-top: -3px; border-width: 7px 7px 0px 7px; border-style: solid; border-color: #f1f1f1 transparent; }
+  .menuLeft_dropdown_btn.active:after { margin-top: -3px; border-width: 0 7px 7px 7px; border-color: #f1f1f1 transparent; }
+  .menuLeft_dropdown_btn.active { background: linear-gradient(to right, #532C0F 0%, #a2573a 100%); }
+  .menuLeft_class .closebtn { position: absolute; top: 0; right: 15px; font-size: 40px; margin-left: 50px; border-bottom: 0px; }
+  .menuLeft_class .closebtn:hover { background-color: #532C0F; }
+/* Раскрывшийся элемент в левом меню */
+  .menuLeft_dropdown { display: none; padding-left: 24px; }
+/* Для полупрозрачного занавеса при открытии боковой панели*/
+  .menuLeft_class2 { width: 0; height: 100%; position: fixed; z-index: 3; float: left; top: 0; left: 0; background-color: rgba(0,0,0,0.7); }
+  .menuLeft_class2 .closebtn { position: absolute; top: 0; right: 25px; font-size: 1400px; text-decoration: none; color: #818181; display: block; }  
+
+@media (max-width: 899px) {   
+  .wrapper { width: 100%; }
+  .div_top, .ads, .img_big { display: none; }
+  .div_top_small, .img_small { display: block; }
+  .navbarclass_small { width: 100%; border-left: 0px solid #3c2012; border-right: 0px solid #3c2012; }
+  .navbarclass_small .btnnav, .navbarclass_small .btnnav_menu { float: left; display: block; color: #fbefc9; text-align: center; text-decoration: none; font-family: Century Gothic, Verdana; }
+  .navbarclass_small .btnnav { font-size: 14px; padding: 6px 8px; }
+  .navbarclass_small .btnnav_menu { font-size: 24px; padding: 0px 0px; }
+  .div_main { width: 98%; padding: 0px; }
+  TD.d1 { width: 10px; background: url('images/brd_left.jpg') left top; border-right: 2px solid #ded7a3; }
+  TD.d2 { border-left: 2px solid #271507; border-right: 2px solid #271507; padding: 15px 10px 5px 10px; }
+  TD.d3 { width: 10px; background: url('images/brd_right.jpg') left top; border-left: 2px solid #ded7a3; }
+  .prokrutka { left: 5px; bottom: 5px; width: 22px; padding: 0px 0px; font: 6pt Georgia, Verdana; color: #676767;}
+  .imgprokrutka { width: 22px; }
+  .img_menu { width: 58px; }
+  h1 {font: 24pt Georgia, Verdana; }
+  h2 {font: 22pt Georgia, Verdana; }
+  p {font: 18pt cambria, Verdana; }
+  .list {font: 15pt Century Gothic, cambria, Verdana; }
+  .ltl_text {font: 12pt Century Gothic, cambria, Verdana; }
+  .tbl_soder { width: 300px; }
+}
+
+</style>
+</head>
+
+<BODY>
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+var _tmr = _tmr || [];
+_tmr.push({id: "2526061", type: "pageView", start: (new Date()).getTime()});
+(function (d, w) {
+   var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+   ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+   var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+   if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+</script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=2526061;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+
+<div class="prokrutka">
+  <img class="imgprokrutka" src=images/arrow_up.jpg border=0>
+  <center><b id="tablo">0</b>%</center>
+  <img class="imgprokrutka" src=images/arrow_btm.jpg border=0>
+</div>
+
+<!-- меню боковой панели --> 
+<div id="menuLeft_object" class="menuLeft_class">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeMenuLeft();">&times;</a>
+  <button class="menuLeft_dropdown_btn">Современность</button>
+  <div class="menuLeft_dropdown">
+    <a href=skovoroda>Георгий Сковорода</a>
+    <a href=shopengauer>Артур Шопенгауэр</a>
+    <a href=emerson>Ральф Уолдо Эмерсон</a>
+    <a href=lincoln>Авраам Линкольн</a>
+    <a href=tolstoy>Лев Толстой</a>
+    <a href=tagore1>Рабиндранат Тагор</a>
+    <a href=kipling>Редьярд Киплинг</a>
+    <a href=gandistories>Махатма Ганди</a>
+    <a href=berdyaev>Николай Бердяев</a>
+    <a href=jung>Карл Густав Юнг</a>
+    <a href=jlondon>Джек Лондон</a>
+    <a href=gesse>Герман Гессе</a>
+    <a href=rerih>Елена Рерих</a>
+    <a href=einshtein>Альберт Эйнштейн</a>
+    <a href=aikido>Морихеи Уешиба</a>
+    <a href=ilyin>Иван Ильин</a>
+    <a href=chaplin>Чарли Чаплин</a>
+    <a href=juanmascaro>Хуан Маскаро</a>
+    <a href=exuperi>Антуан Де Сент-Экзюпери</a>
+    <a href=tolle>Экхарт Толле</a>
+    <a href=zaratustra>Дмитрий и Надежда Зима</a>
+    <a href=mirkina>Зинаида Миркина</a>
+    <a href=majorov>Олег Майоров</a>
+    <a href=antipin>Дмитрий Антипин</a>
+    <a href=pritchimodern>Современные притчи</a>
+  </div>
+  <button class="menuLeft_dropdown_btn">Христианство</button>
+  <div class="menuLeft_dropdown">
+    <a href=nagornaya>Нагорная проповедь</a>
+    <a href=pritchijesus>Притчи Иисуса Христа</a>
+    <a href=mariabirth>Протоевангелие от Иакова</a>
+    <a href=jesuschildthomas>Евангелие ранних лет от Фомы</a>
+    <a href=jesuschildarab>Арабское Евангелие детства</a>
+    <a href=jesuschildmatheus>Евангелие о рождении благодатной Марии</a>
+    <a href=agrafa>Аграфа</a>
+    <a href=notovich>Тибетские Евангелие</a>
+    <a href=maria>Первое Евангелие от Марии Магдалины</a>
+    <a href=magdalina2>Второе Евангелие от Марии Магдалины</a>
+    <a href=thomas>Евангелие от Фомы</a>
+    <a href=philipp>Евангелие от Филиппа</a>
+    <a href=simeon>Евангелие от Петра</a>
+    <a href=jakob>Апокриф Иакова</a>
+    <a href=ioannapostol>Деяния Иоанна</a>
+    <a href=jesuspurana>Неизвестная жизнь Христа</a>
+    <a href=jesuskundalini>Иисус Христос и Кундалини</a>
+    <a href=heavenchrist>Брачный чертог, или таламус</a>
+    <a href=mysticalcross>Мистический символ креста</a>
+    <a href=ioann>Иоанн Иерусалимский</a>
+    <a href=francisk>Франциск Ассизский</a>
+    <a href=aligyeri>Данте Алигьери</a>
+    <a href=sarovskiy>Серафим Саровский</a>
+    <a href=gete>Иоганн Вольфганг Гете</a>
+    <a href=optin>Оптинские старцы</a>
+    <a href=luis>Клайв Стейплз Льюис</a>
+    <a href=essei>Эдмонт Бордо Секкей</a>
+    <a href=argivyanin>Георгий Вольский</a>
+    <a href=greevs>Кристофер Гривз</a>
+    <a href=rekviem>Реквием</a>
+    <a href=pritchichrist>Христианские притчи</a>
+  </div>
+  <button class="menuLeft_dropdown_btn">Ислам</button>
+  <div class="menuLeft_dropdown">
+    <a href=allahnames>99 Имен Аллаха</a>
+    <a href=quran>Фрагменты из Корана</a>
+    <a href=sunna>Сунна Пророка Мухаммеда</a>
+    <a href=fatima>Обращение к госпоже Фатиме</a>
+    <a href=aforism>Суфийские афоризмы</a>
+    <a href=pritchisufizm>Суфийские притчи</a>
+    <a href=avicenna>Абу Али Хусейн Ибн Абдаллах Ибн Сина</a>
+    <a href=gazali>Аль-Газали</a>
+    <a href=ahmedyasewi>Ахмед Ясави</a>
+    <a href=saadibustan>Саади Ширази</a>
+    <a href=rumi>Джалал-Ад-Дин Руми</a>
+    <a href=hosrov>Амир Хосров Дехлеви</a>
+    <a href=navoi>Алишер Навои</a>
+    <a href=inayat>Инайят Хан</a>
+    <a href=alikhan>Нусрат Фатех Али Кхан</a>
+    <a href=rotshild>Джеффри Ротшильд</a>
+    <a href=pritchieast>Восточные притчи</a>
+  </div>
+  <button class="menuLeft_dropdown_btn">Буддизм</button>
+  <div class="menuLeft_dropdown">
+    <a href=buddalife>Жизнеописание Будды в притчах</a>
+    <a href=buddagnyana>Учение Будды в притчах</a>
+    <a href=malunkya>Малая сутра о Малункье</a>
+    <a href=sutta>Сутта Нипата</a>
+    <a href=dhammapada>Дхаммапада</a>
+    <a href=matreya>Пророчества о приходе Матрейи</a>
+    <a href=padmasabhava>Пророчества Падмасабхавы</a>
+    <a href=pritchibuddism>Буддийские притчи</a>
+    <a href=/bankey/>Банкэй Етаку</a>
+    <a href=/bankey/takuan01.htm>Такуон Сохо</a>
+    <a href=/bankey/hakuin01.htm>Хакуин Экаку</a>
+    <a href=/bankey/dogen01.htm>Эйхэй Догэн</a>
+    <a href=/bankey/bokudzu01.htm>Бокудзю</a>
+    <a href=zenzastava>Застава без ворот</a>
+    <a href=zenknigapokoy>Книга спокойствия</a>
+    <a href=zenlinczy>Речения Линь-цзи</a>
+    <a href=zenfleyta>Железная флейта</a>
+    <a href=zenstory1>101 дзенская история</a>
+    <a href=zenstory2>Мудрость Дзен. Сто историй пробуждения</a>
+    <a href=pritchizen>Дзенские истории</a>
+  </div>
+  <button class="menuLeft_dropdown_btn">Ведизм</button>
+  <div class="menuLeft_dropdown">
+    <a href=upanishadkatha>Катха-упанишад</a>
+    <a href=ramayana>Рамаяна</a>
+    <a href=mahabharata03>Махабхарата</a>
+    <a href=puranamarkandeya>Маркандейя-пурана</a>
+    <a href=devimahatmya>Деви-Махатмья</a>
+    <a href=argalastotram>Аргала Стотрам</a>
+    <a href=kavachdevi>Кавач Деви</a>
+    <a href=ganeshaatharvashiirsha>Ганеша Атхарва Шиирша</a>
+    <a href=deviatharvashiirsha>Деви Атхарва Шиирша</a>
+    <a href=avadhuta>Авадхута-Гита</a>
+    <a href=ganesha>История создания Ганеши</a>
+    <a href=yogavasistha>Йога Васиштха</a>
+    <a href=ashtavakra>Аштавакра-Гита</a>
+    <a href=shankara3>Ади Шанкарачария</a>
+    <a href=namdev>Намдев</a>
+    <a href=gnyaneshvar1>Гнянешвар</a>
+    <a href=kabirbiogr>Кабир</a>
+    <a href=tansen>Тансен Миян</a>
+    <a href=tukaram>Тукарам</a>
+    <a href=sai>Сай Баба из Ширди</a>
+    <a href=ramana>Рамана Махарши</a>
+    <a href=vedicstories>Ведические истории</a>
+    <a href=pritchiveda>Ведические притчи</a>
+  </div>
+  <button class="menuLeft_dropdown_btn">Другое</button>
+  <div class="menuLeft_dropdown">
+    <a href=ekklesiast>Книга Екклесиаста</a>
+    <a href=psaltir>Псалтирь Давида</a>
+    <a href=pritchibible>Библейские истории</a>
+    <a href=isaya>Апокриф: Вознесение Исайи</a>
+    <a href=iudaizm>Рассказ о Шейхине</a>
+    <a href=pritchiiudaizm>Иудейские притчи</a>
+    <a href=lao>Дао де Дзин</a>
+    <a href=china>Изречения китайских мудрецов</a>
+    <a href=pritchidao>Даосские притчи</a>
+    <a href=confutsiy>Изречения Конфуция</a>
+    <a href=pritchiconfutsiy>Конфуцианские притчи</a>
+    <a href=sokrat1>Сократ</a>
+    <a href=arjan>Утренняя молитва сикхов</a>
+    <a href=sikhism>Сахадж в Сикхизме</a>
+  </div>
+  <a class=omkara href=/><img src=images/omkara.jpg></a>
+</div>
+
+<!-- для полупрозрачного занавеса при открытии боковой панели -->
+<div id="menuLeft_object2" class="menuLeft_class2">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeMenuLeft();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</div>
+
+<div class=wrapper>
+<!-- шапка -->
+  <div id=div_top_obj class=div_top>
+    <table cellpadding=0 cellspacing=0 border=0 width=1200>
+      <tr><td rowspan=3><img src=images/header_a.jpg border=0></td>
+          <td colspan=2><img src=images/header_b.jpg border=0></td></tr>
+      <tr><td><a href=index><img src=images/header_c.jpg border=0></a></td>
+          <td><a href=/ title="Проект сайтов ОМКАРА"><img src=images/header_d.jpg border=0></td></tr>
+      <tr><td colspan=2><img src=images/header_e.jpg border=0></td></tr>
+    </table>
+  </div>
+  
+<!-- шапка для малых экранов --> 
+  <div id=div_top_small_obj class=div_top_small>
+    <img src=images/header_900.jpg width=100% border=0>
+  </div>
+
+<!-- строка меню -->
+  <div id=navbarclass_small_object class=navbarclass_small>
+    <table cellpadding=0 cellspacing=0 align=center><tr><td>
+    <!--<a class=btnnav_menu href="javascript:void(0)" onclick="openMenuLeft()">&#9776</a>-->
+    <a onmouseover="document.images['menu'].src = 'images/selected/menu.jpg'" onmouseout="document.images['menu'].src = 'images/menu.jpg'" class=btnnav_menu href="javascript:void(0)" onclick="openMenuLeft()"><img src=images/menu.jpg name="menu" border=0 class=img_menu></a>    
+    <a class=btnnav href=modern>Современность</a>
+    <a class=btnnav href=christ>Христианство</a>
+    <a class=btnnav href=islam>Ислам</a>
+    <a class=btnnav href=buddism>Буддизм</a>
+    <a class=btnnav href=hindu>Ведизм</a>
+    <a class=btnnav href=jewish>Другое</a>
+    </td></tr></table>
+  </div>
+
+  <div class="div_main">
+    <table align=center width=100% height=100% cellspacing=0 border=0>
+      <tr><td class=d1>&nbsp;</td>
+          <td class=d2 align=left valign=top>
+
+
+<h1>Иша-упанишад</h1>
+
+<p><i>Это одна из основных упанишад по своей известности и своему значению. В этом очень коротком тексте сосредоточено обращение ко Всевышнему Ишваре в виде молитвенных мантр с описанием Его абсолютных качеств. Иша-упанишада является последней главой Шукла Яджурведы, но, тем не менее, считается одной из самых ранних упанишад.</i>
+
+<p><div class="img_big"><table align=center><tr><td width=10>&nbsp;</td><td><img src=images/flower01.png></td></tr></table></div><div class="img_small"><table align=center><tr><td><img src=images/flower01.png width=300></td></tr></table></div>
+
+<p><b>ом пурнам адах пурнам идам<br>
+пурнат пурнам удачйате<br>
+пурнасйа пурнам адайа<br>
+пурнам эва аващишйате</b>
+
+<p>Ом. Существующая полнота <i>(совершенство, законченность)</i>, то есть полнота этого мира, была создана полнотой из полноты. И когда из полноты была выделена полнота, тогда та же полнота и осталась.
+
+<p><b>1. ищавасйам идам сарвам<br>
+йат кинча джагатйам джагат<br>
+тена тйактена бхунджитха<br>
+ма грыдхах касйа свид дханам</b>
+
+<p>Господом управляется это все, что бы ни было, все рожденное в воплощенном мире. Им выделенную для тебя долю прими и откажись от собственности другого.
+
+<p><b>2. курванн эвеха кармани<br>
+джидживишеч чхатам самах<br>
+эвам твайи нанйатхето асти<br>
+на карма липйате наре</b>
+
+<p>Придерживаясь такого поведения, душа способна прожить сто лет. Для нее не существует другого варианта, когда деятельность бы не связывала человека.
+
+<p><b>3. асурйа нама те лока<br>
+андхена тамаса аврытах<br>
+тамсте претйа абхигаччханти<br>
+йе ке чатма хано джанах</b>
+
+<p>Известно, что миры, предназначенные для асуров, покрыты темнотой слепоты. Туда, став умершей душой, попадают те воплощенные, кто притеснял Атман.
+
+<p><b>4. анеджад экам манасо джавийо<br>
+наинад дева апнуван пурвам аршат<br>
+тад дхавато анйан атйети тиштхат<br>
+тасминн апо матарищва дадхати</b>
+
+<p>Единый и неподвижный Он быстрее мысли передвигается впереди всех, и даже Боги не достигают Его. Он превосходит других подвижных, будучи неподвижным, и через Него управляющие стихиями повелевают. 
+
+<p><b>5. тад эджати тан наиджати<br>
+тад дуре тад вантике<br>
+тад антар асйа сарвасйа<br>
+таду сарвасйа асйа бахйатах</b>
+
+<p>Он движется, и Он не движется. Он находится далеко, и Он находится близко. Он внутри этого всего, и Он также всего этого вовне.
+
+<p><b>6. йас ту сарвани бхутани<br>
+атмани эва анупащйати<br>
+сарва бхутешу чатманам<br>
+тато на виджугупсате</b>
+
+<p>Кто всех живых существ как Атман только воспринимает, и Атман как все живые существа, тот не станет относиться с ненавистью. 
+
+<p><b>7. йасмин сарвани бхутани<br>
+атмаивабхуд виджанатах<br>
+татра ко мохах ках щока<br>
+экатвам анупащйатах</b>
+
+<p>У того, кто знает, что все живое существует только как Атман, какие иллюзии и какие тревоги могут быть, если он только так воспринимает?
+
+<p><b>8. са парйагач чхукрам акайам авранам<br>
+аснавирам щуддхам апапа виддхам<br>
+кавир маниши парибхух свайамбхур йатхататхйато<br>
+арытхан вйададхач чхащватибхйах самабхйах</b>
+
+<p>Он Вездесуще Всесильный, Бестелесный, Безупречный, Не имеющий вен, Чистый, Безгрешный, Всеведущий знаток, Величайший, Самодостаточный, как нужно установивший положения и знания во все времена.
+
+<p><b>9. андхам тамах правищанти<br>
+йе авидйам упасате<br>
+тато бхуйа ива те тамо<br>
+йа у видйайам ратах</b>
+
+<p>В слепую темноту уходят те, кто почитает неведение. Но погруженными в еще большую темноту подобны те, кто неправильно используют знание.
+
+<p><b>10. анйад эвахур видйайа<br>
+анйад ахур авидйайа<br>
+ити щущрума дхиранам<br>
+йе нас тад вичачакшире</b>
+
+<p>Конечно же, знание считается чем-то одним, а неведение считается чем-то другим. Так было услышано от мудрых, которые разъяснили это.
+
+<p><b>11. видйам ча авидйам ча йас<br>
+тад ведобхайам саха<br>
+авидйайа мрытйум тиртва<br>
+видйайа амрытам ащнуте</b>
+
+<p>Кто и знание, и неведение постиг одновременно, тот, переступив через смерть неведения, достигнет бессмертие знания. 
+
+<p><b>12. андхам тамах правищанти<br>
+йе асамбхутим упасате<br>
+тато бхуйа ива те тамо<br>
+йа у самбхутйам ратах</b>
+
+<p>В слепую темноту уходят те, кто почитает несуществующее. Но погруженными в еще большую темноту подобны те, кто неправильно использует существующее.
+
+<p><b>13. анйад эва ахух самбхавад<br>
+анйад ахур асамбхават<br>
+ити щущрума дхиранам<br>
+йе нас тад вичачакшире</b>
+
+<p>Конечно же, существующее считается чем-то одним, а несуществующее считается чем-то другим. Так было услышано от мудрых, которые разъяснили это.
+
+<p><b>14. самбхутим ча винащам ча<br>
+йас тад ведобхайам саха<br>
+винащена мрытйум тиртва<br>
+самбхутйа амрытам ащнуте</b>
+
+<p>Кто и существование, и уничтожение постиг одновременно, тот, переступив через смерть уничтожения, достигнет бессмертие существования.
+
+<p><b>15. хиранмайена патрена<br>
+сатйасйапихитам мукхам<br>
+тат твам пушанн апаврыну<br>
+сатйа дхармайа дрыштайе</b>
+
+<p>Золотистым ослепительным сиянием скрыто лицо Истины. Этот покров, о Пушан, удали для почитающего Истину, чтобы лицезреть ее.
+
+<p><b>16. пушанн экарше йама сурйа<br>
+праджапатйа вйуха ращмин самуха<br>
+теджах йат те рупам калйана тамам тат те пащйами<br>
+йо асав асау пурушах со ахам асми</b>
+
+<p>О Пушан, Наимудрейший, Яма, Сурья, Праджапати, распространи лучи, направь сияние так, чтобы Твою самую благодатную форму я мог бы видеть, и чтобы этим светом Пуруши мог быть я сам.
+
+<p><b>17. вайур анилам амрытам<br>
+атхедам бхасмантам щарирам<br>
+ом крато смара крытам смара<br>
+крато смара крытам смара</b>
+
+<p>Пусть жизненный воздух <i>(прана)</i> станет бессмертным дыханием, когда это тело станет пеплом. Ом. Разум, помни, помни деяния, разум, помни, помни деяния!
+
+<p><b>18. агне найа супатха райе асман<br>
+вищвани дева вайунани видван<br>
+йуйодхи асмадж джухуранам эно<br>
+бхуйиштыхам те нама уктим видхема</b>
+
+<p>О Агни, веди праведным путем к благополучию, о Вселенский Бог, знающий все пути. Удали в нас любые препятствия и пороки. Бесчисленные Тебе слова почтения выражаем.
+
+<p align=center><a href="hindu" class=lnk_main>вернуться в раздел "Ведизм"</a>
+          </td>
+          <td class=d3>&nbsp;</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  var navbar_small = document.getElementById("navbarclass_small_object");
+  var sticky_small = navbar_small.offsetTop;
+  var dto = document.getElementById("div_top_obj");
+  var dtso = document.getElementById("div_top_small_obj");
+
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - window.innerHeight;
+    var scrolled = (winScroll / height) * 100;
+    var div_top_small_height = window.innerWidth / 565 * 160;
+    document
+      .getElementById('tablo')
+      .innerHTML = Math.round(scrolled);
+    if (window.pageYOffset >= sticky_small) {
+      navbar_small.classList.add("sticky");
+      dto.classList.add("sticky2");
+      dtso.style.height = div_top_small_height + 52;
+    } else {
+      navbar_small.classList.remove("sticky");
+      dto.classList.remove("sticky2");
+      dtso.style.height = div_top_small_height - 3;
+    }
+  }
+  
+  /* для открытия/закрытия боковой панели */
+  function openMenuLeft() { 
+    document.getElementById("menuLeft_object").style.width = "300px";
+    document.getElementById("menuLeft_object2").style.width = "105%";
+   }
+  function closeMenuLeft() {
+    document.getElementById("menuLeft_object").style.width = "0"; 
+    document.getElementById("menuLeft_object2").style.width = "0";
+  }
+</script>
+
+<script>
+  var dropdown = document.getElementsByClassName("menuLeft_dropdown_btn");
+  var i;
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+</script>
+</BODY></HTML>
+
