@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram AI Bot — Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        h1 { text-align: center; margin-bottom: 40px; color: #fff; }
+        .demo { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .chat { background: #111; border: 1px solid #222; border-radius: 12px; overflow: hidden; }
+        .chat-header { background: #1a1a2e; padding: 16px; font-weight: bold; }
+        .chat-messages { padding: 16px; min-height: 400px; }
+        .msg { margin-bottom: 12px; max-width: 80%; }
+        .msg.user { margin-left: auto; }
+        .msg .bubble { padding: 10px 14px; border-radius: 16px; line-height: 1.5; font-size: 0.9rem; }
+        .msg.user .bubble { background: #3a7bd5; color: #fff; border-bottom-right-radius: 4px; }
+        .msg.bot .bubble { background: #1e1e2e; color: #e0e0e0; border-bottom-left-radius: 4px; }
+        .msg .time { font-size: 0.7rem; color: #666; margin-top: 4px; }
+        .admin { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; }
+        .admin h3 { color: #fff; margin-bottom: 16px; }
+        .stat { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #222; }
+        .stat .label { color: #888; }
+        .stat .val { color: #fff; font-weight: bold; }
+        .features { margin-top: 40px; }
+        .features h2 { color: #fff; margin-bottom: 20px; }
+        .feature { background: #111; border: 1px solid #222; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .feature h4 { color: #3a7bd5; margin-bottom: 8px; }
+        .feature p { color: #888; font-size: 0.9rem; line-height: 1.5; }
+        .pricing { margin-top: 40px; }
+        .pricing h2 { color: #fff; margin-bottom: 20px; }
+        .price-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; display: inline-block; margin-right: 16px; min-width: 200px; text-align: center; }
+        .price-card.popular { border-color: #3a7bd5; }
+        .price-card h4 { color: #fff; margin-bottom: 8px; }
+        .price-card .price { font-size: 2rem; color: #3a7bd5; font-weight: bold; }
+        .price-card ul { list-style: none; margin-top: 12px; text-align: left; font-size: 0.85rem; color: #888; }
+        .price-card ul li { padding: 4px 0; }
+        .price-card ul li::before { content: "✓ "; color: #00ff88; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💬 Telegram AI Bot — RAG + Admin Panel</h1>
+
+        <div class="demo">
+            <div class="chat">
+                <div class="chat-header">🤖 AI Support Bot</div>
+                <div class="chat-messages">
+                    <div class="msg user">
+                        <div class="bubble">Как оформить возврат?</div>
+                        <div class="time">14:32</div>
+                    </div>
+                    <div class="msg bot">
+                        <div class="bubble">Для оформления возврата выполните следующие шаги:<br><br>1. Перейдите в раздел "Мои заказы"<br>2. Выберите нужный заказ<br>3. Нажмите "Вернуть товар"<br>4. Укажите причину возврата<br><br>Возврат обрабатывается в течение 3-5 рабочих дней. Нужна ещё помощь?</div>
+                        <div class="time">14:32</div>
+                    </div>
+                    <div class="msg user">
+                        <div class="bubble">А если прошло больше 14 дней?</div>
+                        <div class="time">14:33</div>
+                    </div>
+                    < class="msg bot">
+                        <div class="bubble">Если прошло более 14 дней, возврат возможен только для товаров ненадлежащего качества. Вам нужно:<br><br>1. Сфотографировать дефект<br>2. Отправить заявку через форму обратной связи<br>3. Дождаться ответа менеджера (1-2 дня)<br><br>📞 Техподдержка: +7 (800) 123-45-67</div>
+                        <div class="time">14:33</div>
+                    </div>
+                    <div class="msg user">
+                        <div class="bubble">👍</div>
+                        <div class="time">14:34</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin">
+                <h3>📊 Admin Dashboard</h3>
+                <div class="stat"><span class="label">Total queries today</span><span class="val">847</span></div>
+                <div class="stat"><span class="label">Accuracy rate</span><span class="val" style="color:#00ff88">94.2%</span></div>
+                <div class="stat"><span class="label">Avg response time</span><span class="val">1.2s</span></div>
+                <div class="stat"><span class="label">Documents in KB</span><span class="val">23</span></div>
+                <div class="stat"><span class="label">FAQ entries</span><span class="val">156</span></div>
+                <div class="stat"><span class="label">Users served</span><span class="val">312</span></div>
+                <div class="stat"><span class="label">Helpful votes</span><span class="val" style="color:#00ff88">89%</span></div>
+                <div class="stat"><span class="label">LLM cost (today)</span><span class="val">$0.00</span></div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Features</h2>
+            <div class="feature">
+                <h4>📄 RAG — Document Q&A</h4>
+                <p>Upload PDFs, docs, manuals. Bot answers questions from your knowledge base using Mistral Embeddings + ChromaDB. Zero-cost AI.</p>
+            </div>
+            <div class="feature">
+                <h4>💬 FAQ Fast Answers</h4>
+                <p>Exact-match FAQ for instant responses. Saves tokens, faster replies. Fallback to RAG for complex questions.</p>
+            </div>
+            <div class="feature">
+                <h4>📊 Admin Panel (Streamlit)</h4>
+                <p>Manage documents, FAQ entries, view analytics. Dark theme, API-powered, Basic Auth protected.</p>
+            </div>
+            <div class="feature">
+                <h4>👍 Feedback Collection</h4>
+                <p>"Helpful?" button on every answer. Tracks accuracy, improves the knowledge base over time.</p>
+            </div>
+            <div class="feature">
+                <h4>🐳 Docker Deploy</h4>
+                <p>One command to launch: docker-compose up. Backend + admin + database — all included.</p>
+            </div>
+        </div>
+
+        <div class="pricing">
+            <h2>Pricing for Clients</h2>
+            <div class="price-card">
+                <h4>Basic</h4>
+                <div class="price">$500</div>
+                <ul>
+                    <li>Telegram bot</li>
+                    <li>5 PDF documents</li>
+                    <li>FAQ system</li>
+                    <li>Basic analytics</li>
+                    <li>Deployment</li>
+                </ul>
+            </div>
+            <div class="price-card popular">
+                <h4>Standard</h4>
+                <div class="price">$1,000</div>
+                <ul>
+                    <li>Everything in Basic</li>
+                    <li>Admin panel (Streamlit)</li>
+                    <li>Unlimited documents</li>
+                    <li>Advanced analytics</li>
+                    <li>Feedback system</li>
+                </ul>
+            </div>
+            <div class="price-card">
+                <h4>Premium</h4>
+                <div class="price">$2,000</div>
+                <ul>
+                    <li>Everything in Standard</li>
+                    <li>CRM integration</li>
+                    <li>Custom workflows</li>
+                    <li>Multi-language</li>
+                    <li>3 months support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align:center;padding:40px;color:#444">
+            <p><a href="https://github.com/mrpkk/telegram-ai-bot" style="color:#3a7bd5">View on GitHub</a> &nbsp;|&nbsp; <a href="https://mrpkk.github.io/portfolio/" style="color:#3a7bd5">Back to Portfolio</a></p>
+        </div>
+    </div>
+</body>
+</html>
