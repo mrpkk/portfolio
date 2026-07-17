@@ -108,6 +108,27 @@ I create **autonomous AI agents** that operate 24/7 on blockchains — making de
 
 ## Freelance Services
 
+## Изображения для фриланса
+
+### 🤖 On-Chain AI Agent Framework
+| Cover | Selling 1 | Selling 2 | Selling 3 |
+|-------|-----------|-----------|-----------|
+| ![cover](images/onchain_cover.png) | ![1](images/onchain_selling_1.png) | ![2](images/onchain_selling_2.png) | ![3](images/onchain_selling_3.png) |
+
+### 💬 Telegram AI Bot (RAG + Admin)
+| Cover | Selling 1 | Selling 2 | Selling 3 |
+|-------|-----------|-----------|-----------|
+| ![cover](images/telegram_bot_cover.png) | ![1](images/telegram_bot_selling_1.png) | ![2](images/telegram_bot_selling_2.png) | ![3](images/telegram_bot_selling_3.png) |
+
+### 📊 RAG Corp Bot
+| Cover | Selling 1 | Selling 2 | Selling 3 |
+|-------|-----------|-----------|-----------|
+| ![cover](images/rag_cover.png) | ![1](images/rag_selling_1.png) | ![2](images/rag_selling_2.png) | ![3](images/rag_selling_3.png) |
+
+---
+
+## Pricing
+
 | Service | Price |
 |---------|-------|
 | Telegram Bot (AI/RAG) | $500–$2000 |

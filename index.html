@@ -34,6 +34,10 @@
         .project .links a.ghost { border-color: #30363d; color: #8b949e; }
         .project .links a.ghost:hover { border-color: #8b949e; color: #fff; background: transparent; }
         .stack { color: #484f58; font-size: 0.85rem; margin-top: 12px; }
+    .gallery { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+    .gallery img { width: 48%; border-radius: 8px; border: 1px solid #21262d; cursor: pointer; transition: opacity 0.2s; }
+    .gallery img:hover { opacity: 0.8; }
+    .gallery img:only-child { width: 100%; }
 
         /* Contact */
         .contact { text-align: center; padding: 80px 40px; background: #0d1117; border-top: 1px solid #21262d; }
@@ -56,7 +60,7 @@
 
         <!-- On-Chain AI Agent -->
         <div class="project">
-            <img class="project-cover" src="images/onchain-agent.png" alt="On-Chain AI Agent">
+            <img class="project-cover" src="images/onchain-swagger-full-expanded.png" alt="On-Chain AI Agent API">
             <div class="project-body">
                 <h3>On-Chain AI Agent Framework</h3>
                 <span class="tag">Solidity</span>
@@ -66,6 +70,10 @@
                 <span class="tag">Docker</span>
                 <p>Autonomous AI agents that own wallets, sign smart contracts, and execute on-chain operations 24/7. Ricardian agreements, ERC-8004 identity, yield optimization, cross-chain arbitrage.</p>
                 <div class="stack">Stack: Python, FastAPI, Web3.py, Solidity, Hardhat, Mistral AI</div>
+                <div class="gallery">
+                    <img src="images/onchain-swagger-full.png" alt="Swagger UI endpoints">
+                    <img src="images/onchain-api-health.png" alt="API health response">
+                </div>
                 <div class="links">
                     <a href="https://github.com/mrpkk/onchain-ai-agent">GitHub</a>
                     <a href="agent-dashboard.html" class="ghost">Demo</a>
@@ -109,7 +117,7 @@
 
         <!-- Nivritti -->
         <div class="project">
-            <img class="project-cover" src="images/nivritti.png" alt="Nivritti">
+            <img class="project-cover" src="images/nivritti-api-real.png" alt="Nivritti API">
             <div class="project-body">
                 <h3>Nivritti — Vedic Media</h3>
                 <span class="tag">Muhurta</span>
