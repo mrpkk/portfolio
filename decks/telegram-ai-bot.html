@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram AI Bot — mrpkk</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 12px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .sub { color: #8b949e; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .hero .badge { display: inline-block; background: #161b22; color: #38bdf8; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; margin-top: 12px; border: 1px solid #21262d; }
+        section { padding: 60px 0; border-bottom: 1px solid #21262d; }
+        section:last-child { border: none; }
+        h2 { color: #fff; font-size: 1.5rem; margin-bottom: 24px; }
+        h3 { color: #ddd; font-size: 1.1rem; margin: 20px 0 10px; }
+        p, li { color: #8b949e; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 6px 0; }
+        li::before { content: "▸ "; color: #38bdf8; }
+        .tags { margin: 12px 0; }
+        .tag { display: inline-block; background: #161b22; color: #38bdf8; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; margin: 2px 4px; border: 1px solid #21262d; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { background: #111; border: 1px solid #21262d; border-radius: 12px; padding: 24px; }
+        .card h3 { margin-top: 0; }
+        img { max-width: 100%; border-radius: 12px; border: 1px solid #21262d; margin: 16px 0; }
+        .btns { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #38bdf8; color: #0d1117; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .btn.ghost { background: transparent; color: #38bdf8; border: 1px solid #38bdf8; }
+        .footer-cta { text-align: center; padding: 60px 0; }
+        .footer-cta h2 { margin-bottom: 12px; }
+        .footer-cta p { margin-bottom: 24px; }
+        @media(max-width:600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .arch { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 20px; font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: #8b949e; margin: 16px 0; white-space: pre; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Telegram AI Bot with RAG</h1>
+        <p class="sub">Enterprise document Q&A — upload PDFs, get instant answers</p>
+        <div class="badge">✅ Ready for Deployment</div>
+    </div>
+    <div class="container">
+        <section>
+            <h2>Architecture</h2>
+            <div class="arch">┌──────────┐     ┌──────────────┐     ┌───────────┐
+│  User    │────▶│  Telegram     │────▶│  FastAPI  │
+│  (TG)    │     │  Bot API      │     │  Server   │
+└──────────┘     └──────────────┘     └─────┬─────┘
+                                            │
+                ┌───────────────────────────┼───────────┐
+                │                           │           │
+        ┌───────▼──────┐          ┌─────────▼──────┐   │
+        │  ChromaDB    │          │   Mistral AI   │   │
+        │  (vectors)   │◀────────▶│   Embed + Gen  │   │
+        └──────────────┘          └────────────────┘   │
+                │                                       │
+        ┌───────▼──────┐                               │
+        │  PDF Parser  │───────────────────────────────┘
+        │  (PyMuPDF)   │
+        └──────────────┘</div>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>📄 PDF Upload</h3>
+                    <p>Drag-and-drop any PDF. Instantly parsed, chunked, and indexed for semantic search.</p>
+                </div>
+                <div class="card">
+                    <h3>🔍 Semantic Search</h3>
+                    <p>Mistral Embeddings + ChromaDB — finds the exact context before generating answers. No hallucinations on your docs.</p>
+                </div>
+                <div class="card">
+                    <h3>📊 Admin Dashboard</h3>
+                    <p>Streamlit-based admin panel with FAQ management, user analytics, and document usage stats.</p>
+                </div>
+                <div class="card">
+                    <h3>💰 Zero-Cost AI</h3>
+                    <p>Uses Mistral AI free tier (500k req/min). No monthly fees, no API bills.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">ChromaDB</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">Mistral AI</span>
+                <span class="tag">Telegram Bot API</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Docker</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Use Cases</h2>
+            <ul>
+                <li>Corporate knowledge base — employees ask questions, bot answers from internal docs</li>
+                <li>Legal document Q&A for law firms</li>
+                <li>Medical research paper analysis</li>
+                <li>Technical documentation assistant</li>
+                <li>Academic study guide generator</li>
+            </ul>
+        </section>
+
+        <div class="footer-cta">
+            <h2>Interested?</h2>
+            <p>This project is available for licensing or custom development.</p>
+            <a href="https://t.me/mrpkk" class="btn">Contact on Telegram</a>
+            <a href="../index.html" class="btn ghost">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

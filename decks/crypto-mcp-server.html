@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto MCP Server — mrpkk</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 12px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .sub { color: #8b949e; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .hero .badge { display: inline-block; background: #161b22; color: #38bdf8; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; margin-top: 12px; border: 1px solid #21262d; }
+        section { padding: 60px 0; border-bottom: 1px solid #21262d; }
+        section:last-child { border: none; }
+        h2 { color: #fff; font-size: 1.5rem; margin-bottom: 24px; }
+        h3 { color: #ddd; font-size: 1.1rem; margin: 20px 0 10px; }
+        p, li { color: #8b949e; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 6px 0; }
+        li::before { content: "▸ "; color: #38bdf8; }
+        .tags { margin: 12px 0; }
+        .tag { display: inline-block; background: #161b22; color: #38bdf8; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; margin: 2px 4px; border: 1px solid #21262d; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { background: #111; border: 1px solid #21262d; border-radius: 12px; padding: 24px; }
+        .card h3 { margin-top: 0; }
+        img { max-width: 100%; border-radius: 12px; border: 1px solid #21262d; margin: 16px 0; }
+        .btns { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #38bdf8; color: #0d1117; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .btn.ghost { background: transparent; color: #38bdf8; border: 1px solid #38bdf8; }
+        .footer-cta { text-align: center; padding: 60px 0; }
+        .footer-cta h2 { margin-bottom: 12px; }
+        .footer-cta p { margin-bottom: 24px; }
+        @media(max-width:600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .arch { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 20px; font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: #8b949e; margin: 16px 0; white-space: pre; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Crypto & DeFi MCP Server</h1>
+        <p class="sub">AI-powered crypto tools for any AI assistant</p>
+        <div class="badge">✅ Ready for Deployment</div>
+    </div>
+    <div class="container">
+        <section>
+            <h2>What Is MCP?</h2>
+            <p>Model Context Protocol (MCP) is an open standard that connects AI assistants with external tools and data sources. This MCP server gives any AI (Claude, Cursor, etc.) real-time crypto and DeFi capabilities.</p>
+            <div class="arch">┌──────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│  AI Assistant │────▶│  Crypto MCP       │────▶│  CoinGecko      │
+│  (Claude,     │     │  Server           │     │  DeFiLlama      │
+│   Cursor,etc) │◀────│  (Python SDK)     │◀────│  Etherscan      │
+└──────────────┘     └──────────────────┘     │  Bybit          │
+                                               │  Whale Alerts   │
+                                               │  Fear & Greed   │
+                                               └─────────────────┘</div>
+        </section>
+
+        <section>
+            <h2>14 Available Tools</h2>
+            <div class="grid-2">
+                <div class="card"><h3>💰 Coin Price</h3><p>Real-time price, market cap, volume for any coin.</p></div>
+                <div class="card"><h3>📈 Yield Rates</h3><p>Best lending/borrowing rates across DeFi protocols.</p></div>
+                <div class="card"><h3>📊 Technical Analysis</h3><p>RSI, MACD, moving averages for any trading pair.</p></div>
+                <div class="card"><h3>⛽ Gas Tracker</h3><p>Ethereum gas prices by priority level.</p></div>
+                <div class="card"><h3>🐋 Whale Alerts</h3><p>Large transactions monitoring across chains.</p></div>
+                <div class="card"><h3>🤖 AI Analysis</h3><p>Natural-language market analysis with sentiment.</p></div>
+                <div class="card"><h3>📰 News Feed</h3><p>Latest crypto news from major sources.</p></div>
+                <div class="card"><h3>📉 Fear & Greed</h3><p>Market sentiment index with historical trend.</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Integration</h2>
+            <p>Add to any AI assistant in seconds:</p>
+            <div class="arch">{
+  "mcpServers": {
+    "crypto": {
+      "command": "python",
+      "args": ["mcp_server.py"]
+    }
+  }
+}</div>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">MCP SDK</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">CoinGecko API</span>
+                <span class="tag">DeFiLlama API</span>
+                <span class="tag">Etherscan API</span>
+                <span class="tag">Bybit API</span>
+                <span class="tag">WebSocket</span>
+            </div>
+        </section>
+
+        <div class="footer-cta">
+            <h2>Interested?</h2>
+            <p>This project is available for licensing or custom development.</p>
+            <a href="https://t.me/mrpkk" class="btn">Contact on Telegram</a>
+            <a href="../index.html" class="btn ghost">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

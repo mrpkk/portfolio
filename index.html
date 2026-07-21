@@ -10,15 +10,11 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
-
-        /* Hero */
         .hero { padding: 100px 40px; text-align: center; background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(56,189,248,0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(168,85,247,0.08) 0%, transparent 50%); }
         .hero h1 { font-size: 3.5rem; margin-bottom: 16px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; }
         .hero p { font-size: 1.2rem; color: #8b949e; max-width: 600px; margin: 0 auto; position: relative; }
         .hero img { width: 400px; border-radius: 16px; margin-top: 40px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-
-        /* Projects */
         .projects { max-width: 1200px; margin: 60px auto; padding: 0 40px; }
         .projects h2 { color: #fff; font-size: 1.8rem; margin-bottom: 32px; }
         .project { background: #111; border: 1px solid #21262d; border-radius: 16px; margin-bottom: 32px; overflow: hidden; transition: border-color 0.3s, transform 0.2s; }
@@ -28,19 +24,18 @@
         .project h3 { color: #fff; font-size: 1.4rem; margin-bottom: 8px; }
         .tag { display: inline-block; background: #161b22; color: #38bdf8; padding: 4px 12px; border-radius: 16px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 6px; border: 1px solid #21262d; }
         .project p { color: #8b949e; line-height: 1.6; margin-top: 12px; }
-        .project .links { margin-top: 20px; display: flex; gap: 16px; }
+        .project .links { margin-top: 20px; display: flex; gap: 16px; flex-wrap: wrap; }
         .project .links a { color: #38bdf8; text-decoration: none; font-size: 0.9rem; padding: 6px 16px; border: 1px solid #38bdf8; border-radius: 8px; transition: all 0.2s; }
         .project .links a:hover { background: #38bdf8; color: #0d1117; }
         .project .links a.ghost { border-color: #30363d; color: #8b949e; }
         .project .links a.ghost:hover { border-color: #8b949e; color: #fff; background: transparent; }
+        .project .links a.deck { border-color: #a855f7; color: #a855f7; }
+        .project .links a.deck:hover { background: #a855f7; color: #0d1117; }
         .stack { color: #484f58; font-size: 0.85rem; margin-top: 12px; }
-
-        /* Contact */
         .contact { text-align: center; padding: 80px 40px; background: #0d1117; border-top: 1px solid #21262d; }
         .contact h2 { color: #fff; margin-bottom: 16px; }
         .contact p { color: #8b949e; margin-bottom: 24px; }
         .contact a { color: #38bdf8; text-decoration: none; font-size: 1.1rem; margin: 0 16px; }
-
         footer { text-align: center; padding: 24px; color: #484f58; font-size: 0.8rem; border-top: 1px solid #21262d; }
     </style>
 </head>
@@ -56,7 +51,7 @@
 
         <!-- On-Chain AI Agent -->
         <div class="project">
-            <img class="project-cover" src="images/onchain-agent.png" alt="On-Chain AI Agent">
+            <img class="project-cover" src="images/onchain-swagger-full-expanded.png" alt="On-Chain AI Agent API">
             <div class="project-body">
                 <h3>On-Chain AI Agent Framework</h3>
                 <span class="tag">Solidity</span>
@@ -67,8 +62,28 @@
                 <p>Autonomous AI agents that own wallets, sign smart contracts, and execute on-chain operations 24/7. Ricardian agreements, ERC-8004 identity, yield optimization, cross-chain arbitrage.</p>
                 <div class="stack">Stack: Python, FastAPI, Web3.py, Solidity, Hardhat, Mistral AI</div>
                 <div class="links">
-                    <a href="https://github.com/mrpkk/onchain-ai-agent">GitHub</a>
+                    <a href="decks/onchain-ai-agent.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/onchain-ai-agent" class="ghost">GitHub</a>
                     <a href="agent-dashboard.html" class="ghost">Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solidty Smart Contract Portfolio -->
+        <div class="project">
+            <img class="project-cover" src="images/solidity-portfolio.png" alt="Solidity Smart Contracts">
+            <div class="project-body">
+                <h3>Solidity Smart Contract Portfolio</h3>
+                <span class="tag">Solidity</span>
+                <span class="tag">Hardhat</span>
+                <span class="tag">Foundry</span>
+                <span class="tag">OpenZeppelin</span>
+                <span class="tag">Security</span>
+                <p>14 production-ready Solidity contracts spanning RWA tokenization, ZK privacy, cross-chain bridges, ERC-4626 vaults, and ERC-6551 token-bound accounts. Audited with fuzz testing.</p>
+                <div class="stack">Stack: Solidity 0.8+, Hardhat, Foundry, OpenZeppelin, Slither, Echidna</div>
+                <div class="links">
+                    <a href="decks/solidity-portfolio.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/solidity-portfolio" class="ghost">GitHub</a>
                 </div>
             </div>
         </div>
@@ -77,18 +92,16 @@
         <div class="project">
             <img class="project-cover" src="images/telegram-ai-bot-repo.png" alt="Telegram AI Bot">
             <div class="project-body">
-                <h3>Telegram AI Bot</h3>
+                <h3>Telegram AI Bot with RAG</h3>
                 <span class="tag">RAG</span>
                 <span class="tag">Mistral AI</span>
                 <span class="tag">ChromaDB</span>
                 <span class="tag">Streamlit</span>
-                <p>Commercial product for enterprise document Q&A. Upload PDFs, get instant answers. RAG system with Mistral Embeddings + ChromaDB. Admin panel with analytics, FAQ management.</p>
+                <p>Enterprise document Q&A — upload PDFs, get instant answers. RAG system with Mistral Embeddings + ChromaDB. Admin panel with analytics, FAQ management, user tracking.</p>
                 <div class="stack">Stack: Python, FastAPI, ChromaDB, LangChain, Telegram Bot API</div>
-                <div class="gallery">
-                    <img src="images/telegram-bot-code-real.png" alt="RAG pipeline code">
-                </div>
                 <div class="links">
-                    <a href="https://github.com/mrpkk/telegram-ai-bot">GitHub</a>
+                    <a href="decks/telegram-ai-bot.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/telegram-ai-bot" class="ghost">GitHub</a>
                 </div>
             </div>
         </div>
@@ -103,11 +116,64 @@
                 <span class="tag">Mistral AI</span>
                 <p>Lightweight corporate document Q&A bot. Upload PDFs, employees ask questions via Telegram, bot answers from the knowledge base. Powered by Mistral AI with RAG pipeline.</p>
                 <div class="stack">Stack: Python, LangChain, ChromaDB, Mistral AI</div>
-                <div class="gallery">
-                    <img src="images/rag-bot-code-real.png" alt="RAG bot source code">
-                </div>
                 <div class="links">
-                    <a href="https://github.com/mrpkk/rag-corp-bot">GitHub</a>
+                    <a href="decks/rag-corp-bot.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/rag-corp-bot" class="ghost">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crypto & DeFi MCP Server -->
+        <div class="project">
+            <img class="project-cover" src="images/crypto-mcp.png" alt="Crypto MCP Server">
+            <div class="project-body">
+                <h3>Crypto & DeFi MCP Server</h3>
+                <span class="tag">MCP</span>
+                <span class="tag">AI Tools</span>
+                <span class="tag">DeFi</span>
+                <p>14 MCP tools that give any AI assistant real-time crypto superpowers — prices, yields, TA, gas tracker, whale alerts, news, Fear & Greed, AI market analysis. Drop-in for Claude, Cursor, any MCP host.</p>
+                <div class="stack">Stack: Python, MCP SDK, CoinGecko, DeFiLlama, Bybit, WebSocket</div>
+                <div class="links">
+                    <a href="decks/crypto-mcp-server.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/crypto-mcp-server" class="ghost">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DeFi Pilot -->
+        <div class="project">
+            <img class="project-cover" src="images/defi-pilot.png" alt="DeFi Pilot">
+            <div class="project-body">
+                <h3>DeFi Pilot</h3>
+                <span class="tag">React</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Docker</span>
+                <span class="tag">K8s</span>
+                <span class="tag">In Development</span>
+                <p>Cross-chain DeFi automation and portfolio management platform. Dashboard, strategy engine, yield optimization, cross-chain arbitrage, Telegram alerts. Microservices architecture on Kubernetes.</p>
+                <div class="stack">Stack: Python/FastAPI, Go, React, PostgreSQL, Redis, Docker, Kubernetes</div>
+                <div class="links">
+                    <a href="decks/defi-pilot.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/defi-pilot" class="ghost">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vedic Timekeeper (Android) -->
+        <div class="project">
+            <img class="project-cover" src="images/vedic-timekeeper.png" alt="Vedic Timekeeper">
+            <div class="project-body">
+                <h3>Vedic Timekeeper (Android)</h3>
+                <span class="tag">Kotlin</span>
+                <span class="tag">Jetpack Compose</span>
+                <span class="tag">Swisseph</span>
+                <span class="tag">Muhurta</span>
+                <span class="tag">In Development</span>
+                <p>Premium Android clock app with Vedic astrological integration. Panchanga, muhurta engine (Bṛhat Saṃhitā), nakshatra yoni, voice control. Swiss Ephemeris for accurate calculations.</p>
+                <div class="stack">Stack: Kotlin, Jetpack Compose, Hilt, Room, Swiss Ephemeris, Rust NDK</div>
+                <div class="links">
+                    <a href="decks/vedic-timekeeper.html" class="deck">📖 Deck</a>
+                    <a href="https://github.com/mrpkk/vedic-timekeeper" class="ghost">GitHub</a>
                 </div>
             </div>
         </div>
@@ -120,7 +186,7 @@
                 <span class="tag">Muhurta</span>
                 <span class="tag">Swisseph</span>
                 <span class="tag">AI Content</span>
-                <p>Autonomous Vedic content system — 5 Telegram channels, muhurta-aware scheduling. Posts published only during auspicious times. AI-generated content in Advaita, Vedas, Yoga, Mantras.</p>
+                <p>Autonomous Vedic content system — 5 Telegram channels, 5 VK groups, muhurta-aware scheduling. Posts published only during auspicious times. AI-generated content in Advaita, Vedas, Yoga, Mantras.</p>
                 <div class="stack">Stack: Python, FastAPI, Swisseph, Mistral AI</div>
                 <div class="gallery">
                     <img src="images/dashboard-real.png" alt="Scheduler dashboard">
@@ -128,8 +194,6 @@
                 <div class="links">
                     <a href="https://github.com/mrpkk/nivritti">GitHub</a>
                 </div>
-            </div>
-        </div>
             </div>
         </div>
 
@@ -189,8 +253,8 @@
                 <span class="tag">Signal Bot</span>
                 <span class="tag">Airdrop Farmer</span>
                 <span class="tag">Arbitrage</span>
-                <p>7 autonomous scripts for crypto monitoring and monetization. AI signal bot, airdrop scanner, arbitrage, funding monitor, liquidation monitor, income engine.</p>
-                <div class="stack">Stack: Python, CoinGecko, DeFiLlama, Mistral AI</div>
+                <p>7 autonomous scripts for crypto monitoring and monetization. AI signal bot, airdrop scanner, arbitrage, funding monitor, liquidation monitor, income engine, portfolio tracker.</p>
+                <div class="stack">Stack: Python, CoinGecko, DeFiLlama, Mistral AI, Bybit API</div>
                 <div class="links">
                     <a href="https://github.com/mrpkk/artha">GitHub</a>
                 </div>

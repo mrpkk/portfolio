@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Timekeeper — mrpkk</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 12px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .sub { color: #8b949e; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .hero .badge { display: inline-block; background: #161b22; color: #38bdf8; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; margin-top: 12px; border: 1px solid #21262d; }
+        section { padding: 60px 0; border-bottom: 1px solid #21262d; }
+        section:last-child { border: none; }
+        h2 { color: #fff; font-size: 1.5rem; margin-bottom: 24px; }
+        h3 { color: #ddd; font-size: 1.1rem; margin: 20px 0 10px; }
+        p, li { color: #8b949e; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 6px 0; }
+        li::before { content: "▸ "; color: #38bdf8; }
+        .tags { margin: 12px 0; }
+        .tag { display: inline-block; background: #161b22; color: #38bdf8; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; margin: 2px 4px; border: 1px solid #21262d; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { background: #111; border: 1px solid #21262d; border-radius: 12px; padding: 24px; }
+        .card h3 { margin-top: 0; }
+        img { max-width: 100%; border-radius: 12px; border: 1px solid #21262d; margin: 16px 0; }
+        .btns { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #38bdf8; color: #0d1117; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .btn.ghost { background: transparent; color: #38bdf8; border: 1px solid #38bdf8; }
+        .footer-cta { text-align: center; padding: 60px 0; }
+        .footer-cta h2 { margin-bottom: 12px; }
+        .footer-cta p { margin-bottom: 24px; }
+        @media(max-width:600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .arch { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 20px; font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: #8b949e; margin: 16px 0; white-space: pre; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Vedic Timekeeper</h1>
+        <p class="sub">Premium Android clock app with Vedic astrological integration</p>
+        <div class="badge">🚧 In Development</div>
+    </div>
+    <div class="container">
+        <section>
+            <h2>Features</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🕉 Panchanga</h3>
+                    <p>Daily Vedic calendar: tithi, nakshatra, yoga, karana, sunrise/sunset, moon phase.</p>
+                </div>
+                <div class="card">
+                    <h3>⏰ Muhurta Engine</h3>
+                    <p>Auspicious time selection based on Bṛhat Saṃhitā. 17 favorable + 13 unfavorable classifications.</p>
+                </div>
+                <div class="card">
+                    <h3>🐾 Nakshatra Yoni</h3>
+                    <p>Daily totem animal based on lunar nakshatra. Vedic wisdom from Bṛhat Parāśara.</p>
+                </div>
+                <div class="card">
+                    <h3>🎤 Voice Control</h3>
+                    <p>Hands-free operation — "What's today's muhurta?", "Set alarm for next Brahma muhurta."</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <div class="arch">┌─────────────────────────────────────┐
+│        Android App (Kotlin)            │
+│  Jetpack Compose · Hilt · Navigation   │
+└──────────┬──────────────────────────────┘
+           │
+┌──────────▼──────────────────────────────┐
+│         Vedic Engine (C/Rust NDK)        │
+│  Swiss Ephemeris · BPHS rules · Muhurta │
+└─────────────────────────────────────────┘
+           │
+┌──────────▼──────────────────────────────┐
+│        Persistence & Sync               │
+│  Room DB · WorkManager · DataStore      │
+└─────────────────────────────────────────┘</div>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <div class="tags">
+                <span class="tag">Kotlin</span>
+                <span class="tag">Jetpack Compose</span>
+                <span class="tag">Hilt</span>
+                <span class="tag">Room</span>
+                <span class="tag">WorkManager</span>
+                <span class="tag">Swiss Ephemeris</span>
+                <span class="tag">NDK (Rust)</span>
+                <span class="tag">Coroutines</span>
+                <span class="tag">DataStore</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Monetization</h2>
+            <ul>
+                <li>Premium app ($4.99) — one-time purchase, no ads</li>
+                <li>Widget pack (in-app purchase, $1.99)</li>
+                <li>Custom muhurta alerts subscription ($0.99/mo)</li>
+            </ul>
+        </section>
+
+        <div class="footer-cta">
+            <h2>Interested?</h2>
+            <p>This project is available for licensing or custom development.</p>
+            <a href="https://t.me/mrpkk" class="btn">Contact on Telegram</a>
+            <a href="../index.html" class="btn ghost">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

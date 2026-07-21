@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solidity Smart Contracts — mrpkk</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 12px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .sub { color: #8b949e; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .hero .badge { display: inline-block; background: #161b22; color: #38bdf8; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; margin-top: 12px; border: 1px solid #21262d; }
+        section { padding: 60px 0; border-bottom: 1px solid #21262d; }
+        section:last-child { border: none; }
+        h2 { color: #fff; font-size: 1.5rem; margin-bottom: 24px; }
+        h3 { color: #ddd; font-size: 1.1rem; margin: 20px 0 10px; }
+        p, li { color: #8b949e; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 6px 0; }
+        li::before { content: "▸ "; color: #38bdf8; }
+        .tags { margin: 12px 0; }
+        .tag { display: inline-block; background: #161b22; color: #38bdf8; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; margin: 2px 4px; border: 1px solid #21262d; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { background: #111; border: 1px solid #21262d; border-radius: 12px; padding: 24px; }
+        .card h3 { margin-top: 0; }
+        img { max-width: 100%; border-radius: 12px; border: 1px solid #21262d; margin: 16px 0; }
+        .btns { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn { display: inline-block; background: #38bdf8; color: #0d1117; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .btn.ghost { background: transparent; color: #38bdf8; border: 1px solid #38bdf8; }
+        .footer-cta { text-align: center; padding: 60px 0; }
+        .footer-cta h2 { margin-bottom: 12px; }
+        .footer-cta p { margin-bottom: 24px; }
+        @media(max-width:600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .arch { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 20px; font-family: monospace; font-size: 0.85rem; line-height: 1.8; color: #8b949e; margin: 16px 0; white-space: pre; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Solidity Smart Contract Portfolio</h1>
+        <p class="sub">14 production-ready Solidity contracts for Web3</p>
+        <div class="badge">✅ Audited</div>
+    </div>
+    <div class="container">
+        <section>
+            <h2>Contract Categories</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🏦 RWA Tokenization</h3>
+                    <p>Real-world asset tokenization contracts with legal compliance hooks. ERC-3643, permissioned transfers, KYC integration.</p>
+                </div>
+                <div class="card">
+                    <h3>🔐 ZK Privacy</h3>
+                    <p>Zero-knowledge proof verification contracts. Private transactions, anonymous voting, confidential NFTs.</p>
+                </div>
+                <div class="card">
+                    <h3>🌉 Cross-Chain</h3>
+                    <p>Bridge contracts with Merkle proof verification. Lock/mint and burn/redeem patterns with validator consensus.</p>
+                </div>
+                <div class="card">
+                    <h3>📈 ERC-4626 Vaults</h3>
+                    <p>Tokenized yield vaults with automated strategy execution. Multi-asset support, harvest/distribute patterns.</p>
+                </div>
+                <div class="card">
+                    <h3>🆔 ERC-6551 TBA</h3>
+                    <p>Token-bound accounts — every NFT becomes a smart contract wallet. Full composability with existing DeFi.</p>
+                </div>
+                <div class="card">
+                    <h3>⚙️ Core Infrastructure</h3>
+                    <p>Factories, registries, proxy patterns (UUPS), multi-sig wallets, timelock controllers, Merkle distributors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tech Stack</h2>
+            <div class="tags">
+                <span class="tag">Solidity 0.8+</span>
+                <span class="tag">Hardhat</span>
+                <span class="tag">OpenZeppelin</span>
+                <span class="tag">Foundry</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Ethers.js</span>
+                <span class="tag">Wagmi</span>
+                <span class="tag">Slither</span>
+                <span class="tag">Echidna</span>
+            </div>
+            <p>All contracts pass Hardhat test suites with 95%+ coverage. Formal verification with Echidna fuzzing. Gas optimization reports included.</p>
+        </section>
+
+        <section>
+            <h2>Use Cases</h2>
+            <ul>
+                <li>Tokenization platform for real-world assets (real estate, commodities)</li>
+                <li>Privacy-focused DeFi with confidential transactions</li>
+                <li>Cross-chain liquidity bridges for new L1/L2 rollups</li>
+                <li>Automated yield vaults for asset managers</li>
+                <li>NFT collections with embedded wallet functionality</li>
+            </ul>
+        </section>
+
+        <div class="footer-cta">
+            <h2>Interested?</h2>
+            <p>This project is available for licensing or custom development.</p>
+            <a href="https://t.me/mrpkk" class="btn">Contact on Telegram</a>
+            <a href="../index.html" class="btn ghost">← Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
