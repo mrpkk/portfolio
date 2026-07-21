@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; padding: 40px; }
+        .project { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 32px; margin-bottom: 32px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .project h2 { font-size: 1.5rem; color: #58a6ff; margin-bottom: 8px; }
+        .project .desc { color: #8b949e; margin-bottom: 16px; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .tag { background: #1f6feb22; color: #58a6ff; padding: 4px 12px; border-radius: 16px; font-size: 0.8rem; }
+        .stats { display: flex; gap: 24px; color: #8b949e; font-size: 0.9rem; margin-bottom: 16px; }
+        .stats span { display: flex; align-items: center; gap: 6px; }
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+        .feature { background: #0d1117; padding: 12px; border-radius: 8px; border: 1px solid #21262d; }
+        .feature h4 { color: #e6edf3; font-size: 0.9rem; margin-bottom: 4px; }
+        .feature p { color: #8b949e; font-size: 0.8rem; }
+        .section { margin-top: 60px; }
+        .section h1 { color: #f0f6fc; font-size: 2rem; margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>🤖 On-Chain AI Agent Framework</h1>
+        <div class="project">
+            <h2>Autonomous Blockchain Agents</h2>
+            <p class="desc">AI-агенты, которые владеют кошельками, анализируют рынок и исполняют транзакции 24/7 без участия человека.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Web3.py</span>
+                <span class="tag">Solidity</span>
+                <span class="tag">Mistral AI</span>
+                <span class="tag">Docker</span>
+            </div>
+            <div class="stats">
+                <span>⛓ 3 смарт-контракта</span>
+                <span>🔗 6 EVM-сетей</span>
+                <span>🛡️ Аудит безопасности</span>
+            </div>
+            <div class="features">
+                <div class="feature"><h4>Perception Layer</h4><p>Чтение блокчейна, мониторинг цен, анализ мемпула</p></div>
+                <div class="feature"><h4>Reasoning Layer</h4><p>AI-принятие решений через Mistral, Chain-of-Thought</p></div>
+                <div class="feature"><h4>Planning Layer</h4><p>Декомпозиция целей в on-chain операции</p></div>
+                <div class="feature"><h4>Execution Layer</h4><p>Подпись транзакций, gas estimation, retry</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>💬 Telegram AI Bot (RAG)</h1>
+        <div class="project">
+            <h2>Enterprise RAG System</h2>
+            <p class="desc">Telegram-бот с базой знаний из документов. Загружаете PDF — бот отвечает на вопросы. Zero-cost AI.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">ChromaDB</span>
+                <span class="tag">Mistral AI</span>
+                <span class="tag">Streamlit</span>
+            </div>
+            <div class="stats">
+                <span>📄 RAG по PDF/DOCX/TXT</span>
+                <span>📊 Админ-панель</span>
+                <span>💰 Zero-cost AI</span>
+            </div>
+            <div class="features">
+                <div class="feature"><h4>RAG System</h4><p>Mistral Embeddings + ChromaDB для поиска по документам</p></div>
+                <div class="feature"><h4>Admin Panel</h4><p>Streamlit: документы, FAQ, аналитика, логи</p></div>
+                <div class="feature"><h4>FAQ Manager</h4><p>Быстрые ответы на частые вопросы</p></div>
+                <div class="feature"><h4>Analytics</h4><p>Точность, время ответа, популярные темы</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>⛓ Solidity Portfolio</h1>
+        <div class="project">
+            <h2>14 Production-Ready Smart Contracts</h2>
+            <p class="desc">Полная библиотека смарт-контрактов для DeFi, NFT, governance и RWA. Все на Solidity ^0.8.24.</p>
+            <div class="tags">
+                <span class="tag">Solidity ^0.8.24</span>
+                <span class="tag">Hardhat</span>
+                <span class="tag">Foundry</span>
+                <span class="tag">OpenZeppelin</span>
+            </div>
+            <div class="features">
+                <div class="feature"><h4>ERC-20 Token</h4><p>Токен с Ownable, Pausable, Burnable</p></div>
+                <div class="feature"><h4>ERC-721 NFT</h4><p>NFT-коллекция с royalty</p></div>
+                <div class="feature"><h4>RWA Tokenization</h4><p>ERC-3643, identity registry, compliance</p></div>
+                <div class="feature"><h4>ZK Privacy</h4><p>Приватное голосование, Merkle proof</p></div>
+                <div class="feature"><h4>Cross-Chain Bridge</h4><p>Lock-and-mint, multi-sig, nonce tracking</p></div>
+                <div class="feature"><h4>ERC-4626 Vault</h4><p>Yield vault, strategy pattern, harvest</p></div>
+                <div class="feature"><h4>DAO Governance</h4><p>Голосование, кворум, казначейство</p></div>
+                <div class="feature"><h4>ERC-6551 Account</h4><p>Token-bound accounts, session keys</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>📊 Artha — Crypto Automation</h1>
+        <div class="project">
+            <h2>7 Autonomous Crypto Scripts</h2>
+            <p class="desc">Автоматизация крипто-операций: сигналы, airdrop'ы, арбитраж, мониторинг.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">CoinGecko</span>
+                <span class="tag">DeFiLlama</span>
+                <span class="tag">Mistral AI</span>
+            </div>
+            <div class="features">
+                <div class="feature"><h4>Signal Bot</h4><p>AI-сигналы для трейдинга через Mistral</p></div>
+                <div class="feature"><h4>Airdrop Farmer</h4><p>Сканер аирдроп-возможностей</p></div>
+                <div class="feature"><h4>Arbitrage Scanner</h4><p>Поиск спредов между биржами</p></div>
+                <div class="feature"><h4>Liquidation Monitor</h4><p>Отслеживание ликвидаций в реальном времени</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>🔗 Crypto MCP Server</h1>
+        <div class="project">
+            <h2>AI-Powered Crypto & DeFi MCP Server</h2>
+            <p class="desc">14 инструментов для работы с крипто через MCP-протокол. Интеграция с Claude, Gemini и другими AI-агентами.</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">MCP</span>
+                <span class="tag">DeFi</span>
+                <span class="tag">14 tools</span>
+            </div>
+            <div class="features">
+                <div class="feature"><h4>Price Feed</h4><p>Реальные цены криптовалют</p></div>
+                <div class="feature"><h4>Yield Optimizer</h4><p>Поиск лучшего APY</p></div>
+                <div class="feature"><h4>Portfolio Tracker</h4><p>Мониторинг портфеля</p></div>
+                <div class="feature"><h4>Gas Estimator</h4><p>Оценка стоимости газа</p></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,274 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mrpkk — AI Agent & Blockchain Developer</title>
-    <meta property="og:title" content="mrpkk — AI Agent & Blockchain Developer">
-    <meta property="og:description" content="Autonomous AI systems, smart contracts, and Web3 automation.">
-    <meta property="og:image" content="https://mrpkk.github.io/portfolio/images/hero-banner.png">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
-        .hero { padding: 100px 40px; text-align: center; background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(56,189,248,0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(168,85,247,0.08) 0%, transparent 50%); }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 16px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; }
-        .hero p { font-size: 1.2rem; color: #8b949e; max-width: 600px; margin: 0 auto; position: relative; }
-        .hero img { width: 400px; border-radius: 16px; margin-top: 40px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-        .projects { max-width: 1200px; margin: 60px auto; padding: 0 40px; }
-        .projects h2 { color: #fff; font-size: 1.8rem; margin-bottom: 32px; }
-        .project { background: #111; border: 1px solid #21262d; border-radius: 16px; margin-bottom: 32px; overflow: hidden; transition: border-color 0.3s, transform 0.2s; }
-        .project:hover { border-color: #38bdf8; transform: translateY(-2px); }
-        .project-cover { width: 100%; height: 300px; object-fit: cover; }
-        .project-body { padding: 24px 32px 32px; }
-        .project h3 { color: #fff; font-size: 1.4rem; margin-bottom: 8px; }
-        .tag { display: inline-block; background: #161b22; color: #38bdf8; padding: 4px 12px; border-radius: 16px; font-size: 0.75rem; margin-right: 8px; margin-bottom: 6px; border: 1px solid #21262d; }
-        .project p { color: #8b949e; line-height: 1.6; margin-top: 12px; }
-        .project .links { margin-top: 20px; display: flex; gap: 16px; flex-wrap: wrap; }
-        .project .links a { color: #38bdf8; text-decoration: none; font-size: 0.9rem; padding: 6px 16px; border: 1px solid #38bdf8; border-radius: 8px; transition: all 0.2s; }
-        .project .links a:hover { background: #38bdf8; color: #0d1117; }
-        .project .links a.ghost { border-color: #30363d; color: #8b949e; }
-        .project .links a.ghost:hover { border-color: #8b949e; color: #fff; background: transparent; }
-        .project .links a.deck { border-color: #a855f7; color: #a855f7; }
-        .project .links a.deck:hover { background: #a855f7; color: #0d1117; }
-        .stack { color: #484f58; font-size: 0.85rem; margin-top: 12px; }
-        .contact { text-align: center; padding: 80px 40px; background: #0d1117; border-top: 1px solid #21262d; }
-        .contact h2 { color: #fff; margin-bottom: 16px; }
-        .contact p { color: #8b949e; margin-bottom: 24px; }
-        .contact a { color: #38bdf8; text-decoration: none; font-size: 1.1rem; margin: 0 16px; }
-        footer { text-align: center; padding: 24px; color: #484f58; font-size: 0.8rem; border-top: 1px solid #21262d; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mrpkk — Autonomous AI Agents & Solidity Development</title>
+<meta name="description" content="AI agent systems, smart contracts, and Telegram bots. I build autonomous software that operates 24/7 on blockchains and messaging platforms.">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #03080e; color: #e6edf3; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; background: radial-gradient(ellipse at 30% 40%, rgba(56,139,253,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(121,40,202,0.1) 0%, transparent 60%), #03080e; }
+.hero-content { position: relative; z-index: 1; padding: 40px 24px; }
+.hero-badge { display: inline-block; background: rgba(56,139,253,0.1); color: #58a6ff; padding: 6px 20px; border-radius: 100px; font-size: 0.85rem; margin-bottom: 24px; border: 1px solid rgba(56,139,253,0.2); letter-spacing: 0.3px; }
+.hero h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 700; line-height: 1.05; margin-bottom: 20px; background: linear-gradient(135deg, #f0f6fc 0%, #58a6ff 50%, #a371f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -2px; }
+.hero p { font-size: clamp(1rem, 2vw, 1.3rem); color: #8b949e; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 14px 32px; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; }
+.btn-primary { background: linear-gradient(135deg, #238636, #2ea043); color: #fff; border: none; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(46,160,67,0.3); }
+.btn-outline { background: transparent; color: #58a6ff; border: 1px solid #30363d; }
+.btn-outline:hover { border-color: #58a6ff; background: rgba(56,139,253,0.08); transform: translateY(-2px); }
+.hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat-value { font-size: 1.8rem; font-weight: 700; color: #f0f6fc; }
+.hero-stat-label { font-size: 0.85rem; color: #8b949e; margin-top: 4px; }
+
+/* Section titles */
+.section { padding: 100px 0; }
+.section-label { display: inline-block; color: #58a6ff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 600; }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; line-height: 1.2; letter-spacing: -1px; }
+.section-subtitle { color: #8b949e; font-size: 1.1rem; max-width: 600px; line-height: 1.6; }
+
+/* Projects grid */
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+@media(max-width:800px){ .projects-grid { grid-template-columns: 1fr; } }
+.project-card { background: linear-gradient(135deg, #0d1117, #161b22); border: 1px solid #21262d; border-radius: 20px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+.project-card:hover { border-color: #30363d; transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.project-card-image { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: #161b22; }
+.project-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.project-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #f0f6fc; }
+.project-card-tagline { color: #8b949e; font-size: 0.9rem; margin-bottom: 16px; line-height: 1.5; }
+.project-card-features { list-style: none; margin-bottom: 16px; flex: 1; }
+.project-card-features li { color: #8b949e; font-size: 0.85rem; padding: 4px 0; line-height: 1.5; }
+.project-card-features li::before { content: "✓ "; color: #3fb950; }
+.project-card-tags { margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.project-card-tags span { display: inline-block; background: rgba(56,139,253,0.1); color: #58a6ff; padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; border: 1px solid rgba(56,139,253,0.15); }
+.project-card-price { font-size: 1.2rem; font-weight: 700; color: #f0f6fc; margin-bottom: 16px; }
+.project-card-price small { font-size: 0.8rem; font-weight: 400; color: #8b949e; }
+.project-card .btn { text-align: center; padding: 12px 24px; font-size: 0.9rem; }
+.project-card .btn-order { background: linear-gradient(135deg, #238636, #2ea043); color: #fff; border: none; width: 100%; border-radius: 10px; }
+.project-card .btn-order:hover { box-shadow: 0 4px 20px rgba(46,160,67,0.3); transform: translateY(-2px); }
+.project-card .btn-demo { background: transparent; color: #58a6ff; border: 1px solid #30363d; width: 100%; border-radius: 10px; margin-top: 8px; }
+.project-card .btn-demo:hover { border-color: #58a6ff; }
+.project-card .deck-link { color: #a371f7; font-size: 0.85rem; text-decoration: none; margin-top: -8px; margin-bottom: 12px; display: inline-block; }
+.project-card .deck-link:hover { text-decoration: underline; }
+
+/* Nivritti/Pravritti/Artha — без цен, с GitHub */
+.project-card .btn-gh-link { background: transparent; color: #8b949e; border: 1px solid #30363d; width: 100%; border-radius: 10px; }
+.project-card .btn-gh-link:hover { border-color: #8b949e; color: #f0f6fc; }
+.project-card .badge-open { display: inline-block; background: rgba(63,185,80,0.1); color: #3fb950; padding: 2px 10px; border-radius: 100px; font-size: 0.7rem; margin-left: 8px; }
+
+/* Process */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+@media(max-width:800px){ .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:500px){ .process-grid { grid-template-columns: 1fr; } }
+.process-step { text-align: center; padding: 32px 20px; background: #0d1117; border: 1px solid #21262d; border-radius: 16px; }
+.process-step-num { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(56,139,253,0.1); color: #58a6ff; font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; border: 1px solid rgba(56,139,253,0.2); }
+.process-step h4 { font-size: 1rem; margin-bottom: 8px; color: #f0f6fc; }
+.process-step p { font-size: 0.85rem; color: #8b949e; line-height: 1.5; }
+
+/* Pricing table */
+.pricing-wrap { overflow-x: auto; margin-top: 48px; }
+.pricing-table { width: 100%; border-collapse: collapse; background: #0d1117; border: 1px solid #21262d; border-radius: 16px; overflow: hidden; }
+.pricing-table th { text-align: left; padding: 20px 24px; background: #161b22; color: #f0f6fc; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+.pricing-table td { padding: 18px 24px; border-top: 1px solid #21262d; color: #8b949e; font-size: 0.9rem; }
+.pricing-table td:last-child { color: #f0f6fc; font-weight: 600; white-space: nowrap; }
+.pricing-table tr:hover td { background: rgba(56,139,253,0.03); }
+
+/* Tech */
+.tech-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
+.tech-item { background: #0d1117; border: 1px solid #21262d; padding: 12px 24px; border-radius: 12px; color: #8b949e; font-size: 0.9rem; transition: all 0.2s; }
+.tech-item:hover { border-color: #58a6ff; color: #58a6ff; }
+
+/* CTA final */
+.cta-final { text-align: center; padding: 100px 0; background: radial-gradient(ellipse at center, rgba(56,139,253,0.08) 0%, transparent 70%); }
+.cta-final h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; }
+.cta-final p { color: #8b949e; max-width: 500px; margin: 0 auto 32px; font-size: 1.1rem; line-height: 1.6; }
+.cta-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-link { color: #58a6ff; text-decoration: none; padding: 8px 16px; border: 1px solid #30363d; border-radius: 8px; font-size: 0.9rem; transition: all 0.2s; }
+.cta-link:hover { border-color: #58a6ff; background: rgba(56,139,253,0.05); }
+
+footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8rem; border-top: 1px solid #21262d; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeUp 0.6s ease-out both; }
+.fade-in-d1 { animation-delay: 0.1s; }
+.fade-in-d2 { animation-delay: 0.2s; }
+.fade-in-d3 { animation-delay: 0.3s; }
+
+/* Stars bg */
+.stars { position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; pointer-events: none; }
+.star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; opacity: 0; animation: twinkle 3s ease-in-out infinite; }
+@keyframes twinkle { 0%,100%{opacity:0} 50%{opacity:0.8} }
+</style>
 </head>
 <body>
-    <div class="hero">
-        <h1>mrpkk</h1>
-        <p>AI Agent & Blockchain Developer. Building autonomous systems that operate 24/7.</p>
-        <img src="images/hero-banner.png" alt="mrpkk portfolio">
+
+<div class="hero">
+  <div class="stars">
+    <script>for(let i=0;i<100;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*5+'s';s.style.animationDuration=(2+Math.random()*3)+'s';s.style.width=s.style.height=(1+Math.random()*2)+'px';document.querySelector('.stars').appendChild(s)}</script>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge fade-in">Available for hire — AI, Blockchain, Automation</div>
+    <h1 class="fade-in fade-in-d1">Autonomous AI Agents &amp; Smart Contracts</h1>
+    <p class="fade-in fade-in-d2">I build systems that operate 24/7 — on blockchains, in Telegram, and across the web. From zero to production in weeks.</p>
+    <div class="hero-cta fade-in fade-in-d3">
+      <a href="https://t.me/mrpkk" class="btn btn-primary">📩 Contact on Telegram</a>
+      <a href="#projects" class="btn btn-outline">View Projects ↓</a>
     </div>
-
-    <div class="projects">
-        <h2>Projects</h2>
-
-        <!-- On-Chain AI Agent -->
-        <div class="project">
-            <img class="project-cover" src="images/onchain-swagger-full-expanded.png" alt="On-Chain AI Agent API">
-            <div class="project-body">
-                <h3>On-Chain AI Agent Framework</h3>
-                <span class="tag">Solidity</span>
-                <span class="tag">Python</span>
-                <span class="tag">Web3.py</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Docker</span>
-                <p>Autonomous AI agents that own wallets, sign smart contracts, and execute on-chain operations 24/7. Ricardian agreements, ERC-8004 identity, yield optimization, cross-chain arbitrage.</p>
-                <div class="stack">Stack: Python, FastAPI, Web3.py, Solidity, Hardhat, Mistral AI</div>
-                <div class="links">
-                    <a href="decks/onchain-ai-agent.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/onchain-ai-agent" class="ghost">GitHub</a>
-                    <a href="agent-dashboard.html" class="ghost">Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Solidty Smart Contract Portfolio -->
-        <div class="project">
-            <img class="project-cover" src="images/solidity-portfolio.png" alt="Solidity Smart Contracts">
-            <div class="project-body">
-                <h3>Solidity Smart Contract Portfolio</h3>
-                <span class="tag">Solidity</span>
-                <span class="tag">Hardhat</span>
-                <span class="tag">Foundry</span>
-                <span class="tag">OpenZeppelin</span>
-                <span class="tag">Security</span>
-                <p>14 production-ready Solidity contracts spanning RWA tokenization, ZK privacy, cross-chain bridges, ERC-4626 vaults, and ERC-6551 token-bound accounts. Audited with fuzz testing.</p>
-                <div class="stack">Stack: Solidity 0.8+, Hardhat, Foundry, OpenZeppelin, Slither, Echidna</div>
-                <div class="links">
-                    <a href="decks/solidity-portfolio.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/solidity-portfolio" class="ghost">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Telegram AI Bot -->
-        <div class="project">
-            <img class="project-cover" src="images/telegram-ai-bot-repo.png" alt="Telegram AI Bot">
-            <div class="project-body">
-                <h3>Telegram AI Bot with RAG</h3>
-                <span class="tag">RAG</span>
-                <span class="tag">Mistral AI</span>
-                <span class="tag">ChromaDB</span>
-                <span class="tag">Streamlit</span>
-                <p>Enterprise document Q&A — upload PDFs, get instant answers. RAG system with Mistral Embeddings + ChromaDB. Admin panel with analytics, FAQ management, user tracking.</p>
-                <div class="stack">Stack: Python, FastAPI, ChromaDB, LangChain, Telegram Bot API</div>
-                <div class="links">
-                    <a href="decks/telegram-ai-bot.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/telegram-ai-bot" class="ghost">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- RAG Corp Bot -->
-        <div class="project">
-            <img class="project-cover" src="images/rag-corp-bot-repo.png" alt="RAG Corp Bot">
-            <div class="project-body">
-                <h3>RAG Corp Bot</h3>
-                <span class="tag">LangChain</span>
-                <span class="tag">ChromaDB</span>
-                <span class="tag">Mistral AI</span>
-                <p>Lightweight corporate document Q&A bot. Upload PDFs, employees ask questions via Telegram, bot answers from the knowledge base. Powered by Mistral AI with RAG pipeline.</p>
-                <div class="stack">Stack: Python, LangChain, ChromaDB, Mistral AI</div>
-                <div class="links">
-                    <a href="decks/rag-corp-bot.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/rag-corp-bot" class="ghost">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Crypto & DeFi MCP Server -->
-        <div class="project">
-            <img class="project-cover" src="images/crypto-mcp.png" alt="Crypto MCP Server">
-            <div class="project-body">
-                <h3>Crypto & DeFi MCP Server</h3>
-                <span class="tag">MCP</span>
-                <span class="tag">AI Tools</span>
-                <span class="tag">DeFi</span>
-                <p>14 MCP tools that give any AI assistant real-time crypto superpowers — prices, yields, TA, gas tracker, whale alerts, news, Fear & Greed, AI market analysis. Drop-in for Claude, Cursor, any MCP host.</p>
-                <div class="stack">Stack: Python, MCP SDK, CoinGecko, DeFiLlama, Bybit, WebSocket</div>
-                <div class="links">
-                    <a href="decks/crypto-mcp-server.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/crypto-mcp-server" class="ghost">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- DeFi Pilot -->
-        <div class="project">
-            <img class="project-cover" src="images/defi-pilot.png" alt="DeFi Pilot">
-            <div class="project-body">
-                <h3>DeFi Pilot</h3>
-                <span class="tag">React</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Docker</span>
-                <span class="tag">K8s</span>
-                <span class="tag">In Development</span>
-                <p>Cross-chain DeFi automation and portfolio management platform. Dashboard, strategy engine, yield optimization, cross-chain arbitrage, Telegram alerts. Microservices architecture on Kubernetes.</p>
-                <div class="stack">Stack: Python/FastAPI, Go, React, PostgreSQL, Redis, Docker, Kubernetes</div>
-                <div class="links">
-                    <a href="decks/defi-pilot.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/defi-pilot" class="ghost">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Vedic Timekeeper (Android) -->
-        <div class="project">
-            <img class="project-cover" src="images/vedic-timekeeper.png" alt="Vedic Timekeeper">
-            <div class="project-body">
-                <h3>Vedic Timekeeper (Android)</h3>
-                <span class="tag">Kotlin</span>
-                <span class="tag">Jetpack Compose</span>
-                <span class="tag">Swisseph</span>
-                <span class="tag">Muhurta</span>
-                <span class="tag">In Development</span>
-                <p>Premium Android clock app with Vedic astrological integration. Panchanga, muhurta engine (Bṛhat Saṃhitā), nakshatra yoni, voice control. Swiss Ephemeris for accurate calculations.</p>
-                <div class="stack">Stack: Kotlin, Jetpack Compose, Hilt, Room, Swiss Ephemeris, Rust NDK</div>
-                <div class="links">
-                    <a href="decks/vedic-timekeeper.html" class="deck">📖 Deck</a>
-                    <a href="https://github.com/mrpkk/vedic-timekeeper" class="ghost">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Nivritti -->
-        <div class="project">
-            <img class="project-cover" src="images/nivritti-api-real.png" alt="Nivritti API">
-            <div class="project-body">
-                <h3>Nivritti — Vedic Media</h3>
-                <span class="tag">Muhurta</span>
-                <span class="tag">Swisseph</span>
-                <span class="tag">AI Content</span>
-                <p>Autonomous Vedic content system — 5 Telegram channels, 5 VK groups, muhurta-aware scheduling. Posts published only during auspicious times. AI-generated content in Advaita, Vedas, Yoga, Mantras.</p>
-                <div class="stack">Stack: Python, FastAPI, Swisseph, Mistral AI</div>
-                <div class="gallery">
-                    <img src="images/dashboard-real.png" alt="Scheduler dashboard">
-                </div>
-                <div class="links">
-                    <a href="https://github.com/mrpkk/nivritti">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Titan Agent -->
-        <div class="project">
-            <img class="project-cover" src="images/ai-blockchain.png" alt="Titan Agent">
-            <div class="project-body">
-                <h3>Titan Agent — Intelligence Scanner</h3>
-                <span class="tag">13 Sources</span>
-                <span class="tag">10 KOLs</span>
-                <span class="tag">AI Reports</span>
-                <p>Autonomous news intelligence system. Scans 13 sources (HN, VC, GitHub, CoinGecko, TechCrunch, Reddit, X/Twitter, Telegram) + 10 KOLs (Musk, Buterin, Altman, etc.). Delivers Morning Pulse at 09:00 and Full Daily Intel at 21:00.</p>
-                <div class="stack">Stack: Python, Mistral AI, RSS, Nitter, Pushshift</div>
-                <div class="links">
-                    <a href="https://github.com/mrpkk/scout-agent">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Saṃskāra Bot -->
-        <div class="project">
-            <img class="project-cover" src="images/nivritti-dashboard.png" alt="Saṃskāra Bot">
-            <div class="project-body">
-                <h3>Saṃskāra Bot — Vedic Assistant</h3>
-                <span class="tag">Swiss Ephemeris</span>
-                <span class="tag">Mistral AI</span>
-                <span class="tag">Muhurta</span>
-                <p>Universal Vedic assistant with panchanga calculations, muhurta selection, mantra recitation from Rigveda, and numerology. Uses Swiss Ephemeris for precise astrological computations.</p>
-                <div class="stack">Stack: Python, Swisseph, Mistral AI, Telegram Bot API</div>
-                <div class="links">
-                    <a href="https://github.com/mrpkk/artha">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pravritti -->
-        <div class="project">
-            <img class="project-cover" src="images/pravritti.png" alt="Pravritti">
-            <div class="project-body">
-                <h3>Pravritti — News Pipeline</h3>
-                <span class="tag">8 Sources</span>
-                <span class="tag">7 Personas</span>
-                <span class="tag">Multi-platform</span>
-                <p>AI-generated tech news from 8 sources (HN, ArsTechnica, BleepingComputer, etc.) for 7 Telegram channels + 5 VK groups + Dzen RSS. Each channel has a unique AI persona.</p>
-                <div class="stack">Stack: Python, Mistral AI, Pollinations, Telegram API, VK API</div>
-                <div class="links">
-                    <a href="https://github.com/mrpkk/pravritti-v3">GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Artha -->
-        <div class="project">
-            <img class="project-cover" src="images/artha.png" alt="Artha">
-            <div class="project-body">
-                <h3>Artha — Crypto Automation</h3>
-                <span class="tag">Signal Bot</span>
-                <span class="tag">Airdrop Farmer</span>
-                <span class="tag">Arbitrage</span>
-                <p>7 autonomous scripts for crypto monitoring and monetization. AI signal bot, airdrop scanner, arbitrage, funding monitor, liquidation monitor, income engine, portfolio tracker.</p>
-                <div class="stack">Stack: Python, CoinGecko, DeFiLlama, Mistral AI, Bybit API</div>
-                <div class="links">
-                    <a href="https://github.com/mrpkk/artha">GitHub</a>
-                </div>
-            </div>
-        </div>
+    <div class="hero-stats fade-in fade-in-d3">
+      <div class="hero-stat"><div class="hero-stat-value">10+</div><div class="hero-stat-label">Projects shipped</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">14</div><div class="hero-stat-label">Smart Contracts</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">7</div><div class="hero-stat-label">Channels running</div></div>
     </div>
+  </div>
+</div>
 
-    <div class="contact">
-        <h2>Let's work together</h2>
-        <p>Autonomous AI agents, smart contracts, Telegram bots with AI.</p>
-        <a href="https://github.com/mrpkk">GitHub</a>
-        <a href="https://t.me/mrpkk">Telegram</a>
+<div class="section" id="projects">
+  <div class="container">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Projects I've Built</h2>
+    <p class="section-subtitle">Each project is production-ready. Prices are starting points — contact me for a custom quote.</p>
+
+    <div class="projects-grid">
+
+      <!-- On-Chain AI Agent -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/onchain-swagger-full-expanded.png" alt="On-Chain AI Agent" loading="lazy">
+        <div class="project-card-body">
+          <h3>On-Chain AI Agent Framework</h3>
+          <p class="project-card-tagline">Autonomous blockchain agents with wallets, contracts, and AI reasoning.</p>
+          <ul class="project-card-features">
+            <li>AI agents own wallets, sign transactions autonomously</li>
+            <li>Ricardian agreements — legally binding smart contracts</li>
+            <li>ERC-8004 on-chain identity for AI</li>
+            <li>Yield optimization, cross-chain arbitrage</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Solidity</span><span>Python</span><span>FastAPI</span><span>Web3.py</span><span>Hardhat</span><span>Mistral AI</span>
+          </div>
+          <div class="project-card-price">from $1,500 <small>one-time</small></div>
+          <a href="https://t.me/mrpkk" class="btn btn-order">📩 Order on Telegram</a>
+          <a href="decks/onchain-ai-agent.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
+      <!-- Telegram AI Bot -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/telegram-ai-bot-repo.png" alt="Telegram AI Bot" loading="lazy">
+        <div class="project-card-body">
+          <h3>Telegram AI Bot with RAG</h3>
+          <p class="project-card-tagline">Enterprise document Q&A — upload PDFs, get instant answers via Telegram.</p>
+          <ul class="project-card-features">
+            <li>RAG pipeline: Mistral Embeddings + ChromaDB</li>
+            <li>Admin dashboard with analytics &amp; FAQ management</li>
+            <li>Zero-cost AI (Mistral free tier, 500k req/min)</li>
+            <li>Docker Compose, deploy in 5 minutes</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Python</span><span>FastAPI</span><span>ChromaDB</span><span>LangChain</span><span>Mistral AI</span><span>Docker</span>
+          </div>
+          <div class="project-card-price">$500 – $2,000 <small>implementation</small></div>
+          <a href="https://t.me/mrpkk" class="btn btn-order">📩 Order on Telegram</a>
+          <a href="decks/telegram-ai-bot.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
+      <!-- RAG Corp Bot -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/rag-corp-bot-repo.png" alt="RAG Corp Bot" loading="lazy">
+        <div class="project-card-body">
+          <h3>RAG Corp Bot</h3>
+          <p class="project-card-tagline">Lightweight corporate document Q&A for your team.</p>
+          <ul class="project-card-features">
+            <li>Upload PDFs → instant AI answers in Telegram</li>
+            <li>100% private — runs on your infrastructure</li>
+            <li>Mistral AI free tier — zero monthly cost</li>
+            <li>5-minute deploy with Docker</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Python</span><span>LangChain</span><span>ChromaDB</span><span>Mistral AI</span><span>Docker</span>
+          </div>
+          <div class="project-card-price">$300 – $800 <small>implementation</small></div>
+          <a href="https://t.me/mrpkk" class="btn btn-order">📩 Order on Telegram</a>
+          <a href="decks/rag-corp-bot.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
+      <!-- Solidity Portfolio -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/solidity-portfolio.png" alt="Solidity Smart Contracts" loading="lazy" onerror="this.style.display='none'">
+        <div class="project-card-body">
+          <h3>Solidity Smart Contracts</h3>
+          <p class="project-card-tagline">14 production-ready contracts — audited with formal verification.</p>
+          <ul class="project-card-features">
+            <li>RWA tokenization, ZK privacy, cross-chain bridges</li>
+            <li>ERC-4626 vaults, ERC-6551 token-bound accounts</li>
+            <li>Hardhat tests + Echidna fuzzing (95%+ coverage)</li>
+            <li>Gas-optimized, OpenZeppelin-based</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Solidity 0.8+</span><span>Hardhat</span><span>Foundry</span><span>OpenZeppelin</span><span>Slither</span>
+          </div>
+          <div class="project-card-price">$1,000 – $3,000 <small>per contract set</small></div>
+          <a href="https://t.me/mrpkk" class="btn btn-order">📩 Order on Telegram</a>
+          <a href="decks/solidity-portfolio.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
+      <!-- Crypto MCP Server -->
+      <div class="project-card">
+        <div class="project-card-body">
+          <h3>Crypto &amp; DeFi MCP Server</h3>
+          <p class="project-card-tagline">14 AI-powered crypto tools for Claude, Cursor, and any MCP host.</p>
+          <ul class="project-card-features">
+            <li>Real-time prices, yields, technical analysis</li>
+            <li>Gas tracker, whale alerts, Fear &amp; Greed index</li>
+            <li>AI market analysis with sentiment scoring</li>
+            <li>Drop-in integration — one config block</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Python</span><span>MCP SDK</span><span>CoinGecko</span><span>DeFiLlama</span><span>WebSocket</span>
+          </div>
+          <div class="project-card-price">$500 – $1,500 <small>custom integration</small></div>
+          <a href="https://t.me/mrpkk" class="btn btn-order">📩 Order on Telegram</a>
+          <a href="decks/crypto-mcp-server.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
+      <!-- DeFi Pilot -->
+      <div class="project-card">
+        <div class="project-card-body">
+          <h3>DeFi Pilot</h3>
+          <p class="project-card-tagline">Cross-chain portfolio management and DeFi automation platform.</p>
+          <ul class="project-card-features">
+            <li>Real-time P&amp;L across wallets and chains</li>
+            <li>Automated yield, DCA, and rebalancing</li>
+            <li>Cross-chain arbitrage detection</li>
+            <li>Telegram alerts for liquidations and opportunities</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>React</span><span>FastAPI</span><span>Go</span><span>PostgreSQL</span><span>Docker</span><span>K8s</span>
+          </div>
+          <div class="project-card-price">$3,000 – $8,000 <small>full platform</small></div>
+          <a href="https://t.me/mrpkk" class="btn btn-order">📩 Order on Telegram</a>
+          <a href="decks/defi-pilot.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
     </div>
+  </div>
+</div>
 
-    <footer>&copy; 2026 mrpkk — AI Agent & Blockchain Developer</footer>
+<!-- Open-source projects -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <span class="section-label">Open Source</span>
+    <h2 class="section-title">Active Systems Running 24/7</h2>
+    <p class="section-subtitle">These projects power my own media channels. Code is public on GitHub.</p>
+
+    <div class="projects-grid" style="margin-top:32px">
+
+      <!-- Nivritti -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/nivritti-api-real.png" alt="Nivritti API" loading="lazy">
+        <div class="project-card-body">
+          <h3>Nivritti — Vedic Media <span class="badge-open">Live</span></h3>
+          <p class="project-card-tagline">Autonomous Vedic content system — 5 Telegram channels + 5 VK groups.</p>
+          <ul class="project-card-features">
+            <li>Muhurta-aware scheduler (Bṛhat Saṃhitā)</li>
+            <li>AI-generated content: Advaita, Vedas, Yoga, Mantras</li>
+            <li>30 muhurtas × 48 min from sunrise</li>
+            <li>Running 24/7, 6 posts/day in auspicious times</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Python</span><span>FastAPI</span><span>Swisseph</span><span>Mistral AI</span><span>Systemd</span>
+          </div>
+          <a href="https://github.com/mrpkk/nivritti" class="btn btn-gh-link">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Pravritti -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/pravritti.png" alt="Pravritti" loading="lazy">
+        <div class="project-card-body">
+          <h3>Pravritti — News Pipeline <span class="badge-open">Live</span></h3>
+          <p class="project-card-tagline">AI-generated tech news from 8 sources across 7 channels.</p>
+          <ul class="project-card-features">
+            <li>HN, ArsTechnica, BleepingComputer, CoinGecko, DeFiLlama</li>
+            <li>7 unique AI personas per channel</li>
+            <li>Multi-platform: TG + VK + RSS</li>
+            <li>Automatic image generation (Pollinations)</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Python</span><span>Mistral AI</span><span>Pollinations</span><span>TG API</span><span>VK API</span>
+          </div>
+          <a href="https://github.com/mrpkk/pravritti-v3" class="btn btn-gh-link">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Artha -->
+      <div class="project-card">
+        <img class="project-card-image" src="images/artha.png" alt="Artha" loading="lazy">
+        <div class="project-card-body">
+          <h3>Artha — Crypto Automation <span class="badge-open">Live</span></h3>
+          <p class="project-card-tagline">7 autonomous scripts for crypto monitoring and monetization.</p>
+          <ul class="project-card-features">
+            <li>AI signal bot → Telegram trading signals</li>
+            <li>Airdrop scanner (CoinGecko + DeFiLlama)</li>
+            <li>Funding rate &amp; liquidation monitors</li>
+            <li>Portfolio tracker + income engine</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Python</span><span>CoinGecko</span><span>DeFiLlama</span><span>Mistral AI</span><span>Bybit API</span>
+          </div>
+          <a href="https://github.com/mrpkk/artha" class="btn btn-gh-link">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Vedic Timekeeper -->
+      <div class="project-card">
+        <div class="project-card-body">
+          <h3>Vedic Timekeeper (Android) <span class="badge-open">In Dev</span></h3>
+          <p class="project-card-tagline">Premium clock app with Vedic astrological engine.</p>
+          <ul class="project-card-features">
+            <li>Panchanga, muhurta, nakshatra yoni</li>
+            <li>Voice control — "What's today's muhurta?"</li>
+            <li>Swiss Ephemeris + Rust NDK for speed</li>
+            <li>Premium: $4.99, no ads</li>
+          </ul>
+          <div class="project-card-tags">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>Hilt</span><span>Swisseph</span><span>Rust</span>
+          </div>
+          <a href="decks/vedic-timekeeper.html" class="btn btn-demo">📖 View Deck →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- How It Works -->
+<div class="section" style="background:#0a0e14">
+  <div class="container">
+    <span class="section-label">Process</span>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">From idea to production in 4 simple steps.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <h4>Discuss</h4>
+        <p>You describe the problem — I design the solution. Free 30-min consultation.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <h4>Prototype</h4>
+        <p>Working MVP in 1-2 weeks. You see real results, not mockups.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <h4>Build</h4>
+        <p>Production-grade system with tests, monitoring, and documentation.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <h4>Deploy</h4>
+        <p>24/7 operation on your infrastructure. Ongoing support available.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing table -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">Services &amp; Rates</h2>
+    <p class="section-subtitle">Transparent pricing. Every project starts with a free consultation.</p>
+    <div class="pricing-wrap">
+      <table class="pricing-table">
+        <thead><tr><th>Service</th><th>Description</th><th>Starting Price</th></tr></thead>
+        <tbody>
+          <tr><td>Telegram Bot (AI / RAG)</td><td>Document Q&A, customer support, analytics</td><td>$500 – $2,000</td></tr>
+          <tr><td>On-Chain AI Agent</td><td>Autonomous blockchain agent + smart contracts</td><td>$1,500 – $5,000</td></tr>
+          <tr><td>Smart Contract Audit</td><td>Formal verification, fuzz testing, gas optimization</td><td>$1,000 – $3,000</td></tr>
+          <tr><td>DeFi / Trading Platform</td><td>Portfolio tracker, strategy engine, cross-chain</td><td>$3,000 – $8,000</td></tr>
+          <tr><td>AI Content System</td><td>Autonomous media channels, scheduling, multi-platform</td><td>$2,000 – $5,000</td></tr>
+          <tr><td>Monthly Support</td><td>24/7 monitoring, updates, maintenance</td><td>$200 – $500/mo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Tech Stack -->
+<div class="section" style="text-align:center; background:#0a0e14">
+  <div class="container">
+    <span class="section-label">Stack</span>
+    <h2 class="section-title">Technologies I Work With</h2>
+    <div class="tech-grid">
+      <span class="tech-item">Python</span>
+      <span class="tech-item">Solidity</span>
+      <span class="tech-item">FastAPI</span>
+      <span class="tech-item">React</span>
+      <span class="tech-item">Kotlin</span>
+      <span class="tech-item">Go</span>
+      <span class="tech-item">Web3.py</span>
+      <span class="tech-item">Hardhat</span>
+      <span class="tech-item">Foundry</span>
+      <span class="tech-item">Mistral AI</span>
+      <span class="tech-item">LangChain</span>
+      <span class="tech-item">ChromaDB</span>
+      <span class="tech-item">PostgreSQL</span>
+      <span class="tech-item">Redis</span>
+      <span class="tech-item">Docker</span>
+      <span class="tech-item">Kubernetes</span>
+      <span class="tech-item">Telegram API</span>
+      <span class="tech-item">Swiss Ephemeris</span>
+      <span class="tech-item">OpenZeppelin</span>
+      <span class="tech-item">Ethers.js</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-final">
+  <div class="container">
+    <h2>Ready to Build?</h2>
+    <p>I'm available for freelance, contract, and full-time projects. Let's discuss your idea.</p>
+    <div class="cta-links">
+      <a href="https://t.me/mrpkk" class="btn btn-primary">📩 Telegram @mrpkk</a>
+      <a href="https://github.com/mrpkk" class="cta-link">GitHub →</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 mrpkk — AI Agent &amp; Blockchain Developer</footer>
+
 </body>
 </html>
