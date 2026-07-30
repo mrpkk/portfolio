@@ -1,31 +1,33 @@
-# mrpkk — Autonomous AI Agents & Smart Contracts
+# mrpkk — AI-агенты, Telegram-боты и DeFi разработка
 
-I build autonomous systems that operate 24/7 — on blockchains, in Telegram, and across the web.
+Строю системы, которые работают 24/7 — в Telegram, на блокчейнах и в вебе.
 
-## What I Build
+## Что я делаю
 
-- **On-Chain AI Agents** — AI agents that own wallets and execute smart contracts
-- **Telegram Bots with RAG** — Enterprise document Q&A, customer support
-- **Smart Contracts** — Solidity, audits, formal verification
-- **DeFi Platforms** — Portfolio tracking, yield optimization, cross-chain
-- **AI Content Systems** — Autonomous media channels, scheduling
-- **Android Apps** — Vedic Timekeeper with astrological engine
+- **Telegram AI Bot** — AI-ассистент в Telegram, Mistral AI, русские модели, SOCKS5/Tor
+- **RAG Corp Bot** — Корпоративный Q&A по документам, гибридный поиск (BM25 + Vector)
+- **DeFi One** — AI Portfolio Manager, WalletConnect, исполнение сделок, веб-панель
+- **Crypto MCP Server** — 14 крипто-инструментов для Claude, Cursor и MCP-хостов
+- **AI Content Systems** — Автономные медиа-каналы, расписание, мультиплатформа
 
 ## Quick Links
 
-- 🌐 [Portfolio](https://mrpkk.github.io/portfolio/) — full landing page with projects, pricing, and contact
+- 🌐 [Portfolio](https://mrpkk.github.io/portfolio/) — полная лендинг-страница с проектами и ценами
+- 🖥️ [Demo Hub](http://127.0.0.1:8008/) — все демо-проекты в одном месте
 - 📩 [Telegram](https://t.me/mrpkk)
 - 🐙 [GitHub](https://github.com/mrpkk)
 
-## Pricing
+## Цены
 
-| Service | Starting Price |
-|---------|---------------|
-| Telegram Bot (AI/RAG) | $500 – $2,000 |
-| On-Chain AI Agent | $1,500 – $5,000 |
-| Smart Contract Audit | $1,000 – $3,000 |
-| DeFi Platform | $3,000 – $8,000 |
-| AI Content System | $2,000 – $5,000 |
-| Monthly Support | $200 – $500/mo |
+| Услуга | Цена |
+|--------|------|
+| Telegram-бот (AI / RAG) | 25 000 – 40 000 ₽ |
+| DeFi-платформа | от 40 000 ₽ |
+| Crypto MCP Server | 15 000 ₽ |
+| AI Content System | 30 000 – 50 000 ₽ |
+| Интеграция / доработка | от 10 000 ₽ |
+| Поддержка | от 15 000 ₽/мес |
 
-All projects start with a free consultation. Contact me on Telegram to discuss your idea.
+Оплата: 50% предоплата + 50% при приёмке. Самозанятость — чеки предоставляются.
+
+Каждый проект начинается с бесплатной консультации. Свяжитесь со мной в Telegram.
