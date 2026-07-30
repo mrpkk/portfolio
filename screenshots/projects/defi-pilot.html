@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; padding: 40px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .header h1 { font-size: 1.8rem; color: #58a6ff; }
+        .header .status { color: #3fb950; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; }
+        .card .label { color: #8b949e; font-size: 0.8rem; margin-bottom: 8px; }
+        .card .value { font-size: 2rem; font-weight: bold; }
+        .card .change { font-size: 0.85rem; margin-top: 4px; }
+        .card .change.up { color: #3fb950; }
+        .card .change.down { color: #f85149; }
+        .section { margin-bottom: 32px; }
+        .section h2 { color: #e6edf3; margin-bottom: 16px; }
+        table { width: 100%; border-collapse: collapse; background: #161b22; border-radius: 12px; overflow: hidden; }
+        th { background: #21262d; color: #8b949e; text-align: left; padding: 12px 16px; font-size: 0.8rem; text-transform: uppercase; }
+        td { padding: 12px 16px; border-top: 1px solid #30363d; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .badge.green { background: #0d3320; color: #3fb950; }
+        .badge.yellow { background: #3d2e00; color: #d29922; }
+        .badge.blue { background: #0d2240; color: #58a6ff; }
+        .chart { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; height: 200px; display: flex; align-items: flex-end; gap: 8px; padding-top: 20px; }
+        .bar { flex: 1; background: linear-gradient(to top, #1f6feb, #58a6ff); border-radius: 4px 4px 0 0; min-height: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 DeFi Pilot Dashboard</h1>
+        <div class="status">● System Online — 3 strategies active</div>
+    </div>
+
+    <div class="grid">
+        <div class="card"><div class="label">Portfolio Value</div><div class="value" style="color:#3fb950">$45,230</div><div class="change up">+8.3% this week</div></div>
+        <div class="card"><div class="label">Active Strategies</div><div class="value">3</div><div class="change">Yield, Arbitrage, DCA</div></div>
+        <div class="card"><div class="label">Transactions (7d)</div><div class="value">127</div><div class="change up">99.1% success</div></div>
+        <div class="card"><div class="label">Gas Spent (7d)</div><div class="value">0.42 ETH</div><div class="change down">-$15 vs last week</div></div>
+    </div>
+
+    <div class="section">
+        <h2>Active Strategies</h2>
+        <table>
+            <thead><tr><th>Strategy</th><th>Type</th><th>Status</th><th>APY</th><th>Deposited</th><th>Actions</th></tr></thead>
+            <tbody>
+                <tr><td><strong>YieldMax</strong></td><td>Yield Optimizer</td><td><span class="badge green">RUNNING</span></td><td style="color:#3fb950">8.2%</td><td>2.5 ETH</td><td>View</td></tr>
+                <tr><td><strong>ArbHunter</strong></td><td>Cross-chain Arb</td><td><span class="badge yellow">SCANNING</span></td><td>—</td><td>1.2 ETH + 5.8 BNB</td><td>View</td></tr>
+                <tr><td><strong>DCABot</strong></td><td>DCA Strategy</td><td><span class="badge green">RUNNING</span></td><td>—</td><td>3,500 USDC</td><td>View</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Portfolio Performance (7 days)</h2>
+        <div class="chart">
+            <div class="bar" style="height:40%"></div><div class="bar" style="height:45%"></div>
+            <div class="bar" style="height:35%"></div><div class="bar" style="height:55%"></div>
+            <div class="bar" style="height:50%"></div><div class="bar" style="height:65%"></div>
+            <div class="bar" style="height:80%"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Recent Transactions</h2>
+        <table>
+            <thead><tr><th>Time</th><th>Action</th><th>Amount</th><th>Gas</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td>2 min ago</td><td>Deposit → Aave</td><td>0.5 ETH</td><td>0.003 ETH</td><td><span class="badge green">Success</span></td></tr>
+                <tr><td>15 min ago</td><td>Swap USDC → ETH</td><td>200 USDC</td><td>0.001 ETH</td><td><span class="badge green">Success</span></td></tr>
+                <tr><td>1h ago</td><td>Bridge → Polygon</td><td>0.2 ETH</td><td>0.005 ETH</td><td><span class="badge green">Success</span></td></tr>
+                <tr><td>3h ago</td><td>Harvest yield</td><td>0.012 ETH</td><td>0.002 ETH</td><td><span class="badge green">Success</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; display: flex; height: 100vh; }
+        .sidebar { width: 280px; background: #161b22; border-right: 1px solid #30363d; padding: 20px; }
+        .sidebar h2 { font-size: 1.1rem; color: #58a6ff; margin-bottom: 20px; }
+        .sidebar .stat { margin-bottom: 16px; }
+        .sidebar .stat .label { color: #8b949e; font-size: 0.8rem; }
+        .sidebar .stat .value { color: #e6edf3; font-size: 1.4rem; font-weight: bold; }
+        .sidebar .stat .change { font-size: 0.8rem; }
+        .sidebar .stat .change.up { color: #3fb950; }
+        .sidebar .stat .change.down { color: #f85149; }
+        .main { flex: 1; display: flex; flex-direction: column; }
+        .chat { flex: 1; padding: 20px; overflow-y: auto; }
+        .chat-header { padding: 16px 20px; background: #161b22; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 12px; }
+        .chat-header .avatar { width: 40px; height: 40px; border-radius: 50%; background: #1f6feb; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .chat-header .name { font-weight: 600; }
+        .chat-header .status { color: #3fb950; font-size: 0.8rem; }
+        .message { margin-bottom: 16px; max-width: 70%; }
+        .message.user { margin-left: auto; }
+        .message .bubble { padding: 12px 16px; border-radius: 16px; line-height: 1.5; font-size: 0.9rem; }
+        .message.user .bubble { background: #1f6feb; color: #fff; border-bottom-right-radius: 4px; }
+        .message.bot .bubble { background: #21262d; color: #e6edf3; border-bottom-left-radius: 4px; }
+        .message .time { font-size: 0.7rem; color: #484f58; margin-top: 4px; }
+        .message .source { font-size: 0.75rem; color: #58a6ff; margin-top: 4px; }
+        .input-area { padding: 16px 20px; background: #161b22; border-top: 1px solid #30363d; display: flex; gap: 12px; }
+        .input-area input { flex: 1; background: #0d1117; border: 1px solid #30363d; color: #e6edf3; padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; }
+        .input-area button { background: #1f6feb; color: #fff; border: none; padding: 12px 24px; border-radius: 12px; cursor: pointer; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>📊 Admin Panel</h2>
+        <div class="stat"><div class="label">Запросов сегодня</div><div class="value">847</div><div class="change up">+12% vs вчера</div></div>
+        <div class="stat"><div class="label">Точность ответов</div><div class="value">94.2%</div><div class="change up">+1.3%</div></div>
+        <div class="stat"><div class="label">Среднее время</div><div class="value">1.2с</div><div class="change up">-0.3с</div></div>
+        <div class="stat"><div class="label">Документов</div><div class="value">23</div></div>
+        <div class="stat"><div class="label">FAQ записей</div><div class="value">156</div></div>
+        <div class="stat"><div class="label">Пользователей</div><div class="value">312</div></div>
+        <div class="stat"><div class="label">Полезных ответов</div><div class="value">89%</div></div>
+        <div class="stat"><div class="label">Стоимость AI</div><div class="value">$0.00</div></div>
+    </div>
+    <div class="main">
+        <div class="chat-header">
+            <div class="avatar">🤖</div>
+            <div><div class="name">AI Support Bot</div><div class="status">● online</div></div>
+        </div>
+        <div class="chat">
+            <div class="message user"><div class="bubble">Как оформить возврат?</div><div class="time">14:32</div></div>
+            <div class="message bot"><div class="bubble">Для оформления возврата выполните следующие шаги:<br><br>1. Перейдите в раздел "Мои заказы"<br>2. Выберите нужный заказ<br>3. Нажмите "Вернуть товар"<br>4. Укажите причину возврата<br><br>Возврат обрабатывается в течение 3-5 рабочих дней. Нужна ещё помощь?</div><div class="time">14:32</div><div class="source">📄 policy_return.pdf</div></div>
+            <div class="message user"><div class="bubble">А если прошло больше 14 дней?</div><div class="time">14:33</div></div>
+            <div class="message bot"><div class="bubble">Если прошло более 14 дней, возврат возможен только для товаров ненадлежащего качества. Вам нужно:<br><br>1. Сфотографировать дефект<br>2. Отправить заявку через форму обратной связи<br>3. Дождаться ответа менеджера (1-2 дня)<br><br>📞 Техподдержка: +7 (800) 123-45-67</div><div class="time">14:33</div><div class="source">📄 contacts.pdf</div></div>
+            <div class="message user"><div class="bubble">👍</div><div class="time">14:34</div></div>
+        </div>
+        <div class="input-area">
+            <input type="text" placeholder="Напишите сообщение...">
+            <button>Отправить</button>
+        </div>
+    </div>
+</body>
+</html>

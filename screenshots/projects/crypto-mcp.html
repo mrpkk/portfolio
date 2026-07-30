@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; padding: 40px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 2rem; color: #58a6ff; }
+        .header p { color: #8b949e; margin-top: 8px; }
+        .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+        .tool { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; }
+        .tool h3 { color: #3fb950; font-size: 1rem; margin-bottom: 8px; }
+        .tool p { color: #8b949e; font-size: 0.85rem; }
+        .tool .status { color: #3fb950; font-size: 0.8rem; margin-top: 8px; }
+        .demo { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; margin-top: 32px; }
+        .demo h2 { color: #e6edf3; margin-bottom: 16px; }
+        .chat { display: flex; flex-direction: column; gap: 12px; }
+        .msg { max-width: 70%; padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; }
+        .msg.user { background: #1f6feb; color: #fff; margin-left: auto; border-bottom-right-radius: 4px; }
+        .msg.ai { background: #21262d; color: #e6edf3; border-bottom-left-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔗 Crypto MCP Server</h1>
+        <p>14 AI-инструментов для работы с крипто через MCP-протокол</p>
+    </div>
+
+    <div class="tools">
+        <div class="tool"><h3>📊 Price Feed</h3><p>Реальные цены 100+ криптовалют в реальном времени</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>📈 Yield Optimizer</h3><p>Поиск лучшего APY по DeFi-протоколам</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>🔍 Portfolio Tracker</h3><p>Мониторинг портфеля across chains</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>⛽ Gas Estimator</h3><p>Оценка стоимости газа по сетям</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>🔔 Alert System</h3><p>Уведомления о ценах и событиях</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>📝 Transaction Log</h3><p>Полная история всех транзакций</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>🔄 DEX Aggregator</h3><p>Лучший курс обмена на DEX</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>💧 Liquidity Monitor</h3><p>Мониторинг ликвидности в пулах</p><div class="status">● Active</div></div>
+        <div class="tool"><h3>🌊 Whale Tracker</h3><p>Отслеживание крупных транзакций</p><div class="status">● Active</div></div>
+    </div>
+
+    <div class="demo">
+        <h2>Демо: AI использует MCP инструменты</h2>
+        <div class="chat">
+            <div class="msg user">Какая сейчас цена BTC и какой APY на Aave?</div>
+            <div class="msg ai">📊 Bitcoin: $67,450 (+2.3% за 24ч)<br>📈 Aave USDC APY: 8.2%<br>📈 Aave ETH APY: 4.7%<br><br>Рекомендация: перенести 0.5 ETH в Aave USDC для максимального APY.</div>
+        </div>
+    </div>
+</body>
+</html>
