@@ -23,8 +23,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(46,160,67,0.3); }
 .btn-outline { background: transparent; color: #58a6ff; border: 1px solid #30363d; }
 .btn-outline:hover { border-color: #58a6ff; background: rgba(56,139,253,0.08); transform: translateY(-2px); }
-.btn-ghost { background: transparent; color: #8b949e; border: 1px solid #30363d; }
-.btn-ghost:hover { border-color: #8b949e; color: #f0f6fc; }
 .hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
 .hero-stat { text-align: center; }
 .hero-stat-value { font-size: 1.8rem; font-weight: 700; color: #f0f6fc; }
@@ -46,7 +44,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 @media(max-width:800px){ .projects-grid { grid-template-columns: 1fr; } }
 .project-card { background: linear-gradient(135deg, #0d1117, #161b22); border: 1px solid #21262d; border-radius: 20px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
 .project-card:hover { border-color: #30363d; transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.project-card-image { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: #161b22; }
+.project-card-image { width: 100%; height: 220px; object-fit: cover; display: block; background: #161b22; }
 .project-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
 .project-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #f0f6fc; }
 .project-card-tagline { color: #8b949e; font-size: 0.9rem; margin-bottom: 16px; line-height: 1.5; }
@@ -55,8 +53,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .project-card-features li::before { content: "✓ "; color: #3fb950; }
 .project-card-tags { margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
 .project-card-tags span { display: inline-block; background: rgba(56,139,253,0.1); color: #58a6ff; padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; border: 1px solid rgba(56,139,253,0.15); }
-.project-card-price { font-size: 1.2rem; font-weight: 700; color: #f0f6fc; margin-bottom: 16px; }
-.project-card-price small { font-size: 0.8rem; font-weight: 400; color: #8b949e; }
 .project-card .btn { text-align: center; padding: 12px 24px; font-size: 0.9rem; }
 .project-card .btn-contact { background: linear-gradient(135deg, #1f6feb, #58a6ff); color: #fff; border: none; width: 100%; border-radius: 10px; }
 .project-card .btn-contact:hover { box-shadow: 0 4px 20px rgba(56,139,253,0.3); transform: translateY(-2px); }
@@ -64,11 +60,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .project-card .btn-demo:hover { border-color: #58a6ff; }
 .project-card .deck-link { color: #a371f7; font-size: 0.85rem; text-decoration: none; margin-top: -8px; margin-bottom: 12px; display: inline-block; }
 .project-card .deck-link:hover { text-decoration: underline; }
-
-/* Open source cards */
-.project-card .btn-gh-link { background: transparent; color: #8b949e; border: 1px solid #30363d; width: 100%; border-radius: 10px; }
-.project-card .btn-gh-link:hover { border-color: #8b949e; color: #f0f6fc; }
-.project-card .badge-live { display: inline-block; background: rgba(63,185,80,0.1); color: #3fb950; padding: 2px 10px; border-radius: 100px; font-size: 0.7rem; margin-left: 8px; }
 
 /* Process */
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
@@ -78,15 +69,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .process-step-num { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(56,139,253,0.1); color: #58a6ff; font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; border: 1px solid rgba(56,139,253,0.2); }
 .process-step h4 { font-size: 1rem; margin-bottom: 8px; color: #f0f6fc; }
 .process-step p { font-size: 0.85rem; color: #8b949e; line-height: 1.5; }
-
-/* Pricing table */
-.pricing-wrap { overflow-x: auto; margin-top: 48px; }
-.pricing-table { width: 100%; border-collapse: collapse; background: #0d1117; border: 1px solid #21262d; border-radius: 16px; overflow: hidden; }
-.pricing-table th { text-align: left; padding: 20px 24px; background: #161b22; color: #f0f6fc; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-.pricing-table td { padding: 18px 24px; border-top: 1px solid #21262d; color: #8b949e; font-size: 0.9rem; }
-.pricing-table td:last-child { color: #f0f6fc; font-weight: 600; white-space: nowrap; }
-.pricing-table tr:hover td { background: rgba(56,139,253,0.03); }
-.pricing-note { margin-top: 24px; color: #8b949e; font-size: 0.85rem; }
 
 /* Tech */
 .tech-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
@@ -124,7 +106,7 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
   </div>
   <div class="hero-content">
     <h1 class="fade-in">Разработка AI-агентов<br>и DeFi-систем</h1>
-    <p class="fade-in fade-in-d1">Строю продакшн-системы, которые работают 24/7 — в Telegram, в блокчейнах и в вебе. Без «нарисуем — посмотрим». Только работающий код, который приносит результат.</p>
+    <p class="fade-in fade-in-d1">Строю продакшн-системы, которые работают 24/7. Без «нарисуем — посмотрим». Только работающий код, который приносит результат.</p>
     <div class="hero-cta fade-in fade-in-d2">
       <a href="#projects" class="btn btn-primary">Посмотреть проекты ↓</a>
       <a href="#contact" class="btn btn-outline">Связаться</a>
@@ -132,11 +114,11 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
     <div class="hero-stats fade-in fade-in-d3">
       <div class="hero-stat"><div class="hero-stat-value">6</div><div class="hero-stat-label">Рабочих проектов</div></div>
       <div class="hero-stat"><div class="hero-stat-value">5+</div><div class="hero-stat-label">Telegram-каналов</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">24/7</div><div class="hero-stat-label">Серверы работают</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">24/7</div><div class="hero-stat-label">Живые серверы</div></div>
     </div>
 
     <div class="disclaimer fade-in fade-in-d3">
-      <p><strong>Как я работаю:</strong> AI (Opencode, Claude Code) — это мой инструмент разработки, как IDE или отладчик. Архитектуру, бизнес-логику и каждую строчку кода перед коммитом проверяю лично. Каждый сданный проект — мой рукопожатый код.</p>
+      <p><strong>Честно:</strong> AI (Opencode) — это мой инструмент разработки, как IDE или отладчик. Промты и контроль качества — мои. Архитектуру, бизнес-логику и каждую строчку кода проверяю лично. Каждый сданный проект — это код, который я подписываю своим именем.</p>
     </div>
   </div>
 </div>
@@ -145,7 +127,7 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
   <div class="container">
     <span class="section-label">Проекты</span>
     <h2 class="section-title">Продукты в продакшне</h2>
-    <p class="section-subtitle">Каждый проект собран, запущен и работает. Цены — ориентир, обсуждается индивидуально под вашу задачу.</p>
+    <p class="section-subtitle">Каждый проект собран, запущен и работает.</p>
 
     <div class="projects-grid">
 
@@ -157,16 +139,15 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
           <p class="project-card-tagline">AI-ассистент в Telegram, который понимает контекст и отвечает по вашей базе знаний.</p>
           <ul class="project-card-features">
             <li>Работает на Mistral AI — 500 000 запросов/мин бесплатно</li>
-            <li>Поддержка российских AI-моделей (GigaChat)</li>
+            <li>Поддержка российских AI-моделей (GigaChat от Сбера)</li>
             <li>Авторизация по белому списку, история диалогов</li>
-            <li>Панель оператора с аналитикой и управлением</li>
+            <li>Панель оператора с аналитикой и управлением контентом</li>
           </ul>
           <div class="project-card-tags">
-            <span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>aiogram 3.x</span><span>PostgreSQL</span>
+            <span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>GigaChat</span><span>aiogram 3.x</span><span>PostgreSQL</span>
           </div>
-          <div class="project-card-price">30 000 ₽ <small>базовая версия</small></div>
           <a href="#contact" class="btn btn-contact">Узнать стоимость под мою задачу →</a>
-          <a href="https://github.com/mrpkk/portfolio" class="btn btn-demo">Примеры кода на GitHub →</a>
+          <a href="https://github.com/mrpkk/portfolio" class="btn btn-demo">Примеры кода →</a>
         </div>
       </div>
 
@@ -183,11 +164,10 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
             <li>Российские AI-модели из коробки</li>
           </ul>
           <div class="project-card-tags">
-            <span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>BM25</span><span>Vector Search</span>
+            <span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>BM25</span><span>Vector Search</span><span>PDF</span>
           </div>
-          <div class="project-card-price">25 000 ₽ <small>внедрение</small></div>
           <a href="#contact" class="btn btn-contact">Обсудить внедрение →</a>
-          <a href="https://github.com/mrpkk/portfolio" class="btn btn-demo">Примеры кода на GitHub →</a>
+          <a href="https://github.com/mrpkk/portfolio" class="btn btn-demo">Примеры кода →</a>
         </div>
       </div>
 
@@ -196,17 +176,16 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
         <img class="project-card-image" src="screenshots/demo-defi-pilot.png" alt="DeFi One" loading="lazy">
         <div class="project-card-body">
           <h3>DeFi One</h3>
-          <p class="project-card-tagline">AI Portfolio Manager — управляйте крипто-портфелем голосом или через веб-панель.</p>
+          <p class="project-card-tagline">AI Portfolio Manager — управляйте крипто-портфелем через веб-панель.</p>
           <ul class="project-card-features">
             <li>Подключение кошелька через WalletConnect</li>
             <li>Исполнение сделок: Lido, Aave, 1inch, Uniswap</li>
-            <li>AI-аналитика портфеля и торговые сигналы</li>
+            <li>AI-аналитика и торговые сигналы</li>
             <li>Голосовое управление (в разработке)</li>
           </ul>
           <div class="project-card-tags">
             <span>React</span><span>FastAPI</span><span>WalletConnect</span><span>Mistral AI</span><span>PostgreSQL</span>
           </div>
-          <div class="project-card-price">от 40 000 ₽ <small>с веб-панелью</small></div>
           <a href="#contact" class="btn btn-contact">Узнать подробности →</a>
           <a href="decks/defi-one.html" class="deck-link">Презентация проекта →</a>
         </div>
@@ -217,7 +196,7 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
         <img class="project-card-image" src="screenshots/demo-crypto-mcp.png" alt="Crypto MCP Server" loading="lazy">
         <div class="project-card-body">
           <h3>Crypto MCP Server</h3>
-          <p class="project-card-tagline">14 крипто-инструментов для вашего AI-ассистента. Цены, yields, газ, аналитика — одним запросом.</p>
+          <p class="project-card-tagline">14 крипто-инструментов для вашего AI-ассистента. Цены, газ, аналитика — одним запросом.</p>
           <ul class="project-card-features">
             <li>Цены, доходности, технический анализ</li>
             <li>Трекер газа, киты, Fear & Greed Index</li>
@@ -227,79 +206,8 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
           <div class="project-card-tags">
             <span>Python</span><span>MCP SDK</span><span>CoinGecko</span><span>DeFiLlama</span><span>WebSocket</span>
           </div>
-          <div class="project-card-price">15 000 ₽ <small>набор инструментов</small></div>
           <a href="#contact" class="btn btn-contact">Заказать интеграцию →</a>
           <a href="decks/crypto-mcp-server.html" class="deck-link">Презентация →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Open Source -->
-<div class="section" style="padding-top:0">
-  <div class="container">
-    <span class="section-label">Open Source</span>
-    <h2 class="section-title">Системы, работающие 24/7</h2>
-    <p class="section-subtitle">Мои собственные медиа-системы. Код открыт на GitHub.</p>
-
-    <div class="projects-grid" style="margin-top:32px">
-
-      <!-- Nivritti -->
-      <div class="project-card">
-        <img class="project-card-image" src="images/nivritti-api-real.png" alt="Nivritti API" loading="lazy">
-        <div class="project-card-body">
-          <h3>Nivritti — Ведические медиа <span class="badge-live">Live</span></h3>
-          <p class="project-card-tagline">Автономная ведическая контент-система — 5 TG + 5 VK.</p>
-          <ul class="project-card-features">
-            <li>Muhurta-aware расписание (Bṛhat Saṃhitā)</li>
-            <li>AI-контент: Адвайта, Веды, Йога, Мантры</li>
-            <li>30 мухурт × 48 мин от восхода</li>
-            <li>24/7, посты в благоприятные периоды</li>
-          </ul>
-          <div class="project-card-tags">
-            <span>Python</span><span>FastAPI</span><span>Swisseph</span><span>Mistral AI</span><span>Systemd</span>
-          </div>
-          <a href="https://github.com/mrpkk/nivritti" class="btn btn-gh-link">GitHub →</a>
-        </div>
-      </div>
-
-      <!-- Pravritti -->
-      <div class="project-card">
-        <img class="project-card-image" src="images/pravritti.png" alt="Pravritti" loading="lazy">
-        <div class="project-card-body">
-          <h3>Pravritti — Новостной пайплайн <span class="badge-live">Live</span></h3>
-          <p class="project-card-tagline">AI-новости из 6 источников, 2 раза в день в TG + 5 VK.</p>
-          <ul class="project-card-features">
-            <li>HN, ArsTechnica, BleepingComputer, CoinGecko</li>
-            <li>Per-channel: hub, flow, ai, agents, crypto</li>
-            <li>Мультиплатформа: TG + VK</li>
-            <li>Автогенерация картинок (Pollinations)</li>
-          </ul>
-          <div class="project-card-tags">
-            <span>Python</span><span>Mistral AI</span><span>Pollinations</span><span>TG API</span><span>VK API</span>
-          </div>
-          <a href="https://github.com/mrpkk/pravritti-v3" class="btn btn-gh-link">GitHub →</a>
-        </div>
-      </div>
-
-      <!-- Artha -->
-      <div class="project-card">
-        <img class="project-card-image" src="images/artha.png" alt="Artha" loading="lazy">
-        <div class="project-card-body">
-          <h3>Artha — Крипто-автоматизация <span class="badge-live">Live</span></h3>
-          <p class="project-card-tagline">7 автономных скриптов для мониторинга и монетизации крипты.</p>
-          <ul class="project-card-features">
-            <li>AI-сигналы → TG-трейдинг-сигналы</li>
-            <li>Airdrop сканер (CoinGecko + DeFiLlama)</li>
-            <li>Мониторинг funding rate и ликвидаций</li>
-            <li>Portfolio tracker + income engine</li>
-          </ul>
-          <div class="project-card-tags">
-            <span>Python</span><span>CoinGecko</span><span>DeFiLlama</span><span>Mistral AI</span><span>Bybit API</span>
-          </div>
-          <a href="https://github.com/mrpkk/artha" class="btn btn-gh-link">GitHub →</a>
         </div>
       </div>
 
@@ -338,29 +246,6 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
   </div>
 </div>
 
-<!-- Pricing table -->
-<div class="section">
-  <div class="container">
-    <span class="section-label">Тарифы</span>
-    <h2 class="section-title">Услуги и цены</h2>
-    <p class="section-subtitle">Прозрачные цены. Каждый проект начинается с бесплатной консультации.</p>
-    <div class="pricing-wrap">
-      <table class="pricing-table">
-        <thead><tr><th>Услуга</th><th>Описание</th><th>Цена</th></tr></thead>
-        <tbody>
-          <tr><td>Telegram-бот (AI / RAG)</td><td>Q&A по документам, поддержка клиентов, аналитика</td><td>25 000 – 40 000 ₽</td></tr>
-          <tr><td>DeFi-платформа</td><td>Управление портфелем, WalletConnect, AI-аналитика</td><td>от 40 000 ₽</td></tr>
-          <tr><td>Crypto MCP Server</td><td>14 крипто-инструментов для AI-ассистентов</td><td>15 000 ₽</td></tr>
-          <tr><td>AI Content System</td><td>Автономные медиа-каналы с AI-генерацией</td><td>30 000 – 50 000 ₽</td></tr>
-          <tr><td>Интеграция / доработка</td><td>Подключение API, ботов, адаптация решений</td><td>от 10 000 ₽</td></tr>
-          <tr><td>Поддержка</td><td>Мониторинг, обновления, обслуживание</td><td>от 5 000 ₽/мес</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="pricing-note">Оплата: 50% предоплата + 50% при приёмке. Самозанятость — официальный статус, чеки предоставляются.</p>
-  </div>
-</div>
-
 <!-- Tech Stack -->
 <div class="section" style="text-align:center; background:#0a0e14">
   <div class="container">
@@ -380,7 +265,7 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
       <span class="tech-item">CoinGecko</span>
       <span class="tech-item">DeFiLlama</span>
       <span class="tech-item">Swiss Ephemeris</span>
-      <span class="tech-item">OpenZeppelin</span>
+      <span class="tech-item">MCP SDK</span>
     </div>
   </div>
 </div>
