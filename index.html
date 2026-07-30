@@ -28,10 +28,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .hero-stat-value { font-size: 1.8rem; font-weight: 700; color: #f0f6fc; }
 .hero-stat-label { font-size: 0.85rem; color: #8b949e; margin-top: 4px; }
 
-/* Disclaimer */
-.disclaimer { background: rgba(56,139,253,0.06); border: 1px solid rgba(56,139,253,0.15); border-radius: 12px; padding: 20px 28px; margin-top: 32px; max-width: 680px; margin-left: auto; margin-right: auto; }
-.disclaimer p { color: #8b949e; font-size: 0.85rem; line-height: 1.6; }
-.disclaimer strong { color: #c9d1d9; }
+/* Disclaimer (footer) */
+.disclaimer-foot { text-align:center; padding: 24px 24px 32px; max-width: 720px; margin: 0 auto; }
+.disclaimer-foot p { color: #484f58; font-size: 0.72rem; line-height: 1.6; }
+.disclaimer-foot strong { color: #8b949e; font-weight:500; }
 
 /* Section titles */
 .section { padding: 100px 0; }
@@ -58,7 +58,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 .project-card .btn-contact:hover { box-shadow: 0 4px 20px rgba(56,139,253,0.3); transform: translateY(-2px); }
 .project-card .btn-demo { background: transparent; color: #58a6ff; border: 1px solid #30363d; width: 100%; border-radius: 10px; margin-top: 8px; }
 .project-card .btn-demo:hover { border-color: #58a6ff; }
-.project-card .deck-link { color: #a371f7; font-size: 0.85rem; text-decoration: none; margin-top: -8px; margin-bottom: 12px; display: inline-block; }
+.project-card .deck-link { color: #a371f7; font-size: 0.85rem; text-decoration: none; margin-top: 12px; margin-bottom: 12px; display: inline-block; }
 .project-card .deck-link:hover { text-decoration: underline; }
 
 /* Process */
@@ -115,10 +115,6 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
       <div class="hero-stat"><div class="hero-stat-value">6</div><div class="hero-stat-label">Рабочих проектов</div></div>
       <div class="hero-stat"><div class="hero-stat-value">5+</div><div class="hero-stat-label">Telegram-каналов</div></div>
       <div class="hero-stat"><div class="hero-stat-value">24/7</div><div class="hero-stat-label">Живые серверы</div></div>
-    </div>
-
-    <div class="disclaimer fade-in fade-in-d3">
-      <p><strong>Честно:</strong> AI (Opencode) — это мой инструмент разработки, как IDE или отладчик. Промты и контроль качества — мои. Архитектуру, бизнес-логику и каждую строчку кода проверяю лично. Каждый сданный проект — это код, который я подписываю своим именем.</p>
     </div>
   </div>
 </div>
@@ -284,6 +280,10 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
       Telegram: <strong>@mrpkk</strong> (приложение работает, веб-версия может быть недоступна в РФ)
     </p>
   </div>
+</div>
+
+<div class="disclaimer-foot">
+  <p>⚡ В разработке активно юзаю AI-агентов — это как работать в паре с сеньором, который никогда не спит и не просит код-ревью. Opencode — мой второй пилот, но штурвал всегда у меня: каждую строчку проверяю лично, архитектуру проектирую сам, а продакшн — только после моего approve. Короче, AI ускоряет, но за результат отвечаю я. И мне этот подход реально заходит 🔥</p>
 </div>
 
 <footer>© 2026 mrpkk — Разработка AI-агентов, Telegram-ботов и DeFi-систем</footer>
