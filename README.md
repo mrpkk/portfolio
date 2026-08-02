@@ -8,6 +8,14 @@
 - **RAG Corp Bot** — Корпоративный Q&A по документам с гибридным поиском
 - **DeFi One** — AI Portfolio Manager с WalletConnect и веб-панелью
 - **Crypto MCP Server** — 14 крипто-инструментов для AI-ассистентов
+- **AIRealty** — AI-брокер недвижимости: Property DNA™ (47 параметров), Market Intelligence, вердикт BUY/WATCH/PASS
+- **AIBiz** — ИИ-менеджер сделок: DealDNA™ (48 параметров), Monte Carlo прогноз конвейера, автоматический DD
+- **AILegal** — ИИ-юрист: ClauseDNA™ (50+ клаузул), Compliance Scanner (17 регламентов), сравнение документов
+
+## AI Copilot Suite
+
+Три вертикальных AI-продукта (AIRealty / AIBiz / AILegal) на единой архитектуре:
+FastAPI + React + Mistral AI + Telegram-боты через Tor. 48+ API-эндпоинтов, реальный AI, без mock-данных.
 
 ## Ссылки
 
