@@ -1,71 +1,90 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mrpkk — AI-агенты, Telegram-боты и DeFi-разработка</title>
-<meta name="description" content="AI-ассистенты, Telegram-боты с RAG, DeFi-платформы и крипто-инструменты. Продакшн-системы, работающие 24/7.">
+<title>mrpkk — AI Agents, Telegram Bots & DeFi Systems</title>
+<meta name="description" content="Production AI systems that run 24/7: AI agents, Telegram bots with RAG, DeFi platforms, smart contracts and AI copilots.">
+<meta name="keywords" content="AI developer, AI agents, Telegram bot developer, DeFi, smart contracts, RAG, FastAPI, React, Mistral AI">
+<meta property="og:title" content="mrpkk — AI Agents, Telegram Bots & DeFi Systems">
+<meta property="og:description" content="I build production systems that run 24/7. From idea to working product.">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #03080e; color: #e6edf3; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; background: rgba(3,8,14,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(33,38,45,0.6); }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-weight: 700; font-size: 1.1rem; color: #f0f6fc; text-decoration: none; }
+.nav-logo span { color: #58a6ff; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.nav-links a:hover { color: #f0f6fc; }
+@media(max-width:700px){ .nav-links { display: none; } }
 
 /* Hero */
 .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; background: radial-gradient(ellipse at 30% 40%, rgba(56,139,253,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(121,40,202,0.1) 0%, transparent 60%), #03080e; }
 .hero-content { position: relative; z-index: 1; padding: 40px 24px; }
-.hero h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 700; line-height: 1.05; margin-bottom: 24px; background: linear-gradient(135deg, #f0f6fc 0%, #58a6ff 50%, #a371f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -2px; }
-.hero p { font-size: clamp(1rem, 2vw, 1.3rem); color: #8b949e; max-width: 640px; margin: 0 auto 32px; line-height: 1.6; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(56,139,253,0.1); border: 1px solid rgba(56,139,253,0.2); color: #58a6ff; padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; letter-spacing: 0.5px; }
+.hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #3fb950; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.hero h1 { font-size: clamp(2.8rem, 8vw, 5.2rem); font-weight: 700; line-height: 1.05; margin-bottom: 24px; background: linear-gradient(135deg, #f0f6fc 0%, #58a6ff 50%, #a371f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -2px; }
+.hero p { font-size: clamp(1rem, 2vw, 1.3rem); color: #8b949e; max-width: 680px; margin: 0 auto 32px; line-height: 1.6; }
 .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 14px 32px; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; }
-.btn-primary { background: linear-gradient(135deg, #238636, #2ea043); color: #fff; border: none; }
+.btn { display: inline-block; padding: 14px 32px; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; }
+.btn-primary { background: linear-gradient(135deg, #238636, #2ea043); color: #fff; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(46,160,67,0.3); }
 .btn-outline { background: transparent; color: #58a6ff; border: 1px solid #30363d; }
 .btn-outline:hover { border-color: #58a6ff; background: rgba(56,139,253,0.08); transform: translateY(-2px); }
-.hero-stats { display: flex; gap: 48px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 56px; justify-content: center; margin-top: 56px; flex-wrap: wrap; }
 .hero-stat { text-align: center; }
-.hero-stat-value { font-size: 1.8rem; font-weight: 700; color: #f0f6fc; }
+.hero-stat-value { font-size: 2rem; font-weight: 700; color: #f0f6fc; }
 .hero-stat-label { font-size: 0.85rem; color: #8b949e; margin-top: 4px; }
 
-/* Disclaimer (footer) */
-.disclaimer-foot { text-align:center; padding: 24px 24px 32px; max-width: 720px; margin: 0 auto; }
-.disclaimer-foot p { color: #484f58; font-size: 0.72rem; line-height: 1.6; }
-.disclaimer-foot strong { color: #8b949e; font-weight:500; }
-
-/* Section titles */
+/* Sections */
 .section { padding: 100px 0; }
 .section-label { display: inline-block; color: #58a6ff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 600; }
 .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; line-height: 1.2; letter-spacing: -1px; }
-.section-subtitle { color: #8b949e; font-size: 1.1rem; max-width: 600px; line-height: 1.6; }
+.section-subtitle { color: #8b949e; font-size: 1.1rem; max-width: 640px; line-height: 1.6; }
+
+/* Filters */
+.filters { display: flex; gap: 10px; margin-top: 40px; flex-wrap: wrap; }
+.filter-btn { background: transparent; border: 1px solid #21262d; color: #8b949e; padding: 8px 20px; border-radius: 100px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; font-weight: 500; }
+.filter-btn:hover { border-color: #58a6ff; color: #58a6ff; }
+.filter-btn.active { background: rgba(56,139,253,0.1); border-color: #58a6ff; color: #58a6ff; }
 
 /* Projects grid */
-.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
-@media(max-width:800px){ .projects-grid { grid-template-columns: 1fr; } }
-.project-card { background: linear-gradient(135deg, #0d1117, #161b22); border: 1px solid #21262d; border-radius: 20px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+@media(max-width:900px){ .projects-grid { grid-template-columns: 1fr; } }
+.project-card { background: linear-gradient(135deg, #0d1117, #161b22); border: 1px solid #21262d; border-radius: 20px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; opacity: 0; transform: translateY(20px); animation: cardIn 0.5s forwards; }
 .project-card:hover { border-color: #30363d; transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+@keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+.project-card.hidden { display: none; }
 .project-card-image { width: 100%; height: 220px; object-fit: cover; display: block; background: #161b22; }
+.project-card-image-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1035 0%, #0d1117 60%, #161b22 100%); font-size: 3.5rem; }
 .project-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.project-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #f0f6fc; }
+.project-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #f0f6fc; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.project-card h3 .cat { font-size: 0.65rem; font-weight: 600; color: #a371f7; background: rgba(163,113,247,0.1); border: 1px solid rgba(163,113,247,0.2); padding: 3px 10px; border-radius: 100px; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px; }
 .project-card-tagline { color: #8b949e; font-size: 0.9rem; margin-bottom: 16px; line-height: 1.5; }
 .project-card-features { list-style: none; margin-bottom: 16px; flex: 1; }
 .project-card-features li { color: #8b949e; font-size: 0.85rem; padding: 4px 0; line-height: 1.5; }
 .project-card-features li::before { content: "✓ "; color: #3fb950; }
-.project-card-tags { margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.project-card-tags { margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
 .project-card-tags span { display: inline-block; background: rgba(56,139,253,0.1); color: #58a6ff; padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; border: 1px solid rgba(56,139,253,0.15); }
-.project-card .btn { text-align: center; padding: 12px 24px; font-size: 0.9rem; }
-.project-card .btn-contact { background: linear-gradient(135deg, #1f6feb, #58a6ff); color: #fff; border: none; width: 100%; border-radius: 10px; }
-.project-card .btn-contact:hover { box-shadow: 0 4px 20px rgba(56,139,253,0.3); transform: translateY(-2px); }
-.project-card .btn-demo { background: transparent; color: #58a6ff; border: 1px solid #30363d; width: 100%; border-radius: 10px; margin-top: 8px; }
-.project-card .btn-demo:hover { border-color: #58a6ff; }
-.project-card .deck-link { color: #a371f7; font-size: 0.85rem; text-decoration: none; margin-top: 12px; margin-bottom: 12px; display: inline-block; }
-.project-card .deck-link:hover { text-decoration: underline; }
+.project-card-actions { display: flex; flex-direction: column; gap: 8px; }
+.btn-demo { background: linear-gradient(135deg, #1f6feb, #58a6ff); color: #fff; text-align: center; padding: 12px 24px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+.btn-demo:hover { box-shadow: 0 4px 20px rgba(56,139,253,0.3); transform: translateY(-2px); }
+.btn-deck { background: transparent; color: #a371f7; border: 1px solid #30363d; text-align: center; padding: 12px 24px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+.btn-deck:hover { border-color: #a371f7; background: rgba(163,113,247,0.08); }
 
 /* Process */
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
 @media(max-width:800px){ .process-grid { grid-template-columns: repeat(2, 1fr); } }
 @media(max-width:500px){ .process-grid { grid-template-columns: 1fr; } }
-.process-step { text-align: center; padding: 32px 20px; background: #0d1117; border: 1px solid #21262d; border-radius: 16px; }
+.process-step { text-align: center; padding: 32px 20px; background: #0d1117; border: 1px solid #21262d; border-radius: 16px; transition: border-color 0.2s; }
+.process-step:hover { border-color: #30363d; }
 .process-step-num { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(56,139,253,0.1); color: #58a6ff; font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; border: 1px solid rgba(56,139,253,0.2); }
 .process-step h4 { font-size: 1rem; margin-bottom: 8px; color: #f0f6fc; }
 .process-step p { font-size: 0.85rem; color: #8b949e; line-height: 1.5; }
@@ -78,12 +97,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 /* CTA final */
 .cta-final { text-align: center; padding: 100px 0; background: radial-gradient(ellipse at center, rgba(56,139,253,0.08) 0%, transparent 70%); }
 .cta-final h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; }
-.cta-final p { color: #8b949e; max-width: 500px; margin: 0 auto 32px; font-size: 1.1rem; line-height: 1.6; }
+.cta-final p { color: #8b949e; max-width: 520px; margin: 0 auto 32px; font-size: 1.1rem; line-height: 1.6; }
 .cta-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .cta-link { color: #58a6ff; text-decoration: none; padding: 8px 16px; border: 1px solid #30363d; border-radius: 8px; font-size: 0.9rem; transition: all 0.2s; }
 .cta-link:hover { border-color: #58a6ff; background: rgba(56,139,253,0.05); }
 
 footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8rem; border-top: 1px solid #21262d; }
+.disclaimer-foot { text-align:center; padding: 24px 24px 0; max-width: 760px; margin: 0 auto; }
+.disclaimer-foot p { color: #484f58; font-size: 0.72rem; line-height: 1.6; }
+.disclaimer-foot strong { color: #8b949e; font-weight:500; }
 
 /* Animations */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -91,8 +113,6 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
 .fade-in-d1 { animation-delay: 0.1s; }
 .fade-in-d2 { animation-delay: 0.2s; }
 .fade-in-d3 { animation-delay: 0.3s; }
-
-/* Stars bg */
 .stars { position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; pointer-events: none; }
 .star { position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%; opacity: 0; animation: twinkle 3s ease-in-out infinite; }
 @keyframes twinkle { 0%,100%{opacity:0} 50%{opacity:0.8} }
@@ -100,190 +120,251 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
 </head>
 <body>
 
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">mrpkk<span>.</span></a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
 <div class="hero">
   <div class="stars">
     <script>for(let i=0;i<100;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*5+'s';s.style.animationDuration=(2+Math.random()*3)+'s';s.style.width=s.style.height=(1+Math.random()*2)+'px';document.querySelector('.stars').appendChild(s)}</script>
   </div>
   <div class="hero-content">
-    <h1 class="fade-in">Разработка AI-агентов<br>и DeFi-систем</h1>
-    <p class="fade-in fade-in-d1">Строю продакшн-системы, которые работают 24/7. Без «нарисуем — посмотрим». Только работающий код, который приносит результат.</p>
+    <div class="hero-badge fade-in"><span class="dot"></span> Available for projects — free analysis</div>
+    <h1 class="fade-in">AI Agents, Telegram Bots<br>& DeFi Systems</h1>
+    <p class="fade-in fade-in-d1">I build production systems that run 24/7. No "mockups first" — just working code that delivers results. From idea to deployed product.</p>
     <div class="hero-cta fade-in fade-in-d2">
-      <a href="#projects" class="btn btn-primary">Посмотреть проекты ↓</a>
-      <a href="#contact" class="btn btn-outline">Связаться</a>
+      <a href="#projects" class="btn btn-primary">Explore projects ↓</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
     </div>
     <div class="hero-stats fade-in fade-in-d3">
-      <div class="hero-stat"><div class="hero-stat-value">9</div><div class="hero-stat-label">Рабочих проектов</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">5+</div><div class="hero-stat-label">Telegram-каналов</div></div>
-      <div class="hero-stat"><div class="hero-stat-value">24/7</div><div class="hero-stat-label">Живые серверы</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">10</div><div class="hero-stat-label">Production projects</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">48+</div><div class="hero-stat-label">API endpoints</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">24/7</div><div class="hero-stat-label">Live systems</div></div>
     </div>
   </div>
 </div>
 
 <div class="section" id="projects">
   <div class="container">
-    <span class="section-label">Проекты</span>
-    <h2 class="section-title">Продукты в продакшне</h2>
-    <p class="section-subtitle">Каждый проект собран, запущен и работает.</p>
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Production-Ready Products</h2>
+    <p class="section-subtitle">Every project below is built, tested and deployed. Each has a live demo and a presentation.</p>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai">AI & RAG</button>
+      <button class="filter-btn" data-filter="defi">DeFi & Blockchain</button>
+      <button class="filter-btn" data-filter="copilot">AI Copilots</button>
+      <button class="filter-btn" data-filter="infra">Infrastructure</button>
+    </div>
 
     <div class="projects-grid">
 
       <!-- Telegram AI Bot -->
-      <div class="project-card">
+      <div class="project-card" data-cat="ai" style="animation-delay:0.02s">
         <img class="project-card-image" src="screenshots/demo-telegram.png" alt="Telegram AI Bot" loading="lazy">
         <div class="project-card-body">
-          <h3>Telegram AI Bot</h3>
-          <p class="project-card-tagline">AI-ассистент в Telegram, который понимает контекст и отвечает по вашей базе знаний.</p>
+          <h3>Telegram AI Bot <span class="cat">AI & RAG</span></h3>
+          <p class="project-card-tagline">AI assistant in Telegram that understands context and answers from your knowledge base.</p>
           <ul class="project-card-features">
-            <li>Работает на Mistral AI — 500 000 запросов/мин бесплатно</li>
-            <li>Поддержка российских AI-моделей (GigaChat от Сбера)</li>
-            <li>Авторизация по белому списку, история диалогов</li>
-            <li>Панель оператора с аналитикой и управлением контентом</li>
+            <li>Mistral AI — 500K requests/min free tier</li>
+            <li>Russian AI models supported (Sber GigaChat)</li>
+            <li>Whitelist auth, conversation history</li>
+            <li>Operator panel with analytics & content management</li>
           </ul>
-          <div class="project-card-tags">
-            <span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>GigaChat</span><span>aiogram 3.x</span><span>PostgreSQL</span>
+          <div class="project-card-tags"><span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>GigaChat</span><span>aiogram 3.x</span><span>PostgreSQL</span></div>
+          <div class="project-card-actions">
+            <a href="demos/telegram-bot.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/telegram-ai-bot.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Узнать стоимость под мою задачу →</a>
-          <a href="https://github.com/mrpkk/portfolio" class="btn btn-demo">Примеры кода →</a>
         </div>
       </div>
 
       <!-- RAG Corp Bot -->
-      <div class="project-card">
+      <div class="project-card" data-cat="ai" style="animation-delay:0.04s">
         <img class="project-card-image" src="screenshots/agent-dashboard.png" alt="RAG Corp Bot" loading="lazy">
         <div class="project-card-body">
-          <h3>RAG Corp Bot</h3>
-          <p class="project-card-tagline">Загрузите документы — бот найдёт ответ. Корпоративный Q&A с гибридным поиском.</p>
+          <h3>RAG Corp Bot <span class="cat">AI & RAG</span></h3>
+          <p class="project-card-tagline">Upload documents — the bot finds answers. Corporate Q&A with hybrid search.</p>
           <ul class="project-card-features">
-            <li>Гибридный поиск: BM25 + векторные эмбеддинги + AI</li>
-            <li>Работает с PDF, DOCX, TXT, ссылками</li>
-            <li>100% приватно — живёт на вашем сервере</li>
-            <li>Российские AI-модели из коробки</li>
+            <li>Hybrid search: BM25 + vector embeddings + AI</li>
+            <li>Works with PDF, DOCX, TXT, links</li>
+            <li>100% private — runs on your server</li>
+            <li>Russian AI models out of the box</li>
           </ul>
-          <div class="project-card-tags">
-            <span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>BM25</span><span>Vector Search</span><span>PDF</span>
+          <div class="project-card-tags"><span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>BM25</span><span>Vector Search</span><span>FAISS</span></div>
+          <div class="project-card-actions">
+            <a href="demos/agent-dashboard.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/rag-corp-bot.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Обсудить внедрение →</a>
-          <a href="https://github.com/mrpkk/portfolio" class="btn btn-demo">Примеры кода →</a>
         </div>
       </div>
 
       <!-- DeFi One -->
-      <div class="project-card">
+      <div class="project-card" data-cat="defi" style="animation-delay:0.06s">
         <img class="project-card-image" src="screenshots/demo-defi-pilot.png" alt="DeFi One" loading="lazy">
         <div class="project-card-body">
-          <h3>DeFi One</h3>
-          <p class="project-card-tagline">AI Portfolio Manager — управляйте крипто-портфелем через веб-панель.</p>
+          <h3>DeFi One <span class="cat">DeFi</span></h3>
+          <p class="project-card-tagline">AI Portfolio Manager — manage your crypto portfolio through a web dashboard.</p>
           <ul class="project-card-features">
-            <li>Подключение кошелька через WalletConnect</li>
-            <li>Исполнение сделок: Lido, Aave, 1inch, Uniswap</li>
-            <li>AI-аналитика и торговые сигналы</li>
-            <li>Голосовое управление (в разработке)</li>
+            <li>WalletConnect — connect any EVM wallet</li>
+            <li>On-chain execution: Lido, Aave, 1inch, Uniswap</li>
+            <li>Yield pools + arbitrage scanner</li>
+            <li>AI analytics and trading signals</li>
           </ul>
-          <div class="project-card-tags">
-            <span>React</span><span>FastAPI</span><span>WalletConnect</span><span>Mistral AI</span><span>PostgreSQL</span>
+          <div class="project-card-tags"><span>React 19</span><span>FastAPI</span><span>WalletConnect</span><span>Web3</span><span>Mistral AI</span><span>PostgreSQL</span></div>
+          <div class="project-card-actions">
+            <a href="demos/defi-one.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/defi-one.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Узнать подробности →</a>
-          <a href="decks/defi-one.html" class="deck-link">Презентация проекта →</a>
         </div>
       </div>
 
       <!-- Solidity Portfolio -->
-      <div class="project-card">
+      <div class="project-card" data-cat="defi" style="animation-delay:0.08s">
         <img class="project-card-image" src="screenshots/demo-solidity-architect.png" alt="Solidity Portfolio" loading="lazy">
         <div class="project-card-body">
-          <h3>Solidity Portfolio</h3>
-          <p class="project-card-tagline">Смарт-контракты для бизнеса + визуальный No-Code конструктор смарт-контрактов.</p>
+          <h3>Solidity Portfolio <span class="cat">Blockchain</span></h3>
+          <p class="project-card-tagline">Smart contracts for business + a visual no-code smart contract builder.</p>
           <ul class="project-card-features">
-            <li>14 production-ready контрактов: платежи, факторинг, supply chain, DAO, стейкинг</li>
-            <li>178 автоматических тестов, аудит безопасности встроен</li>
-            <li>Solidity Architect v5.5 — конструктор из блоков с AI-генерацией</li>
-            <li>Деплой на 7 сетей, CI/CD, OpenZeppelin v5</li>
+            <li>14 production contracts: payments, factoring, supply chain, DAO, staking</li>
+            <li>178 automated tests, built-in security audit</li>
+            <li>Solidity Architect v5.5 — block-based builder with AI generation</li>
+            <li>Deploy to 7 networks, CI/CD, OpenZeppelin v5</li>
           </ul>
-          <div class="project-card-tags">
-            <span>Solidity</span><span>Foundry</span><span>OpenZeppelin</span><span>React</span><span>FastAPI</span><span>Hardhat</span>
+          <div class="project-card-tags"><span>Solidity</span><span>Foundry</span><span>OpenZeppelin</span><span>React</span><span>FastAPI</span><span>Hardhat</span></div>
+          <div class="project-card-actions">
+            <a href="demos/solidity-portfolio.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/solidity-portfolio.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Заказать смарт-контракт →</a>
-          <a href="https://github.com/mrpkk/solidity-portfolio" class="btn btn-demo">Код на GitHub →</a>
         </div>
       </div>
 
       <!-- Crypto MCP Server -->
-      <div class="project-card">
+      <div class="project-card" data-cat="infra" style="animation-delay:0.1s">
         <img class="project-card-image" src="screenshots/demo-crypto-mcp.png" alt="Crypto MCP Server" loading="lazy">
         <div class="project-card-body">
-          <h3>Crypto MCP Server</h3>
-          <p class="project-card-tagline">14 крипто-инструментов для вашего AI-ассистента. Цены, газ, аналитика — одним запросом.</p>
+          <h3>Crypto MCP Server <span class="cat">Infra</span></h3>
+          <p class="project-card-tagline">14 crypto tools for your AI assistant. Prices, gas, analytics — one request.</p>
           <ul class="project-card-features">
-            <li>Цены, доходности, технический анализ</li>
-            <li>Трекер газа, киты, Fear & Greed Index</li>
-            <li>Сентимент-анализ рынка через AI</li>
-            <li>Подключается к Claude, Cursor и любому MCP-хосту</li>
+            <li>Prices, yields, technical analysis</li>
+            <li>Gas tracker, whales, Fear & Greed Index</li>
+            <li>AI market sentiment analysis</li>
+            <li>Plugs into Claude, Cursor and any MCP host</li>
           </ul>
-          <div class="project-card-tags">
-            <span>Python</span><span>MCP SDK</span><span>CoinGecko</span><span>DeFiLlama</span><span>WebSocket</span>
+          <div class="project-card-tags"><span>Python</span><span>MCP SDK</span><span>CoinGecko</span><span>DeFiLlama</span><span>WebSocket</span></div>
+          <div class="project-card-actions">
+            <a href="demos/crypto-mcp.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/crypto-mcp-server.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Заказать интеграцию →</a>
-          <a href="decks/crypto-mcp-server.html" class="deck-link">Презентация →</a>
+        </div>
+      </div>
+
+      <!-- On-Chain AI Agent -->
+      <div class="project-card" data-cat="defi" style="animation-delay:0.12s">
+        <img class="project-card-image" src="images/onchain-agent.png" alt="On-Chain AI Agent" loading="lazy">
+        <div class="project-card-body">
+          <h3>On-Chain AI Agent <span class="cat">Blockchain</span></h3>
+          <p class="project-card-tagline">Full-lifecycle on-chain agents with dashboard, kill switch and transaction log.</p>
+          <ul class="project-card-features">
+            <li>JWT auth + interactive dashboard</li>
+            <li>Agent lifecycle: create, configure, deploy, kill</li>
+            <li>Kill switch and full transaction log</li>
+            <li>Wallet integration for fund movements</li>
+          </ul>
+          <div class="project-card-tags"><span>Python</span><span>FastAPI</span><span>Web3</span><span>JWT</span><span>Docker</span></div>
+          <div class="project-card-actions">
+            <a href="demos/onchain-agent.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/onchain-ai-agent.html" class="btn-deck">📊 Presentation</a>
+          </div>
         </div>
       </div>
 
       <!-- AIRealty -->
-      <div class="project-card">
-        <img class="project-card-image" src="screenshots/airealty-landing.jpg" alt="AIRealty — AI Copilot for Real Estate" loading="lazy">
+      <div class="project-card" data-cat="copilot" style="animation-delay:0.14s">
+        <img class="project-card-image" src="screenshots/airealty-app.jpg" alt="AIRealty — AI Copilot for Real Estate" loading="lazy">
         <div class="project-card-body">
-          <h3>AIRealty</h3>
-          <p class="project-card-tagline">AI-брокер недвижимости: 47-параметровая оценка Property DNA™, анализ рынка и вердикт BUY/WATCH/PASS.</p>
+          <h3>AIRealty <span class="cat">AI Copilot</span></h3>
+          <p class="project-card-tagline">AI real estate broker: 47-parameter Property DNA™, market intelligence and BUY/WATCH/PASS verdicts.</p>
           <ul class="project-card-features">
-            <li>Property DNA™ — 47 параметров в 7 категориях</li>
-            <li>Market Intelligence + сравнимые продажи</li>
-            <li>Monte Carlo симуляции портфеля</li>
-            <li>Telegram-бот @AIRealtyDev_bot (через Tor)</li>
+            <li>Property DNA™ — 47 parameters in 7 categories</li>
+            <li>Market Intelligence + comparable sales</li>
+            <li>Monte Carlo portfolio simulation</li>
+            <li>Telegram bot @AIRealtyDev_bot</li>
           </ul>
-          <div class="project-card-tags">
-            <span>React</span><span>FastAPI</span><span>Mistral AI</span><span>Monte Carlo</span><span>Telegram Bot</span><span>aiogram</span>
+          <div class="project-card-tags"><span>React 19</span><span>FastAPI</span><span>Mistral AI</span><span>Monte Carlo</span><span>Framer Motion</span></div>
+          <div class="project-card-actions">
+            <a href="demos/airealty.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/airealty.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Узнать стоимость →</a>
-          <a href="https://github.com/mrpkk/airealty" class="btn btn-demo">GitHub →</a>
         </div>
       </div>
 
       <!-- AIBiz -->
-      <div class="project-card">
-        <img class="project-card-image" src="screenshots/aibiz-landing.jpg" alt="AIBiz — AI Copilot for Deal Intelligence" loading="lazy">
+      <div class="project-card" data-cat="copilot" style="animation-delay:0.16s">
+        <img class="project-card-image" src="screenshots/aibiz-app.jpg" alt="AIBiz — AI Copilot for Deal Intelligence" loading="lazy">
         <div class="project-card-body">
-          <h3>AIBiz</h3>
-          <p class="project-card-tagline">ИИ-менеджер сделок: DealDNA™, Монте-Карло прогноз конвейера и автоматизированный due diligence.</p>
+          <h3>AIBiz <span class="cat">AI Copilot</span></h3>
+          <p class="project-card-tagline">AI deal manager: DealDNA™, Monte Carlo pipeline forecast and automated due diligence.</p>
           <ul class="project-card-features">
-            <li>DealDNA™ — 48 параметров в 6 категориях</li>
-            <li>Pipeline Forecast — AI-driven прогнозы</li>
-            <li>Due Diligence отчёт за минуты</li>
-            <li>Telegram-бот @AIBizManager_bot (через Tor)</li>
+            <li>DealDNA™ — 48 parameters in 6 categories</li>
+            <li>Pipeline Forecast — AI-driven predictions</li>
+            <li>Due diligence report in minutes</li>
+            <li>Telegram bot @AIBizManager_bot</li>
           </ul>
-          <div class="project-card-tags">
-            <span>React</span><span>FastAPI</span><span>Mistral AI</span><span>Monte Carlo</span><span>Telegram Bot</span><span>Recharts</span>
+          <div class="project-card-tags"><span>React 19</span><span>FastAPI</span><span>Mistral AI</span><span>Monte Carlo</span><span>Recharts</span></div>
+          <div class="project-card-actions">
+            <a href="demos/aibiz.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/aibiz.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Узнать стоимость →</a>
-          <a href="https://github.com/mrpkk/aibiz" class="btn btn-demo">GitHub →</a>
         </div>
       </div>
 
       <!-- AILegal -->
-      <div class="project-card">
-        <img class="project-card-image" src="screenshots/ailegal-landing.jpg" alt="AILegal — AI Copilot for Legal Document Intelligence" loading="lazy">
+      <div class="project-card" data-cat="copilot" style="animation-delay:0.18s">
+        <img class="project-card-image" src="screenshots/ailegal-app.jpg" alt="AILegal — AI Copilot for Legal Document Intelligence" loading="lazy">
         <div class="project-card-body">
-          <h3>AILegal</h3>
-          <p class="project-card-tagline">ИИ-юрист: ClauseDNA™ с риск-скорингом, сканер комплаенса и генератор due diligence по договорам.</p>
+          <h3>AILegal <span class="cat">AI Copilot</span></h3>
+          <p class="project-card-tagline">AI lawyer: ClauseDNA™ risk scoring, compliance scanner and due diligence generator.</p>
           <ul class="project-card-features">
-            <li>ClauseDNA™ — 50+ типов клаузул с риск-скорингом</li>
-            <li>Compliance Scanner — 17 регламентов</li>
-            <li>Сравнение документов и трекер обязательств</li>
-            <li>Telegram-бот @AILegalDev_bot (через Tor)</li>
+            <li>ClauseDNA™ — 50+ clause types with risk scoring</li>
+            <li>Compliance Scanner — 17 regulatory frameworks</li>
+            <li>Document comparison & obligation tracker</li>
+            <li>Telegram bot @AILegalDev_bot</li>
           </ul>
-          <div class="project-card-tags">
-            <span>React</span><span>FastAPI</span><span>Mistral AI</span><span>Risk Scoring</span><span>Telegram Bot</span><span>Framer Motion</span>
+          <div class="project-card-tags"><span>React 19</span><span>FastAPI</span><span>Mistral AI</span><span>Risk Scoring</span><span>Framer Motion</span></div>
+          <div class="project-card-actions">
+            <a href="demos/ailegal.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/ailegal.html" class="btn-deck">📊 Presentation</a>
           </div>
-          <a href="#contact" class="btn btn-contact">Узнать стоимость →</a>
-          <a href="https://github.com/mrpkk/ailegal" class="btn btn-demo">GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Vedic Timekeeper -->
+      <div class="project-card" data-cat="infra" style="animation-delay:0.2s">
+        <div class="project-card-image-placeholder">🕉️</div>
+        <div class="project-card-body">
+          <h3>Vedic Timekeeper <span class="cat">Infra</span></h3>
+          <p class="project-card-tagline">Muhurta-aware scheduling — astrological timing for launches, posts and business decisions.</p>
+          <ul class="project-card-features">
+            <li>Muhurta engine from Bṛhat Saṃhitā</li>
+            <li>Nakshatras, tithis, planetary positions</li>
+            <li>Swiss Ephemeris precise calculations</li>
+            <li>Schedule business actions by auspicious time</li>
+          </ul>
+          <div class="project-card-tags"><span>Python</span><span>FastAPI</span><span>Swiss Ephemeris</span><span>Kotlin</span><span>Vedic</span></div>
+          <div class="project-card-actions">
+            <a href="demos/vedic-timekeeper.html" class="btn-demo">▶ Live Demo</a>
+            <a href="decks/vedic-timekeeper.html" class="btn-deck">📊 Presentation</a>
+          </div>
         </div>
       </div>
 
@@ -292,59 +373,63 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
 </div>
 
 <!-- How It Works -->
-<div class="section" style="background:#0a0e14">
+<div class="section" id="process" style="background:#0a0e14">
   <div class="container">
-    <span class="section-label">Процесс</span>
-    <h2 class="section-title">Как я работаю</h2>
-    <p class="section-subtitle">Проектный подход без сюрпризов.</p>
+    <span class="section-label">Process</span>
+    <h2 class="section-title">How I Work</h2>
+    <p class="section-subtitle">A project approach with no surprises.</p>
     <div class="process-grid">
       <div class="process-step">
         <div class="process-step-num">01</div>
-        <h4>Анализ</h4>
-        <p>Вы описываете задачу — я уточняю детали и фиксирую объём работ. Бесплатно.</p>
+        <h4>Analysis</h4>
+        <p>You describe the task — I clarify details and fix the scope. Free of charge.</p>
       </div>
       <div class="process-step">
         <div class="process-step-num">02</div>
-        <h4>Договор</h4>
-        <p>Фиксируем сроки, стоимость и требования. Предоплата 50% — и я начинаю.</p>
+        <h4>Contract</h4>
+        <p>We lock deadlines, cost and requirements. 50% prepayment — and I start.</p>
       </div>
       <div class="process-step">
         <div class="process-step-num">03</div>
-        <h4>Разработка</h4>
-        <p>Прозрачный процесс — вы видите прогресс. Никаких «ещё неделька».</p>
+        <h4>Development</h4>
+        <p>Transparent process — you see progress. No more "just one more week".</p>
       </div>
       <div class="process-step">
         <div class="process-step-num">04</div>
-        <h4>Запуск</h4>
-        <p>Готовый продукт на вашей инфраструктуре. Остаток 50% — после приёмки.</p>
+        <h4>Launch</h4>
+        <p>Finished product on your infrastructure. Remaining 50% after acceptance.</p>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Tech Stack -->
-<div class="section" style="text-align:center; background:#0a0e14">
+<div class="section" id="stack" style="text-align:center; background:#0a0e14">
   <div class="container">
-    <span class="section-label">Стек</span>
-    <h2 class="section-title">Технологии</h2>
+    <span class="section-label">Stack</span>
+    <h2 class="section-title">Technologies</h2>
     <div class="tech-grid">
       <span class="tech-item">Python</span>
       <span class="tech-item">FastAPI</span>
-      <span class="tech-item">React</span>
+      <span class="tech-item">React 19</span>
       <span class="tech-item">TypeScript</span>
-      <span class="tech-item">Tailwind</span>
       <span class="tech-item">PostgreSQL</span>
       <span class="tech-item">Mistral AI</span>
-      <span class="tech-item">GigaChat (Сбер)</span>
+      <span class="tech-item">OpenAI-compatible APIs</span>
+      <span class="tech-item">GigaChat (Sber)</span>
+      <span class="tech-item">Solidity</span>
+      <span class="tech-item">Foundry</span>
+      <span class="tech-item">OpenZeppelin</span>
+      <span class="tech-item">WalletConnect</span>
+      <span class="tech-item">Web3</span>
+      <span class="tech-item">MCP SDK</span>
       <span class="tech-item">Monte Carlo</span>
       <span class="tech-item">Docker</span>
-      <span class="tech-item">WalletConnect</span>
       <span class="tech-item">Telegram API</span>
       <span class="tech-item">VK API</span>
       <span class="tech-item">CoinGecko</span>
       <span class="tech-item">DeFiLlama</span>
       <span class="tech-item">Swiss Ephemeris</span>
-      <span class="tech-item">MCP SDK</span>
     </div>
   </div>
 </div>
@@ -352,12 +437,12 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
 <!-- CTA -->
 <div class="cta-final" id="contact">
   <div class="container">
-    <h2>Есть задача?</h2>
-    <p>Обсудим вашу идею, прикинем сроки и стоимость — бесплатно и без обязательств.</p>
+    <h2>Have a task?</h2>
+    <p>Let's discuss your idea, estimate timeline and cost — free and no obligations.</p>
     <div class="cta-links">
-      <a href="mailto:maxim.pkk@gmail.com" class="btn btn-primary">Написать на почту</a>
+      <a href="mailto:maxim.pkk@gmail.com" class="btn btn-primary">Email me</a>
       <a href="https://github.com/mrpkk" class="cta-link">GitHub →</a>
-      <a href="https://github.com/mrpkk/portfolio" class="cta-link">Портфолио →</a>
+      <a href="demos/index.html" class="cta-link">All Live Demos →</a>
     </div>
     <p style="margin-top:24px; color:#8b949e; font-size:0.9rem;">
       Telegram: <strong>@mrpkk</strong> | X: <strong>@mrpkk1</strong> | <a href="https://vk.ru/amanaska" style="color:#8b949e;">VK</a> | <a href="https://www.instagram.com/makswiggle/" style="color:#8b949e;">Instagram</a>
@@ -366,10 +451,24 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
 </div>
 
 <div class="disclaimer-foot">
-  <p>⚡ В разработке активно юзаю AI-агентов — это как работать в паре с сеньором, который никогда не спит и не просит код-ревью. Opencode — мой второй пилот, но штурвал всегда у меня: каждую строчку проверяю лично, архитектуру проектирую сам, а продакшн — только после моего approve. Короче, AI ускоряет, но за результат отвечаю я. И мне этот подход реально заходит 🔥</p>
+  <p>⚡ I actively use AI agents in development — it's like pairing with a senior who never sleeps and never asks for code review. OpenCode is my co-pilot, but the controls are always with me: every line is checked personally, architecture is designed by me, production ships only after my approve. AI accelerates, I'm responsible for the result. 🔥</p>
 </div>
 
-<footer>© 2026 mrpkk — Разработка AI-агентов, Telegram-ботов и DeFi-систем</footer>
+<footer>© 2026 mrpkk — AI Agents, Telegram Bots & DeFi Systems</footer>
+
+<script>
+// Project filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f);
+    });
+  });
+});
+</script>
 
 </body>
 </html>

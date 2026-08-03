@@ -1,34 +1,39 @@
-# mrpkk — Разработка AI-агентов, Telegram-ботов и DeFi-систем
+# mrpkk — AI Agents, Telegram Bots & DeFi Systems
 
-Строю продакшн-системы, которые работают 24/7. От идеи до рабочего продукта.
+I build production systems that run 24/7. From idea to working product — no mockups, no "let's see how it goes". Only working code that delivers results.
 
-## Проекты
+## Projects
 
-- **Telegram AI Bot** — AI-ассистент в Telegram с поддержкой российских и зарубежных AI-моделей
-- **RAG Corp Bot** — Корпоративный Q&A по документам с гибридным поиском
-- **DeFi One** — AI Portfolio Manager с WalletConnect и веб-панелью
-- **Crypto MCP Server** — 14 крипто-инструментов для AI-ассистентов
-- **AIRealty** — AI-брокер недвижимости: Property DNA™ (47 параметров), Market Intelligence, вердикт BUY/WATCH/PASS
-- **AIBiz** — ИИ-менеджер сделок: DealDNA™ (48 параметров), Monte Carlo прогноз конвейера, автоматический DD
-- **AILegal** — ИИ-юрист: ClauseDNA™ (50+ клаузул), Compliance Scanner (17 регламентов), сравнение документов
+| Project | Live Demo | Presentation | Stack |
+|---|---|---|---|
+| **Telegram AI Bot** | [Demo](demos/telegram-bot.html) | [Deck](decks/telegram-ai-bot.html) | Python · FastAPI · Mistral AI · GigaChat · aiogram 3.x |
+| **RAG Corp Bot** | [Demo](demos/agent-dashboard.html) | [Deck](decks/rag-corp-bot.html) | Python · FastAPI · Mistral AI · BM25 · Vector Search |
+| **DeFi One** | — | [Deck](decks/defi-one.html) | React · FastAPI · WalletConnect · Mistral AI |
+| **Solidity Portfolio** | — | [Deck](decks/solidity-portfolio.html) | Solidity · Foundry · OpenZeppelin · React |
+| **Crypto MCP Server** | [Demo](demos/crypto-mcp.html) | [Deck](decks/crypto-mcp-server.html) | Python · MCP SDK · CoinGecko · DeFiLlama |
+| **On-Chain AI Agent** | [Demo](demos/onchain-agent.html) | [Deck](decks/onchain-ai-agent.html) | Solidity · Python · FastAPI · Docker |
+| **AIRealty** | — | [Deck](decks/airealty.html) | React · FastAPI · Mistral AI · Monte Carlo |
+| **AIBiz** | — | [Deck](decks/aibiz.html) | React · FastAPI · Mistral AI · Recharts |
+| **AILegal** | — | [Deck](decks/ailegal.html) | React · FastAPI · Mistral AI · Framer Motion |
+| **Vedic Timekeeper** | — | [Deck](decks/vedic-timekeeper.html) | Python · FastAPI · Swiss Ephemeris |
 
 ## AI Copilot Suite
 
-Три вертикальных AI-продукта (AIRealty / AIBiz / AILegal) на единой архитектуре:
-FastAPI + React + Mistral AI + Telegram-боты через Tor. 48+ API-эндпоинтов, реальный AI, без mock-данных.
+Three vertical AI products (AIRealty / AIBiz / AILegal) on a shared architecture:
+FastAPI + React + Mistral AI + Telegram bots. 48+ API endpoints, real AI, no mock data.
 
-## Ссылки
+## Links
 
-- 🌐 [Портфолио](https://mrpkk.github.io/portfolio/)
-- 📧 [mrpkk@proton.me](mailto:mrpkk@proton.me)
+- 🌐 [Portfolio](https://mrpkk.github.io/portfolio/)
+- 📧 [maxim.pkk@gmail.com](mailto:maxim.pkk@gmail.com)
 - 🐙 [GitHub](https://github.com/mrpkk)
 - 💬 Telegram: @mrpkk
 
-## Процесс
+## How I Work
 
-1. Анализ задачи — бесплатно
-2. Договор и предоплата 50%
-3. Разработка с прозрачной отчётностью
-4. Запуск + остаток 50% после приёмки
+1. Analysis of your task — free
+2. Contract and 50% prepayment
+3. Development with transparent reporting
+4. Launch + remaining 50% after acceptance
 
-Самозанятость — официальный статус, чеки предоставляются.
+Self-employed (samozanyatost) status, official receipts provided.
