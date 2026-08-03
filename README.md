@@ -15,7 +15,6 @@ I build production systems that run 24/7. From idea to working product — no mo
 | **AIRealty** | — | [Deck](decks/airealty.html) | React · FastAPI · Mistral AI · Monte Carlo |
 | **AIBiz** | — | [Deck](decks/aibiz.html) | React · FastAPI · Mistral AI · Recharts |
 | **AILegal** | — | [Deck](decks/ailegal.html) | React · FastAPI · Mistral AI · Framer Motion |
-| **Vedic Timekeeper** | — | [Deck](decks/vedic-timekeeper.html) | Python · FastAPI · Swiss Ephemeris |
 
 ## AI Copilot Suite
 

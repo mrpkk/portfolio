@@ -1,153 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram AI Bot — Demo</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        h1 { text-align: center; margin-bottom: 40px; color: #fff; }
-        .demo { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .chat { background: #111; border: 1px solid #222; border-radius: 12px; overflow: hidden; }
-        .chat-header { background: #1a1a2e; padding: 16px; font-weight: bold; }
-        .chat-messages { padding: 16px; min-height: 400px; }
-        .msg { margin-bottom: 12px; max-width: 80%; }
-        .msg.user { margin-left: auto; }
-        .msg .bubble { padding: 10px 14px; border-radius: 16px; line-height: 1.5; font-size: 0.9rem; }
-        .msg.user .bubble { background: #3a7bd5; color: #fff; border-bottom-right-radius: 4px; }
-        .msg.bot .bubble { background: #1e1e2e; color: #e0e0e0; border-bottom-left-radius: 4px; }
-        .msg .time { font-size: 0.7rem; color: #666; margin-top: 4px; }
-        .admin { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; }
-        .admin h3 { color: #fff; margin-bottom: 16px; }
-        .stat { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #222; }
-        .stat .label { color: #888; }
-        .stat .val { color: #fff; font-weight: bold; }
-        .features { margin-top: 40px; }
-        .features h2 { color: #fff; margin-bottom: 20px; }
-        .feature { background: #111; border: 1px solid #222; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-        .feature h4 { color: #3a7bd5; margin-bottom: 8px; }
-        .feature p { color: #888; font-size: 0.9rem; line-height: 1.5; }
-        .pricing { margin-top: 40px; }
-        .pricing h2 { color: #fff; margin-bottom: 20px; }
-        .price-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; display: inline-block; margin-right: 16px; min-width: 200px; text-align: center; }
-        .price-card.popular { border-color: #3a7bd5; }
-        .price-card h4 { color: #fff; margin-bottom: 8px; }
-        .price-card .price { font-size: 2rem; color: #3a7bd5; font-weight: bold; }
-        .price-card ul { list-style: none; margin-top: 12px; text-align: left; font-size: 0.85rem; color: #888; }
-        .price-card ul li { padding: 4px 0; }
-        .price-card ul li::before { content: "✓ "; color: #00ff88; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram AI Bot — Live Demo | mrpkk</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif; background:#0a0e14; color:#e6edf3; line-height:1.6; -webkit-font-smoothing:antialiased; }
+.topbar { padding:18px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #21262d; position:sticky; top:0; background:rgba(10,14,20,0.92); backdrop-filter:blur(10px); z-index:10; }
+.topbar a { color:#58a6ff; text-decoration:none; font-size:0.9rem; font-weight:500; }
+.topbar a:hover { text-decoration:underline; }
+.hero { padding:72px 24px 40px; text-align:center; background:radial-gradient(ellipse at 30% 30%, rgba(56,139,253,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(163,113,247,0.08) 0%, transparent 60%); }
+.hero .badge { display:inline-block; background:rgba(46,160,67,0.1); border:1px solid rgba(46,160,67,0.25); color:#3fb950; padding:4px 14px; border-radius:100px; font-size:0.75rem; font-weight:600; margin-bottom:16px; letter-spacing:0.5px; }
+.hero h1 { font-size:clamp(2rem,5vw,3.2rem); font-weight:700; margin-bottom:12px; background:linear-gradient(135deg,#f0f6fc 0%,#58a6ff 50%,#a371f7 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing:-1px; }
+.hero p { color:#8b949e; font-size:1.05rem; max-width:640px; margin:0 auto; }
+.stats { display:flex; justify-content:center; gap:40px; margin:36px auto 0; flex-wrap:wrap; }
+.stat { text-align:center; }
+.stat-value { font-size:1.6rem; font-weight:700; color:#f0f6fc; }
+.stat-label { font-size:0.78rem; color:#8b949e; margin-top:2px; }
+.container { max-width:1000px; margin:0 auto; padding:0 24px; }
+.demo { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:48px 0; }
+@media(max-width:800px){ .demo { grid-template-columns:1fr; } }
+.chat { background:#0d1117; border:1px solid #21262d; border-radius:16px; overflow:hidden; }
+.chat-header { background:#161b22; padding:16px; font-weight:600; border-bottom:1px solid #21262d; color:#f0f6fc; }
+.chat-messages { padding:16px; min-height:380px; }
+.msg { margin-bottom:12px; max-width:85%; }
+.msg.user { margin-left:auto; }
+.msg .bubble { padding:10px 14px; border-radius:16px; line-height:1.5; font-size:0.85rem; }
+.msg.user .bubble { background:linear-gradient(135deg,#1f6feb,#58a6ff); color:#fff; border-bottom-right-radius:4px; }
+.msg.bot .bubble { background:#161b22; color:#c9d1d9; border-bottom-left-radius:4px; }
+.msg .time { font-size:0.68rem; color:#484f58; margin-top:4px; }
+.admin { background:#0d1117; border:1px solid #21262d; border-radius:16px; padding:24px; }
+.admin h3 { color:#f0f6fc; margin-bottom:16px; }
+.stat-row { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid #161b22; }
+.stat-row .label { color:#8b949e; font-size:0.85rem; }
+.stat-row .val { color:#f0f6fc; font-weight:600; font-size:0.9rem; }
+.features { margin:40px 0; }
+.features h2 { font-size:1.4rem; margin-bottom:16px; color:#f0f6fc; }
+.feature { background:#0d1117; border:1px solid #21262d; border-radius:12px; padding:20px; margin-bottom:12px; }
+.feature h4 { color:#58a6ff; margin-bottom:6px; }
+.feature p { color:#8b949e; font-size:0.9rem; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 40px; }
+.tag { background:rgba(56,139,253,0.1); color:#58a6ff; padding:4px 12px; border-radius:100px; font-size:0.78rem; border:1px solid rgba(56,139,253,0.15); }
+.cta { text-align:center; padding:60px 24px; border-top:1px solid #21262d; background:radial-gradient(ellipse at center, rgba(56,139,253,0.06) 0%, transparent 70%); }
+.cta h2 { margin-bottom:12px; color:#f0f6fc; }
+.cta p { color:#8b949e; margin-bottom:24px; }
+.btn { display:inline-block; background:linear-gradient(135deg,#1f6feb,#58a6ff); color:#fff; padding:12px 28px; border-radius:10px; text-decoration:none; font-weight:600; margin:0 6px; }
+.btn.ghost { background:transparent; color:#58a6ff; border:1px solid #30363d; }
+.btn:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(56,139,253,0.3); }
+footer { text-align:center; padding:24px; color:#484f58; font-size:0.8rem; border-top:1px solid #21262d; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>💬 Telegram AI Bot — RAG + Admin Panel</h1>
-
-        <div class="demo">
-            <div class="chat">
-                <div class="chat-header">🤖 AI Support Bot</div>
-                <div class="chat-messages">
-                    <div class="msg user">
-                        <div class="bubble">Как оформить возврат?</div>
-                        <div class="time">14:32</div>
-                    </div>
-                    <div class="msg bot">
-                        <div class="bubble">Для оформления возврата выполните следующие шаги:<br><br>1. Перейдите в раздел "Мои заказы"<br>2. Выберите нужный заказ<br>3. Нажмите "Вернуть товар"<br>4. Укажите причину возврата<br><br>Возврат обрабатывается в течение 3-5 рабочих дней. Нужна ещё помощь?</div>
-                        <div class="time">14:32</div>
-                    </div>
-                    <div class="msg user">
-                        <div class="bubble">А если прошло больше 14 дней?</div>
-                        <div class="time">14:33</div>
-                    </div>
-                    < class="msg bot">
-                        <div class="bubble">Если прошло более 14 дней, возврат возможен только для товаров ненадлежащего качества. Вам нужно:<br><br>1. Сфотографировать дефект<br>2. Отправить заявку через форму обратной связи<br>3. Дождаться ответа менеджера (1-2 дня)<br><br>📞 Техподдержка: +7 (800) 123-45-67</div>
-                        <div class="time">14:33</div>
-                    </div>
-                    <div class="msg user">
-                        <div class="bubble">👍</div>
-                        <div class="time">14:34</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="admin">
-                <h3>📊 Admin Dashboard</h3>
-                <div class="stat"><span class="label">Total queries today</span><span class="val">847</span></div>
-                <div class="stat"><span class="label">Accuracy rate</span><span class="val" style="color:#00ff88">94.2%</span></div>
-                <div class="stat"><span class="label">Avg response time</span><span class="val">1.2s</span></div>
-                <div class="stat"><span class="label">Documents in KB</span><span class="val">23</span></div>
-                <div class="stat"><span class="label">FAQ entries</span><span class="val">156</span></div>
-                <div class="stat"><span class="label">Users served</span><span class="val">312</span></div>
-                <div class="stat"><span class="label">Helpful votes</span><span class="val" style="color:#00ff88">89%</span></div>
-                <div class="stat"><span class="label">LLM cost (today)</span><span class="val">$0.00</span></div>
-            </div>
-        </div>
-
-        <div class="features">
-            <h2>Features</h2>
-            <div class="feature">
-                <h4>📄 RAG — Document Q&A</h4>
-                <p>Upload PDFs, docs, manuals. Bot answers questions from your knowledge base using Mistral Embeddings + ChromaDB. Zero-cost AI.</p>
-            </div>
-            <div class="feature">
-                <h4>💬 FAQ Fast Answers</h4>
-                <p>Exact-match FAQ for instant responses. Saves tokens, faster replies. Fallback to RAG for complex questions.</p>
-            </div>
-            <div class="feature">
-                <h4>📊 Admin Panel (Streamlit)</h4>
-                <p>Manage documents, FAQ entries, view analytics. Dark theme, API-powered, Basic Auth protected.</p>
-            </div>
-            <div class="feature">
-                <h4>👍 Feedback Collection</h4>
-                <p>"Helpful?" button on every answer. Tracks accuracy, improves the knowledge base over time.</p>
-            </div>
-            <div class="feature">
-                <h4>🐳 Docker Deploy</h4>
-                <p>One command to launch: docker-compose up. Backend + admin + database — all included.</p>
-            </div>
-        </div>
-
-        <div class="pricing">
-            <h2>Pricing for Clients</h2>
-            <div class="price-card">
-                <h4>Basic</h4>
-                <div class="price">$500</div>
-                <ul>
-                    <li>Telegram bot</li>
-                    <li>5 PDF documents</li>
-                    <li>FAQ system</li>
-                    <li>Basic analytics</li>
-                    <li>Deployment</li>
-                </ul>
-            </div>
-            <div class="price-card popular">
-                <h4>Standard</h4>
-                <div class="price">$1,000</div>
-                <ul>
-                    <li>Everything in Basic</li>
-                    <li>Admin panel (Streamlit)</li>
-                    <li>Unlimited documents</li>
-                    <li>Advanced analytics</li>
-                    <li>Feedback system</li>
-                </ul>
-            </div>
-            <div class="price-card">
-                <h4>Premium</h4>
-                <div class="price">$2,000</div>
-                <ul>
-                    <li>Everything in Standard</li>
-                    <li>CRM integration</li>
-                    <li>Custom workflows</li>
-                    <li>Multi-language</li>
-                    <li>3 months support</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="text-align:center;padding:40px;color:#444">
-            <p><a href="https://github.com/mrpkk/telegram-ai-bot" style="color:#3a7bd5">View on GitHub</a> &nbsp;|&nbsp; <a href="https://mrpkk.github.io/portfolio/" style="color:#3a7bd5">Back to Portfolio</a></p>
-        </div>
+<div class="topbar"><a href="index.html">← All Demos</a><a href="../index.html">Portfolio →</a></div>
+<div class="hero">
+  <div class="badge">● Production · live bot</div>
+  <h1>Telegram AI Bot</h1>
+  <p>AI assistant in Telegram with RAG over your knowledge base — answers from your documents, not from the internet.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-value">500K</div><div class="stat-label">req/min free AI</div></div>
+    <div class="stat"><div class="stat-value">94%</div><div class="stat-label">accuracy</div></div>
+    <div class="stat"><div class="stat-value">$0</div><div class="stat-label">LLM cost (free tier)</div></div>
+  </div>
+</div>
+<div class="container">
+  <div class="demo">
+    <div class="chat">
+      <div class="chat-header">🤖 AI Support Bot</div>
+      <div class="chat-messages">
+        <div class="msg user"><div class="bubble">How do I request a refund?</div><div class="time">14:32</div></div>
+        <div class="msg bot"><div class="bubble">To request a refund:<br><br>1. Go to "My orders"<br>2. Select the order<br>3. Tap "Return item"<br>4. Specify the reason<br><br>Refunds are processed within 3–5 business days. Anything else?</div><div class="time">14:32</div></div>
+        <div class="msg user"><div class="bubble">What if more than 14 days passed?</div><div class="time">14:33</div></div>
+        <div class="msg bot"><div class="bubble">After 14 days refunds apply only to defective items:<br><br>1. Photograph the defect<br>2. Submit a ticket via the contact form<br>3. Wait for the manager (1–2 days)<br><br>📞 Support: +7 (800) 123-45-67</div><div class="time">14:33</div></div>
+        <div class="msg user"><div class="bubble">👍</div><div class="time">14:34</div></div>
+      </div>
     </div>
+    <div class="admin">
+      <h3>📊 Admin Dashboard</h3>
+      <div class="stat-row"><span class="label">Queries today</span><span class="val">847</span></div>
+      <div class="stat-row"><span class="label">Accuracy rate</span><span class="val" style="color:#3fb950">94.2%</span></div>
+      <div class="stat-row"><span class="label">Avg response</span><span class="val">1.2s</span></div>
+      <div class="stat-row"><span class="label">Docs in knowledge base</span><span class="val">23</span></div>
+      <div class="stat-row"><span class="label">FAQ entries</span><span class="val">156</span></div>
+      <div class="stat-row"><span class="label">Users served</span><span class="val">312</span></div>
+      <div class="stat-row"><span class="label">Helpful votes</span><span class="val" style="color:#3fb950">89%</span></div>
+      <div class="stat-row"><span class="label">LLM cost today</span><span class="val">$0.00</span></div>
+    </div>
+  </div>
+
+  <div class="features">
+    <h2>Features</h2>
+    <div class="feature"><h4>📄 RAG — Document Q&A</h4><p>Upload PDFs, docs, manuals. The bot answers from your knowledge base using embeddings + vector search. Zero-cost AI.</p></div>
+    <div class="feature"><h4>💬 FAQ Fast Answers</h4><p>Exact-match FAQ for instant responses. Saves tokens, faster replies. Falls back to RAG for complex questions.</p></div>
+    <div class="feature"><h4>📊 Operator Panel</h4><p>Manage documents, FAQ entries, view analytics. API-powered, whitelist auth protected.</p></div>
+    <div class="feature"><h4>👍 Feedback Collection</h4><p>"Helpful?" button on every answer. Tracks accuracy, improves the knowledge base over time.</p></div>
+    <div class="feature"><h4>🌍 Russian AI models</h4><p>Sber GigaChat out of the box — works fully within the Russian legal and infrastructure landscape.</p></div>
+  </div>
+
+  <div class="tags"><span>Python</span><span>FastAPI</span><span>Mistral AI</span><span>GigaChat</span><span>aiogram 3.x</span><span>PostgreSQL</span><span>ChromaDB</span></div>
+</div>
+
+<div class="cta">
+  <h2>Want this for your business?</h2>
+  <p>I build production AI systems. Tell me your task — analysis is free.</p>
+  <a href="../decks/telegram-ai-bot.html" class="btn ghost">📊 Presentation</a>
+  <a href="mailto:maxim.pkk@gmail.com" class="btn">Get a quote</a>
+</div>
+<footer>© 2026 mrpkk · Telegram AI Bot</footer>
 </body>
 </html>
