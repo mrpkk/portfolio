@@ -1,0 +1,87 @@
+⚡ МАКСИМ — Full-Stack и Blockchain-разработчик
+Email: maxim.pkk@gmail.com • Telegram: @mrpkk • GitHub: github.com/mrpkk • Портфолио: mrpkk.github.io/portfolio
+
+Чем занимаюсь
+Собираю готовые продукты за дни, а не за месяцы — с AI-assisted процессом разработки.
+Solidity-контракты, DeFi-протоколы, RWA-токенизация, AI-агенты, Telegram-боты, SaaS.
+
+Основные направления (2026)
+🏠 RWA-токенизация — токенизация недвижимости и реальных активов (AIRealty, RWA-контракты)
+🔗 DeFi и смарт-контракты — ERC-20/721/1155/4626/6551, Staking, DAO, Escrow, Мосты
+🤖 AI-агенты и LLM-системы — автономные агенты, RAG, интеграции Mistral/GigaChat/OpenRouter
+📱 Telegram/VK-автоматизация — боты, контент-пайплайны, сервисы 24/7
+
+Избранные проекты
+
+1. DeFi One — AI-менеджер портфеля
+AI-дашборд DeFi: подключил кошелёк → AI анализирует позиции → стратегии → unsigned-транзакции.
+Стек: React 19 + TypeScript, FastAPI, Web3Modal/WalletConnect, Mistral AI, Lido/Aave/1inch/Uniswap.
+
+2. AIRealty — AI-брокер недвижимости
+AI-брокер с 47-параметровой моделью Property DNA, концепт RWA-токенизации.
+Стек: React, FastAPI, Mistral AI, Monte Carlo.
+
+3. On-Chain AI Agent Framework
+Автономные агенты с кошельками: анализируют рынок и исполняют транзакции 24/7.
+3 смарт-контракта (Ricardian Agreement, Agent Registry ERC-8004, Escrow), FastAPI, Docker.
+
+4. Solidity-портфолио — 14 контрактов
+ERC-20, NFT, Staking, DAO, RWA-токенизация, ZK Privacy, Cross-Chain Bridge, Vault, Escrow,
+Invoice, Payment, SupplyChain, Airdrop, Token-Bound Account. ^0.8.24, custom errors, NatSpec.
+Стек: Solidity, Hardhat, Foundry, OpenZeppelin.
+
+5. RAG Corp Bot
+Корпоративный бот с гибридным поиском (vector + BM25 + LLM): чат с документами, AI-ответы.
+Стек: FastAPI, ChromaDB, Mistral AI.
+
+6. Crypto MCP Server
+14 крипто-API инструментов: цены, газ, DeFi yields, технический анализ. Протокол MCP.
+Стек: Python, CoinGecko, DeFiLlama.
+
+7. Nivritti — ведическая медиа-система
+5 Telegram + 5 VK каналов, AI-контент, muhurta-расписание. Работает 24/7 как systemd-сервис.
+
+Стек
+Node.js Python FastAPI Go React Next.js TypeScript Solidity Rust PostgreSQL MongoDB
+Docker Linux Web3.js Ethers.js Web3.py Hardhat Foundry
+
+Почему я?
+🚀 Быстро — AI-assisted разработка, качество senior-уровня, тесты, документация
+💰 Прозрачные цены — фиксированная стоимость, платите за результат
+🎯 Production-grade — я не сдаю сырой код
+🔧 Полная прозрачность — доступ к коду с первого дня
+💎 В тренде — RWA, DeFi, AI-автоматизация, микро-SaaS — строю то, что реально работает
+
+Что я строю
+✅ RWA-токенизация активов
+✅ DeFi-протоколы и запуск токенов
+✅ AI-агенты и системы автоматизации
+✅ SaaS для профессионалов
+✅ Telegram/VK-боты и контент-пайплайны
+✅ Крипто-платежи
+✅ Порталы и CRM-системы
+
+Цены (USD)
+MVP: $2,000–5,000 (3–7 дней)
+Полный SaaS: $5,000–15,000 (2–4 недели)
+Смарт-контракт: $800–2,000 (1–2 дня)
+DeFi-протокол: $3,000–8,000 (1–2 недели)
+AI-агент / RAG-система: $1,500–4,000
+Оплата: USDT / USDC / ETH (приоритет), PayPal по договорённости
+
+Как работаю
+1. Брифинг — 1–2 часа на архитектуру
+2. AI-assisted разработка — параллельные агенты пишут и тестируют, я довожу до senior-стандарта
+3. Запуск — прозрачная отчётность, сроки соблюдаются
+
+Давайте работать
+💻 Полная разработка под ключ
+🚀 MVP за 7 дней
+🔧 Ускорение вашего текущего продукта
+🤖 Интеграция AI в ваш бизнес
+
+Фиксированная цена. Прозрачно. Без сюрпризов.
+
+"То, что команда делает месяц, я сдаю к пятнице."
+
+📩 maxim.pkk@gmail.com • 💬 @mrpkk • 🐙 github.com/mrpkk
