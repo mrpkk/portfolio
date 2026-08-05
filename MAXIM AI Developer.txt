@@ -11,35 +11,45 @@ Core Focus (2026)
 🤖 AI Agents & LLM Systems — autonomous agents, RAG, Mistral/GigaChat/OpenRouter integrations
 📱 Telegram/VK Automation — bots, content pipelines, 24/7 services
 
-Selected Projects
+Selected Projects (9 commercial)
 
 1. DeFi One — AI Portfolio Manager
 AI-driven DeFi dashboard: connect wallet → AI analyzes positions → strategies → unsigned transactions.
 Stack: React 19 + TypeScript, FastAPI, Web3Modal/WalletConnect, Mistral AI, Lido/Aave/1inch/Uniswap.
 
-2. AIRealty — AI Property Broker
-AI broker for real estate with 47-parameter Property DNA model, RWA tokenization concept.
-Stack: React, FastAPI, Mistral AI, Monte Carlo simulation.
+2. AIRealty — AI Copilot for Real Estate
+AI broker with Property DNA (47 parameters, 7 categories): location, condition, infrastructure,
+legal risk, market dynamics, financials. Paste a listing → get BUY/WATCH/PASS verdict.
+Production v4.0, 15 API endpoints. Stack: React, FastAPI, Mistral AI, Monte Carlo.
 
-3. On-Chain AI Agent Framework
+3. AIBiz — AI Copilot for Deal Intelligence
+DealDNA scoring (48 parameters, 6 categories), pipeline forecasting, automated due diligence.
+Production v4.0, 15 API endpoints. Stack: React, FastAPI, Mistral AI, Recharts.
+
+4. AILegal — AI Copilot for Legal Documents
+ClauseDNA risk scoring (50+ clause types, severity levels), compliance scanning, contract intelligence.
+Production v4.0, 18 API endpoints. Stack: React, FastAPI, Mistral AI, Framer Motion.
+
+5. On-Chain AI Agent Framework
 Autonomous agents with wallets: analyze market, execute transactions 24/7.
 3 smart contracts (Ricardian Agreement, Agent Registry ERC-8004, Escrow), FastAPI, Docker.
 
-4. Solidity Portfolio — 14 contracts
+6. Solidity Portfolio — 14 contracts
 ERC-20, NFT, Staking, DAO, RWA Tokenization, ZK Privacy, Cross-Chain Bridge, Vault, Escrow,
 Invoice, Payment, SupplyChain, Airdrop, Token-Bound Account. ^0.8.24, custom errors, NatSpec.
 Stack: Solidity, Hardhat, Foundry, OpenZeppelin.
 
-5. RAG Corp Bot
+7. Telegram AI Bot (RAG)
+Enterprise document Q&A: upload PDFs, get instant answers. RAG with ChromaDB vector search.
+Stack: Python, FastAPI, aiogram 3.x, Mistral AI, ChromaDB.
+
+8. RAG Corp Bot
 Corporate bot with hybrid search (vector + BM25 + LLM): chat with company docs, AI answers.
 Stack: FastAPI, ChromaDB, Mistral AI.
 
-6. Crypto MCP Server
+9. Crypto MCP Server
 14 crypto API tools: prices, gas, DeFi yields, technical analysis. MCP protocol.
 Stack: Python, CoinGecko, DeFiLlama.
-
-7. Nivritti — Vedic Media System
-5 Telegram + 5 VK channels, AI content, muhurta-aware scheduler. Runs 24/7 as systemd service.
 
 Stack
 Node.js Python FastAPI Go React Next.js TypeScript Solidity Rust PostgreSQL MongoDB
@@ -47,27 +57,18 @@ Docker Linux Web3.js Ethers.js Web3.py Hardhat Foundry
 
 Why Me?
 🚀 Fast delivery — AI-assisted workflow, senior quality, tested, documented
-💰 Transparent pricing — fixed price, you pay for results
-🎯 Production-grade — I don't ship junk
 🔧 Full transparency — code access from Day 1
+🎯 Production-grade — I don't ship junk
 💎 Market-smart — RWA, DeFi, AI automation, micro-SaaS — I build what works now
 
 I Build
 ✅ RWA Tokenization & Asset Tokenization
 ✅ DeFi Protocols & Token Launchpads
 ✅ AI Agents & Automation Systems
-✅ SaaS for Service Professionals
+✅ SaaS Copilots (Real Estate / Deals / Legal)
 ✅ Telegram/VK Bots & Content Pipelines
 ✅ Crypto Payment Gateways
 ✅ Customer Portals & CRMs
-
-Rates (USD)
-MVP: $2,000–5,000 (3–7 days)
-Full SaaS: $5,000–15,000 (2–4 weeks)
-Smart Contract: $800–2,000 (1–2 days)
-DeFi Protocol: $3,000–8,000 (1–2 weeks)
-AI Agent / RAG System: $1,500–4,000
-Payment: USDT / USDC / ETH preferred, PayPal available
 
 How It Works
 1. Discovery — 1–2 hours of planning
@@ -80,7 +81,7 @@ Let's Go
 🔧 Speed up your existing product
 🤖 AI integration
 
-Fixed-price. Transparent. No surprises.
+Fixed-price scope. Transparent. No surprises.
 
 "What takes a team a month, I ship by Friday."
 
