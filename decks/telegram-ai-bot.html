@@ -39,48 +39,57 @@
 <body>
     <div class="hero">
         <h1>Telegram AI Bot with RAG</h1>
-        <p class="sub">Enterprise document Q&A — upload PDFs, get instant answers</p>
-        <div class="badge">✅ Ready for Deployment</div>
+        <p class="sub">Enterprise AI assistant — RAG over your docs, admin panel, Excel reports, multi-chain analytics</p>
+        <div class="badge">✅ Production · 24/7</div>
     </div>
     <div class="container">
         <section>
             <h2>Architecture</h2>
-            <div class="arch">┌──────────┐     ┌──────────────┐     ┌───────────┐
-│  User    │────▶│  Telegram     │────▶│  FastAPI  │
-│  (TG)    │     │  Bot API      │     │  Server   │
-└──────────┘     └──────────────┘     └─────┬─────┘
-                                            │
-                ┌───────────────────────────┼───────────┐
-                │                           │           │
-        ┌───────▼──────┐          ┌─────────▼──────┐   │
-        │  ChromaDB    │          │   Mistral AI   │   │
-        │  (vectors)   │◀────────▶│   Embed + Gen  │   │
-        └──────────────┘          └────────────────┘   │
-                │                                       │
-        ┌───────▼──────┐                               │
-        │  PDF Parser  │───────────────────────────────┘
-        │  (PyMuPDF)   │
-        └──────────────┘</div>
+            <div class="arch">┌──────────┐     ┌──────────────┐     ┌────────────┐
+│  User    │────▶│  Telegram     │────▶│  FastAPI   │
+│  (TG)    │     │  Bot (aiogram)│     │  Server    │
+└──────────┘     └──────────────┘     └──┬──────┬───┘
+                                         │      │
+          ┌──────────────────────────────┤      ├───────────────┐
+          │                              │      │               │
+  ┌───────▼───────┐             ┌────────▼───┐ ┌▼────────────┐
+  │  ChromaDB     │             │  Mistral   │ │ Admin Panel │
+  │  (vectors)    │◀───────────▶│  AI (RAG)  │ │ (Streamlit) │
+  └───────────────┘             └────────────┘ └─────────────┘
+          │
+  ┌───────▼───────┐   ┌───────────────────────────────────────┐
+  │  Docs & OCR   │   │ 8 API modules: AI · users · analytics │
+  │  PDF/DOCX/TXT │   │ blockchains · agents · payments · img │
+  └───────────────┘   │ voice · admin (Excel/CSV export)      │
+                      └───────────────────────────────────────┘</div>
         </section>
 
         <section>
             <h2>Key Features</h2>
             <div class="grid-2">
                 <div class="card">
-                    <h3>📄 PDF Upload</h3>
-                    <p>Drag-and-drop any PDF. Instantly parsed, chunked, and indexed for semantic search.</p>
+                    <h3>📄 RAG over your docs</h3>
+                    <p>PDF/DOCX/TXT uploaded and indexed. Hybrid search (BM25 + vectors) answers only from your documents — no hallucinations.</p>
                 </div>
                 <div class="card">
-                    <h3>🔍 Semantic Search</h3>
-                    <p>Mistral Embeddings + ChromaDB — finds the exact context before generating answers. No hallucinations on your docs.</p>
+                    <h3>🔘 Interactive buttons</h3>
+                    <p>Reply menu (Features / Pricing / About / Help / Sample question) + inline link buttons. Works from any device, no app install.</p>
                 </div>
                 <div class="card">
-                    <h3>📊 Admin Dashboard</h3>
-                    <p>Streamlit-based admin panel with FAQ management, user analytics, and document usage stats.</p>
+                    <h3>📊 Admin panel</h3>
+                    <p>Streamlit dashboard: user analytics, FAQ management, documents, logs. One-click Excel/CSV report export.</p>
+                </div>
+                <div class="card">
+                    <h3>⛓ Multi-chain analytics</h3>
+                    <p>Live balances across ETH, SOL, TON, Cosmos, SUI, Aptos. Risk agents, yield optimization from real DeFiLlama pools.</p>
+                </div>
+                <div class="card">
+                    <h3>🔒 Privacy & security</h3>
+                    <p>Runs on your server via Tor SOCKS5. Documents never leave your infrastructure. Basic Auth on admin API.</p>
                 </div>
                 <div class="card">
                     <h3>💰 Zero-Cost AI</h3>
-                    <p>Uses Mistral AI free tier (500k req/min). No monthly fees, no API bills.</p>
+                    <p>Mistral AI free tier (500k req/min) with automatic fallback chain. No monthly fees, no API bills.</p>
                 </div>
             </div>
         </section>
@@ -90,12 +99,15 @@
             <div class="tags">
                 <span class="tag">Python</span>
                 <span class="tag">FastAPI</span>
+                <span class="tag">aiogram 3.x</span>
                 <span class="tag">ChromaDB</span>
-                <span class="tag">LangChain</span>
                 <span class="tag">Mistral AI</span>
-                <span class="tag">Telegram Bot API</span>
+                <span class="tag">RAG (BM25 + vectors)</span>
+                <span class="tag">OCR</span>
                 <span class="tag">Streamlit</span>
-                <span class="tag">Docker</span>
+                <span class="tag">SQLite + SQLAlchemy</span>
+                <span class="tag">openpyxl</span>
+                <span class="tag">Tor SOCKS5</span>
             </div>
         </section>
 
@@ -103,10 +115,10 @@
             <h2>Use Cases</h2>
             <ul>
                 <li>Corporate knowledge base — employees ask questions, bot answers from internal docs</li>
-                <li>Legal document Q&A for law firms</li>
+                <li>Legal document Q&A for law firms (contracts, fines, clauses)</li>
                 <li>Medical research paper analysis</li>
-                <li>Technical documentation assistant</li>
-                <li>Academic study guide generator</li>
+                <li>Financial analytics — balances, yields, risk in one chat</li>
+                <li>Client demos with instant Excel/CSV reports</li>
             </ul>
         </section>
 
