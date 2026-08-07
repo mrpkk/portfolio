@@ -39,20 +39,42 @@
 <body>
     <div class="hero">
         <h1>AIRealty</h1>
-        <p class="sub">AI Copilot for Real Estate — Property DNA™ analysis, market intelligence and BUY/WATCH/PASS verdicts</p>
-        <div class="badge">✅ Production · v4.0 · 15 API endpoints</div>
+        <p class="sub">RWA Tokenization Foundation — AI property scoring (Property DNA™), market intelligence and BUY/WATCH/PASS verdicts</p>
+        <div class="badge">✅ Production · 18 API endpoints · RWA-ready</div>
     </div>
     <div class="container">
         <section>
             <h2>Problem</h2>
-            <p>Property buyers and agents waste weeks manually comparing listings, estimating ROI and guessing market direction. AIRealty compresses this into minutes: paste a listing, get a data-driven verdict.</p>
+            <p>Property buyers and agents waste weeks manually comparing listings, estimating ROI and guessing market direction. RWA platforms lack a standardized way to score real assets. AIRealty solves both: paste a listing, get a data-driven verdict — a digital passport ready for tokenization.</p>
+        </section>
+
+        <section>
+            <h2>Why RWA</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>🏛 Standardized Asset Scoring</h3>
+                    <p>Property DNA™ produces a structured digital passport for every asset — the foundation any RWA token needs: one metric, comparable across all properties.</p>
+                </div>
+                <div class="card">
+                    <h3>🪙 Tokenization-ready</h3>
+                    <p>Each property = ERC-721 passport + ERC-20 shares. AI verdict + ROI forecast = transparent basis for security token emission.</p>
+                </div>
+                <div class="card">
+                    <h3>🌏 Emerging Markets Edge</h3>
+                    <p>Muhurta scheduler (Bṛhat Saṃhitā) — deals in auspicious windows. A premium differentiator for India & Middle East markets.</p>
+                </div>
+                <div class="card">
+                    <h3>🤖 24/7 Investor Agent</h3>
+                    <p>Telegram AI agent answers: "Which property has the best yield-to-risk now?" — investors never wait for a broker.</p>
+                </div>
+            </div>
         </section>
 
         <section>
             <h2>Key Modules</h2>
             <div class="grid-2">
                 <div class="card">
-                    <h3>🧬 Property DNA™ 2.0</h3>
+                    <h3>🧬 Property DNA™</h3>
                     <p>47 parameters across 7 categories — location, condition, infrastructure, legal risk, market dynamics, financials and hidden factors. Each property gets a complete genetic profile.</p>
                 </div>
                 <div class="card">
@@ -60,12 +82,12 @@
                     <p>Comparable sales, district price trends and demand analysis. Real data, no guesswork.</p>
                 </div>
                 <div class="card">
-                    <h3>📈 ROI Calculator</h3>
+                    <h3>📈 ROI & Monte Carlo</h3>
                     <p>Rental yield, appreciation scenarios and payback period — instant Monte Carlo simulation of investment outcomes.</p>
                 </div>
                 <div class="card">
-                    <h3>🤖 AI Agent</h3>
-                    <p>Natural language chat about any property: "Is this flat a good deal for a 5-year hold?" — answers with evidence, not opinions.</p>
+                    <h3>📿 Muhurta Scheduler</h3>
+                    <p>Deals and calls scheduled in auspicious windows (Bṛhat Saṃhitā) — a unique feature no Western competitor has.</p>
                 </div>
             </div>
         </section>
@@ -99,9 +121,11 @@
             <h2>API Surface</h2>
             <ul>
                 <li>POST /analyze — full Property DNA™ analysis</li>
+                <li>GET /dna — digital asset passport (tokenization-ready)</li>
                 <li>POST /intelligence — market intelligence report</li>
                 <li>POST /calculate/roi — ROI and Monte Carlo simulation</li>
-                <li>POST /listing — AI-generated listing description</li>
+                <li>POST /portfolio — portfolio tracking & valuation</li>
+                <li>GET /muhurta — auspicious deal windows</li>
                 <li>POST /agent/chat — natural-language AI agent</li>
                 <li>GET /stats/summary — portfolio statistics</li>
             </ul>
@@ -113,17 +137,18 @@
                 <span class="tag">React 19</span>
                 <span class="tag">FastAPI</span>
                 <span class="tag">Mistral AI</span>
+                <span class="tag">SQLAlchemy</span>
                 <span class="tag">Monte Carlo</span>
                 <span class="tag">Framer Motion</span>
                 <span class="tag">Recharts</span>
                 <span class="tag">Telegram Bot</span>
-                <span class="tag">aiogram</span>
+                <span class="tag">aiogram 3.x</span>
             </div>
         </section>
 
         <div class="footer-cta">
             <h2>Interested?</h2>
-            <p>AIRealty is available for white-label or custom development.</p>
+            <p>AIRealty is available for RWA integrations, white-label or custom development.</p>
             <a href="https://t.me/mrpkk" class="btn">Contact on Telegram</a>
             <a href="../index.html" class="btn ghost">← Back to Portfolio</a>
         </div>
