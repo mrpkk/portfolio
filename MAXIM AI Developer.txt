@@ -17,16 +17,16 @@ Selected Projects (9 commercial)
 AI-driven DeFi dashboard: connect wallet → AI analyzes positions → strategies → unsigned transactions.
 Stack: React 19 + TypeScript, FastAPI, Web3Modal/WalletConnect, Mistral AI, Lido/Aave/1inch/Uniswap.
 
-2. AIRealty — AI Copilot for Real Estate
+2. AIRealty — AI for Real Estate
 AI broker with Property DNA (47 parameters, 7 categories): location, condition, infrastructure,
 legal risk, market dynamics, financials. Paste a listing → get BUY/WATCH/PASS verdict.
 Production v4.0, 15 API endpoints. Stack: React, FastAPI, Mistral AI, Monte Carlo.
 
-3. AIBiz — AI Copilot for Deal Intelligence
+3. AIBiz — AI for Deal Intelligence
 DealDNA scoring (48 parameters, 6 categories), pipeline forecasting, automated due diligence.
 Production v4.0, 15 API endpoints. Stack: React, FastAPI, Mistral AI, Recharts.
 
-4. AILegal — AI Copilot for Legal Documents
+4. AILegal — AI for Legal Documents
 ClauseDNA risk scoring (50+ clause types, severity levels), compliance scanning, contract intelligence.
 Production v4.0, 18 API endpoints. Stack: React, FastAPI, Mistral AI, Framer Motion.
 
@@ -65,7 +65,7 @@ I Build
 ✅ RWA Tokenization & Asset Tokenization
 ✅ DeFi Protocols & Token Launchpads
 ✅ AI Agents & Automation Systems
-✅ SaaS Copilots (Real Estate / Deals / Legal)
+✅ SaaS AI Assistants (Real Estate / Deals / Legal)
 ✅ Telegram/VK Bots & Content Pipelines
 ✅ Crypto Payment Gateways
 ✅ Customer Portals & CRMs

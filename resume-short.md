@@ -9,10 +9,10 @@
 
 Full-stack and blockchain developer building production systems: Solidity smart
 contracts, DeFi protocols, RWA (Real World Assets) tokenization, AI agents,
-RAG systems, Telegram bots, and SaaS copilots. AI-assisted workflow —
+RAG systems, Telegram bots, and SaaS AI assistants. AI-assisted workflow —
 senior-quality code, fast delivery, transparent fixed-price scope.
 
-**Focus:** RWA Tokenization • DeFi & Smart Contracts • AI Agents & LLM • SaaS Copilots
+**Focus:** RWA Tokenization • DeFi & Smart Contracts • AI Agents & LLM • SaaS AI Assistants
 
 ---
 
@@ -22,15 +22,15 @@ senior-quality code, fast delivery, transparent fixed-price scope.
 AI DeFi dashboard: wallet connect → AI position analysis → strategies → unsigned
 transactions (Lido/Aave/1inch/Uniswap). React 19 + FastAPI + Web3Modal + Mistral AI.
 
-**AIRealty — AI Copilot for Real Estate**
+**AIRealty — AI for Real Estate**
 Property DNA (47 params, 7 categories), BUY/WATCH/PASS verdicts, RWA tokenization concept.
 Production v4.0, 15 API endpoints. React + FastAPI + Mistral AI + Monte Carlo.
 
-**AIBiz — AI Copilot for Deal Intelligence**
+**AIBiz — AI for Deal Intelligence**
 DealDNA scoring (48 params, 6 categories), pipeline forecasting, automated due diligence.
 Production v4.0, 15 API endpoints. React + FastAPI + Mistral AI + Recharts.
 
-**AILegal — AI Copilot for Legal Documents**
+**AILegal — AI for Legal Documents**
 ClauseDNA risk scoring (50+ clause types), compliance scanning, contract intelligence.
 Production v4.0, 18 API endpoints. React + FastAPI + Mistral AI.
 
