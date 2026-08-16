@@ -16,11 +16,6 @@ I build production systems that run 24/7. From idea to working product — no mo
 | **AIBiz** | — | [Deck](decks/aibiz.html) | React · FastAPI · Mistral AI · Recharts |
 | **AILegal** | — | [Deck](decks/ailegal.html) | React · FastAPI · Mistral AI · Framer Motion |
 
-## AI Copilot Suite
-
-Three vertical AI products (AIRealty / AIBiz / AILegal) on a shared architecture:
-FastAPI + React + Mistral AI + Telegram bots. 48+ API endpoints, real AI, no mock data.
-
 ## Links
 
 - 🌐 [Portfolio](https://mrpkk.github.io/portfolio/)
