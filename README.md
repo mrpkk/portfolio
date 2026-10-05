@@ -48,16 +48,16 @@ bash scripts/attest_criterion_check.sh
 The signature has a working negative control: change the record after signing and verification fails.
 A demo that only prints "PASS" would prove nothing.
 
-**Verified 2026-10-06, against the published URL, working tree on top of HEAD `52d081d`** — not a
-local build. This run replaces the four stacked re-verification blocks of 05.10 (23:26 / 23:33 /
-23:41 / 23:59) with one canonical table; the numbers below are the ones measured now, not carried
-over. Only the `attest_dom_check.mjs` row changed in this pass (the animated-bar fix above).
+**Verified 2026-10-06, against the published URL, at HEAD `fcc8406`** — not a local build. The
+criterion of this pass is the curl-only one: `bash scripts/attest_criterion_check.sh` downloads
+`index.html`, `rules.js` and `engine.js` from `mrpkk.github.io` and pushes five artifacts through the
+*downloaded* engine, asserting verdict, trust, signal kinds and the signature — `6/6`, `CRITERION: PASS`.
 
-Re-run whole on `52d081d`, not spot-checked: `demos/attest/` is untouched since `8904b77`
-(`git diff --stat 8904b77..HEAD` touches only `.gitignore`, this `README.md` and
-`scripts/attest_criterion_check.sh`), so the live page is the same bytes as the pass above — but all
-four checks were executed again anyway, and the `published files vs repo` row was re-proved by
-`diff`ing each `curl`ed file against the committed one rather than trusted from the earlier run.
+Re-run whole at `fcc8406`, not spot-checked: `demos/attest/` is untouched since `04c641f`
+(`git diff --stat 52d081d..fcc8406` touches only this `README.md`), so the live page is the same bytes
+as the pass above — but all four checks were executed again anyway, and the
+`published files vs repo` row was re-proved by `diff`ing each `curl`ed file against the committed one
+rather than trusted from the earlier run.
 
 | check | result |
 |---|---|
