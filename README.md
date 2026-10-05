@@ -26,6 +26,11 @@ provenance. The engine runs in the browser — zero requests to a server.
 # 1) assets are live
 curl -s -o /dev/null -w '%{http_code}\n' https://mrpkk.github.io/portfolio/demos/attest/engine.js
 
+# 1b) curl-only: the served HTML really carries the wired form, the instructions
+#     and the sponsor button — no browser, no local build
+curl -s https://mrpkk.github.io/portfolio/demos/attest/ \
+  | grep -c 'id="artifact"\|id="run"\|id="verdict"\|id="attestation"\|Поддержать автора'
+
 # 2) the form answers: clean → ACCEPT, injection → REJECT, forged signature → rejected
 bash scripts/attest_live_smoke.sh
 
@@ -52,6 +57,12 @@ files still match the repo:
 | `attest_dom_check.mjs` | `DOM: PASS` — click → rendered verdict, `crypto.subtle` present, 0 console errors |
 | `attest_conformance.py` | `38/38` identical to the Python service |
 | entry points | `/portfolio/` card, `demos/index.html` card, this README — all `200` |
+
+Re-verified 2026-10-05 23:33 +05 on HEAD `01439f2`, again against the published URL:
+`SMOKE: PASS` (5/5 assets 200, clean → ACCEPT trust=100, injection → REJECT, forged signature
+rejected, schema drift → REJECT), `DOM: PASS` (16/16 — verdict rendered, trust bar 299.859px at
+trust=37, `crypto.subtle` present, forged trust detected, 0 console errors), all five published
+files byte-identical to the repo, and the curl-only form check returns `5`.
 
 The headline criterion — *paste an artifact, get a verdict* — measured on the **downloaded
 production files** (`curl` the two scripts, run the engine over three artifacts):
