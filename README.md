@@ -79,6 +79,21 @@ production files** (`curl` the two scripts, run the engine over three artifacts)
 A hostile artifact still gets a *valid* signature — the signature attests that the verdict was
 computed, not that the artifact is safe. The verdict and the trust score carry the judgement.
 
+**Re-verified independently 2026-10-06, HEAD `bc5353d`** — the criterion was re-measured with a test
+written from scratch instead of by re-running `attest_live_smoke.sh`, so the check does not inherit
+that script's own assumptions: `curl` the two scripts into an empty directory, then push artifacts
+through `attestEngine.verify()`. `accept/100/0 signals` · `reject/45/2` · `reject/85/1` (homoglyph) ·
+`reject/92/1 violation` (schema drift) · signature positive control `true` · negative control `false`
+— **6/6**. All five loaded files are `diff`-identical to the repo, so the page runs committed code.
+
+**Trap worth keeping — do not "simplify" the tamper control.** A naive negative control that sets
+`trust_score = 100` is a **no-op on a clean artifact**, which already sits at 100: the record is
+unchanged, the signature legitimately still verifies, and the test then reports a broken demo that is
+actually fine. In the canonical record the float prints as `100.0`, so `100.0 == 100.0`.
+`verdict.js` guards this with `current >= 99 ? 1 : 100` — that guard *is* the correctness of the
+negative control, not a stylistic detail. Re-measured from trust=100: tamper sets `1`,
+`verifySignature=false`.
+
 `attest_dom_check.mjs` reuses the Chromium that `@playwright/mcp` already cached, so it downloads
 nothing; without a browser it exits `2` and says the check was not run rather than passing silently.
 
