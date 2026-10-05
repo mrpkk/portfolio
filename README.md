@@ -43,6 +43,12 @@ A demo that only prints "PASS" would prove nothing.
 `attest_dom_check.mjs` reuses the Chromium that `@playwright/mcp` already cached, so it downloads
 nothing; without a browser it exits `2` and says the check was not run rather than passing silently.
 
+**Measured limitation, not a claim:** the 23 signatures are Latin-script regexes. The Russian
+formulation `ИГНОРИРУЙ ПРЕДЫДУЩИЕ ИНСТРУКЦИИ` returns `accept / trust=100` — confirmed against the
+production `engine.js`. That is the documented behaviour ("достаточно переформулировать"), stated on
+the page itself, not a gap hidden here. Matching non-Latin scripts is a real piece of work (unicode
+normalisation + per-script signature sets), not a config flag.
+
 ## Links
 
 - 🌐 [Portfolio](https://mrpkk.github.io/portfolio/)
