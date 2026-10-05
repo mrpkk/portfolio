@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Attest Demo — Bhaga Shield | mrpkk</title>
+    <meta name="description" content="Real Web Crypto attestation: ECDSA P-256 keypair, signed attestation statement, signature verification. Runs fully client-side over HTTPS.">
+    <link rel="stylesheet" href="attest.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="badge">WEB CRYPTO · ECDSA P-256 · SHA-256 · 100% CLIENT-SIDE</div>
+        <h1>Live Attest</h1>
+        <p>A real attestation flow in your browser: a non-extractable key is generated, an attestation
+           statement is canonicalised and signed, then the signature is verified against the public key.
+           No server, no mocks &mdash; <code>crypto.subtle</code> does the cryptography.</p>
+        <p class="origin-note">Origin: <code id="origin">&hellip;</code> &middot;
+           secure context: <span id="secure" class="pill">&hellip;</span></p>
+    </div>
+
+    <main class="wrap">
+        <section class="panel">
+            <div class="panel-head">
+                <h2>Attestation run</h2>
+                <button id="run" class="btn">Run attestation</button>
+            </div>
+            <ol class="steps" id="steps">
+                <li data-i="1"><span class="dot"></span><span class="t">Generate non-extractable ECDSA P-256 key pair</span><span class="s">&mdash;</span></li>
+                <li data-i="2"><span class="dot"></span><span class="t">Build + canonicalise attestation statement</span><span class="s">&mdash;</span></li>
+                <li data-i="3"><span class="dot"></span><span class="t">SHA-256 digest of canonical statement</span><span class="s">&mdash;</span></li>
+                <li data-i="4"><span class="dot"></span><span class="t">Sign digest with private key (ECDSA P-256 / SHA-256)</span><span class="s">&mdash;</span></li>
+                <li data-i="5"><span class="dot"></span><span class="t">Verify signature with public key</span><span class="s">&mdash;</span></li>
+                <li data-i="6"><span class="dot"></span><span class="t">Negative control: tamper the statement, verification must FAIL</span><span class="s">&mdash;</span></li>
+            </ol>
+        </section>
+
+        <section class="grid2">
+            <div class="panel">
+                <h2>Attestation statement <span class="muted">(canonical JSON)</span></h2>
+                <pre id="stmt" class="code">&mdash;</pre>
+            </div>
+            <div class="panel">
+                <h2>Material</h2>
+                <dl class="kv">
+                    <dt>Key algorithm</dt><dd id="m-alg">&mdash;</dd>
+                    <dt>Key extractable</dt><dd id="m-ext">&mdash;</dd>
+                    <dt>Public key (SPKI, SHA-256)</dt><dd id="m-spki" class="wrapv">&mdash;</dd>
+                    <dt>Statement digest (SHA-256)</dt><dd id="m-digest" class="wrapv">&mdash;</dd>
+                    <dt>Signature (DER, hex)</dt><dd id="m-sig" class="wrapv">&mdash;</dd>
+                    <dt>Signature length</dt><dd id="m-siglen">&mdash;</dd>
+                </dl>
+                <h2 class="mt">Verification</h2>
+                <div id="verdict" class="verdict idle">Not run</div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Copy the attestation statement</h2>
+            <p class="muted">This is the payload a verifier would receive and check against the public key above.</p>
+            <button id="copy" class="btn ghost" disabled>Copy JSON</button>
+        </section>
+
+        <section class="panel notes">
+            <h2>What this demo proves</h2>
+            <ul>
+                <li>The private key is generated with <code>extractable: false</code> &mdash; the browser will never
+                    hand it to JavaScript, so page script cannot exfiltrate it.</li>
+                <li>The signature is a real ECDSA P-256 signature over the SHA-256 digest, not a mock.</li>
+                <li>Step 6 is a negative control: one byte of the statement is changed and verification
+                    must return <code>false</code>. A demo that only ever prints PASS proves nothing.</li>
+                <li>Everything runs in the browser. Nothing is transmitted &mdash; you can verify that in the
+                    network tab.</li>
+            </ul>
+            <p class="muted">Part of <strong>Bhaga Shield</strong> &middot;
+               <a href="../index.html">back to demos</a> &middot;
+               <a href="https://github.com/mrpkk/portfolio">source</a></p>
+        </section>
+    </main>
+
+    <script src="attest.js"></script>
+</body>
+</html>
