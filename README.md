@@ -15,6 +15,7 @@ I build production systems that run 24/7. From idea to working product — no mo
 | **AIRealty** | — | [Deck](decks/airealty.html) | React · FastAPI · Mistral AI · Monte Carlo |
 | **AIBiz** | — | [Deck](decks/aibiz.html) | React · FastAPI · Mistral AI · Recharts |
 | **AILegal** | — | [Deck](decks/ailegal.html) | React · FastAPI · Mistral AI · Framer Motion |
+| **attest** | [Demo](demos/attest/) | — | Python · Web Crypto (HMAC-SHA-256) · JSON Schema · Apache-2.0 |
 
 ## Links
 
