@@ -45,9 +45,10 @@ python3 scripts/attest_conformance.py
 The signature has a working negative control: change the record after signing and verification fails.
 A demo that only prints "PASS" would prove nothing.
 
-**Verified 2026-10-06, against the published URL on HEAD `3352455`** — not a local build. This run
-replaces the four stacked re-verification blocks of 05.10 (23:26 / 23:33 / 23:41 / 23:59) with one
-canonical table; the numbers below are the ones measured now, not carried over.
+**Verified 2026-10-06, against the published URL, working tree on top of HEAD `e81e463`** — not a
+local build. This run replaces the four stacked re-verification blocks of 05.10 (23:26 / 23:33 /
+23:41 / 23:59) with one canonical table; the numbers below are the ones measured now, not carried
+over. Only the `attest_dom_check.mjs` row changed in this pass (the animated-bar fix above).
 
 | check | result |
 |---|---|
@@ -56,13 +57,23 @@ canonical table; the numbers below are the ones measured now, not carried over.
 | curl-only form check (1b) | `5` — the served HTML carries the wired form, the instructions and the sponsor button |
 | `curl`ed `engine.js` + `rules.js` → verdict | `ACCEPT` 100 / 0 signals · `REJECT` 45 / 2 signals · `REJECT` 60 / 1 signal |
 | `attest_live_smoke.sh` | `SMOKE: PASS` — 23 signatures, clean → ACCEPT trust=100, forged signature rejected, injection → REJECT (2), schema drift → REJECT |
-| `attest_dom_check.mjs` | `DOM: PASS` — 16/16, verdict rendered, trust bar 285.281px at trust=37, forged trust detected, 0 console errors |
+| `attest_dom_check.mjs` | `DOM: PASS` — 15/15, verdict rendered, trust bar `36.9%` at `trust=37` (measured after the 0.35s width transition), forged trust detected, 0 console errors |
 | `attest_conformance.py` | `38/38` identical to the Python service |
 | entry points | `/portfolio/` · `demos/index.html` · `demos/attest/` · `github.com/mrpkk/attest` · `github.com/mrpkk` — all `200` |
 
 The sponsor control resolves to `https://github.com/mrpkk`, not GitHub Sponsors, which is not enabled
 on the account; the page states that in the open next to the button instead of implying a checkout
 that would fail.
+
+**Second trap, fixed here — an animated bar makes a "measured" number into noise.** `.trust-bar span`
+has `transition: width 0.35s`, so reading `getComputedStyle(...).width` right after the verdict is
+rendered samples a frame mid-animation. Three consecutive runs of the same page at the same
+`trust=37` gave `285.281px`, `299.875px`, `291.656px` — three different "measurements" of one value,
+and the earlier table pinned `285.281px` as if it were reproducible. The check now waits out the
+transition and asserts the real invariant — filled share `= trust/100` (36.9% at trust=37, stable
+across runs, tolerance ±1.5). It was previously `> 0`, which matched its own label
+"заполнена по значению" without checking the value at all; the assertion was confirmed to fail
+(`DOM: FAIL`, exit 1) when the expected share is deliberately wrong.
 
 The injection artifact trips **two** signatures (`ignore_previous` and `exfiltrate_secrets`) —
 measured, not carried over from an earlier run.

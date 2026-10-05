@@ -128,10 +128,27 @@ try {
   check('доверие просело', trust > 0 && trust < 100, String(trust));
   check('сигнатуры отрисованы', signals > 0, `${signals} карточек, счётчик ${sigCount}`);
 
-  const barWidth = await page.evaluate(
-    () => getComputedStyle(document.getElementById('trust-fill')).width,
+  /* Ширину шкалы меряем только после окончания анимации: у `.trust-bar span`
+     transition width 0.35s, поэтому чтение сразу после клика ловит кадр
+     перехода, и число получается случайным (285 / 292 / 300 px при trust=37).
+     Проверяем настоящий инвариант — заполненную долю = trust/100, а не «> 0»:
+     иначе метка «заполнена по значению» ничего не проверяла бы. */
+  await page.waitForTimeout(450);
+  const bar = await page.evaluate(() => {
+    const fill = document.getElementById('trust-fill');
+    const track = fill.parentElement;
+    return {
+      fill: fill.getBoundingClientRect().width,
+      track: track.getBoundingClientRect().width,
+    };
+  });
+  const filledPct = bar.track > 0 ? (bar.fill / bar.track) * 100 : 0;
+  const expectedPct = trust;
+  check(
+    'шкала доверия заполнена по значению',
+    Math.abs(filledPct - expectedPct) <= 1.5,
+    `${filledPct.toFixed(1)}% при trust=${expectedPct} (трек ${bar.track.toFixed(1)}px)`,
   );
-  check('шкала доверия заполнена по значению', parseFloat(barWidth) > 0, barWidth);
 
   // --- 3 · негативный контроль подписи ------------------------------------
   await page.click('#verify-sig');
