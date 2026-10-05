@@ -40,11 +40,13 @@ python3 scripts/attest_conformance.py
 The signature has a working negative control: change the record after signing and verification fails.
 A demo that only prints "PASS" would prove nothing.
 
-**Last run, 2026-10-05, against the published URL, not a local build:**
+**Last run, 2026-10-05 23:26 +05, against the published URL, not a local build.** Re-run twice on
+the same commit `440caed` — once after deploy, once as an independent check that the published
+files still match the repo:
 
 | check | result |
 |---|---|
-| assets on `mrpkk.github.io` | `index.html` 200/9517B · `rules.js` 200 · `engine.js` 200 · `verdict.js` 200 · `verdict.css` 200 |
+| assets on `mrpkk.github.io` | `index.html` 200/9517B · `rules.js` 200/11701B · `engine.js` 200/25715B · `verdict.js` 200/12975B · `verdict.css` 200/8647B |
 | published files vs repo | `diff` identical for all five — the live page is the committed code |
 | `attest_live_smoke.sh` | `SMOKE: PASS` — clean → ACCEPT trust=100, injection → REJECT, forged signature rejected |
 | `attest_dom_check.mjs` | `DOM: PASS` — click → rendered verdict, `crypto.subtle` present, 0 console errors |
@@ -60,11 +62,12 @@ production `engine.js`. That is the documented behaviour ("достаточно 
 the page itself, not a gap hidden here. Matching non-Latin scripts is a real piece of work (unicode
 normalisation + per-script signature sets), not a config flag.
 
-**Measured, not assumed — the folder holds 7 files, the page loads 5.** `attest.css` and `attest.js`
+**Measured, not assumed — the folder holds 8 files, the page loads 5.** `attest.css` and `attest.js`
 are the superseded first iteration (ECDSA P-256 keypair instead of the shipped HMAC); nothing in
-`index.html` references them, so they are dead weight that still deploys and answers `200`. Kept in
-the tree rather than deleted — removal is a separate, deliberate step. The live surface is exactly
-the five files the smoke check enumerates.
+`index.html` references them, so they are dead weight that still deploys and answers `200`. The 8th
+file is `LICENSE` (Apache-2.0), also not loaded as a script. Dead files are kept in the tree rather
+than deleted — removal is a separate, deliberate step. The live surface is exactly the five files
+the smoke check enumerates.
 
 ## Links
 
