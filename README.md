@@ -29,12 +29,19 @@ curl -s -o /dev/null -w '%{http_code}\n' https://mrpkk.github.io/portfolio/demos
 # 2) the form answers: clean → ACCEPT, injection → REJECT, forged signature → rejected
 bash scripts/attest_live_smoke.sh
 
-# 3) browser engine is 1:1 with the Python service — 38/38 fixtures identical
+# 3) the real form in a real browser: button click, rendered verdict, Web Crypto,
+#    negative control — the wiring the fixture run above cannot see
+node scripts/attest_dom_check.mjs
+
+# 4) browser engine is 1:1 with the Python service — 38/38 fixtures identical
 python3 scripts/attest_conformance.py
 ```
 
 The signature has a working negative control: change the record after signing and verification fails.
 A demo that only prints "PASS" would prove nothing.
+
+`attest_dom_check.mjs` reuses the Chromium that `@playwright/mcp` already cached, so it downloads
+nothing; without a browser it exits `2` and says the check was not run rather than passing silently.
 
 ## Links
 

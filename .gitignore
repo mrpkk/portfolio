@@ -1,8 +1,12 @@
 *.bak*
+# scripts/ целиком игнорируется: там лежат личные автоскрипты (регистрация почт,
+# IMAP, капча) — публиковать их в публичном портфолио нельзя.
 scripts/
-# ...кроме скриптов проверки attest: их должны видеть те, кто хочет перепроверить демо
+# Скрипты проверки демо attest — исключения. Git не заходит в игнорируемую папку,
+# поэтому они добавлены принудительно: git add -f. Проверить: git ls-files scripts/
 !scripts/attest_conformance.py
 !scripts/attest_conformance.js
 !scripts/attest_live_smoke.sh
+!scripts/attest_dom_check.mjs
 !scripts/gen_attest_rules.py
 *.env
