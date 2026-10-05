@@ -64,6 +64,23 @@ rejected, schema drift → REJECT), `DOM: PASS` (16/16 — verdict rendered, tru
 trust=37, `crypto.subtle` present, forged trust detected, 0 console errors), all five published
 files byte-identical to the repo, and the curl-only form check returns `5`.
 
+Re-verified 2026-10-05 23:59 +05 on HEAD `b37fc46`, against the published URL — third
+independent run, and the first on the commit that added check 1b:
+
+| check | result |
+|---|---|
+| assets on `mrpkk.github.io` | `index.html` 200/9517B · `verdict.css` 200/8647B · `rules.js` 200/11701B · `engine.js` 200/25715B · `verdict.js` 200/12975B |
+| published `index.html` vs repo | `diff` identical — the live page is the committed code |
+| curl-only form check (1b) | `5` — the served HTML carries the wired form and the sponsor button |
+| `attest_live_smoke.sh` | `SMOKE: PASS` — 23 signatures loaded, clean → ACCEPT trust=100, injection → REJECT (2 signals), forged signature rejected, schema drift → REJECT |
+| `attest_dom_check.mjs` | `DOM: PASS` — 16/16, 6 example buttons, trust bar 291.641px at trust=37, forged trust detected, 0 console errors |
+| `attest_conformance.py` | `38/38` identical to the Python service |
+| entry points | `/portfolio/`, `demos/index.html`, `demos/attest/` — all `200` |
+
+The sponsor control resolves to `https://github.com/mrpkk`, not GitHub Sponsors, which is not
+enabled on the account; the page states that in the open next to the button instead of implying a
+checkout that would fail.
+
 The headline criterion — *paste an artifact, get a verdict* — measured on the **downloaded
 production files** (`curl` the two scripts, run the engine over three artifacts):
 
