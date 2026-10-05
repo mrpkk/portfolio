@@ -1,3 +1,8 @@
 *.bak*
 scripts/
+# ...кроме скриптов проверки attest: их должны видеть те, кто хочет перепроверить демо
+!scripts/attest_conformance.py
+!scripts/attest_conformance.js
+!scripts/attest_live_smoke.sh
+!scripts/gen_attest_rules.py
 *.env
