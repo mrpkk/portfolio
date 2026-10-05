@@ -60,6 +60,12 @@ production `engine.js`. That is the documented behaviour ("достаточно 
 the page itself, not a gap hidden here. Matching non-Latin scripts is a real piece of work (unicode
 normalisation + per-script signature sets), not a config flag.
 
+**Measured, not assumed — the folder holds 7 files, the page loads 5.** `attest.css` and `attest.js`
+are the superseded first iteration (ECDSA P-256 keypair instead of the shipped HMAC); nothing in
+`index.html` references them, so they are dead weight that still deploys and answers `200`. Kept in
+the tree rather than deleted — removal is a separate, deliberate step. The live surface is exactly
+the five files the smoke check enumerates.
+
 ## Links
 
 - 🌐 [Portfolio](https://mrpkk.github.io/portfolio/)
