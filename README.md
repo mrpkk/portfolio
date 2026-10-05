@@ -45,57 +45,27 @@ python3 scripts/attest_conformance.py
 The signature has a working negative control: change the record after signing and verification fails.
 A demo that only prints "PASS" would prove nothing.
 
-**Last run, 2026-10-05 23:26 +05, against the published URL, not a local build.** Re-run twice on
-the same commit `440caed` — once after deploy, once as an independent check that the published
-files still match the repo:
+**Verified 2026-10-06, against the published URL on HEAD `3352455`** — not a local build. This run
+replaces the four stacked re-verification blocks of 05.10 (23:26 / 23:33 / 23:41 / 23:59) with one
+canonical table; the numbers below are the ones measured now, not carried over.
 
 | check | result |
 |---|---|
-| assets on `mrpkk.github.io` | `index.html` 200/9517B · `rules.js` 200/11701B · `engine.js` 200/25715B · `verdict.js` 200/12975B · `verdict.css` 200/8647B |
-| published files vs repo | `diff` identical for all five — the live page is the committed code |
-| `attest_live_smoke.sh` | `SMOKE: PASS` — clean → ACCEPT trust=100, injection → REJECT, forged signature rejected |
-| `attest_dom_check.mjs` | `DOM: PASS` — click → rendered verdict, `crypto.subtle` present, 0 console errors |
-| `attest_conformance.py` | `38/38` identical to the Python service |
-| entry points | `/portfolio/` card, `demos/index.html` card, this README — all `200` |
-
-Re-verified 2026-10-05 23:33 +05 on HEAD `01439f2`, again against the published URL:
-`SMOKE: PASS` (5/5 assets 200, clean → ACCEPT trust=100, injection → REJECT, forged signature
-rejected, schema drift → REJECT), `DOM: PASS` (16/16 — verdict rendered, trust bar 299.859px at
-trust=37, `crypto.subtle` present, forged trust detected, 0 console errors), all five published
-files byte-identical to the repo, and the curl-only form check returns `5`.
-
-Re-verified 2026-10-05 23:59 +05 on HEAD `b37fc46`, against the published URL — third
-independent run, and the first on the commit that added check 1b:
-
-| check | result |
-|---|---|
-| assets on `mrpkk.github.io` | `index.html` 200/9517B · `verdict.css` 200/8647B · `rules.js` 200/11701B · `engine.js` 200/25715B · `verdict.js` 200/12975B |
-| published `index.html` vs repo | `diff` identical — the live page is the committed code |
-| curl-only form check (1b) | `5` — the served HTML carries the wired form and the sponsor button |
-| `attest_live_smoke.sh` | `SMOKE: PASS` — 23 signatures loaded, clean → ACCEPT trust=100, injection → REJECT (2 signals), forged signature rejected, schema drift → REJECT |
-| `attest_dom_check.mjs` | `DOM: PASS` — 16/16, 6 example buttons, trust bar 291.641px at trust=37, forged trust detected, 0 console errors |
-| `attest_conformance.py` | `38/38` identical to the Python service |
-| entry points | `/portfolio/`, `demos/index.html`, `demos/attest/` — all `200` |
-
-The sponsor control resolves to `https://github.com/mrpkk`, not GitHub Sponsors, which is not
-enabled on the account; the page states that in the open next to the button instead of implying a
-checkout that would fail.
-
-Re-verified 2026-10-05 23:41 +05 on HEAD `b65f135`, against the published URL — this run closes the
-headline criterion itself rather than the surrounding page: the artifact→verdict table below was
-reproduced from the two scripts `curl`-ed off production, not from the working tree.
-
-| check | result |
-|---|---|
-| all 8 files on `mrpkk.github.io` | `index.html` · `verdict.css` · `rules.js` · `engine.js` · `verdict.js` · `attest.css` · `attest.js` · `LICENSE` — all `200` |
-| `curl`ed `engine.js` + `rules.js` → verdict | `ACCEPT` 100 / 0 signals · `REJECT` 45 / 2 signals · `REJECT` 60 / 1 signal — matches the table below exactly |
+| all 8 files on `mrpkk.github.io` | `index.html` 200/9517B · `verdict.css` 200/8647B · `rules.js` 200/11701B · `engine.js` 200/25715B · `verdict.js` 200/12975B · `attest.css` 200/5256B · `attest.js` 200/6248B · `LICENSE` 200/11358B — all `200` |
+| published files vs repo | `diff` identical for all five loaded files — the live page is the committed code |
+| curl-only form check (1b) | `5` — the served HTML carries the wired form, the instructions and the sponsor button |
+| `curl`ed `engine.js` + `rules.js` → verdict | `ACCEPT` 100 / 0 signals · `REJECT` 45 / 2 signals · `REJECT` 60 / 1 signal |
 | `attest_live_smoke.sh` | `SMOKE: PASS` — 23 signatures, clean → ACCEPT trust=100, forged signature rejected, injection → REJECT (2), schema drift → REJECT |
-| `attest_dom_check.mjs` | `DOM: PASS` — 16/16, verdict rendered, trust bar 299.859px at trust=37, forged trust detected, 0 console errors |
+| `attest_dom_check.mjs` | `DOM: PASS` — 16/16, verdict rendered, trust bar 285.281px at trust=37, forged trust detected, 0 console errors |
 | `attest_conformance.py` | `38/38` identical to the Python service |
 | entry points | `/portfolio/` · `demos/index.html` · `demos/attest/` · `github.com/mrpkk/attest` · `github.com/mrpkk` — all `200` |
 
-This run also corrected the table below: the injection artifact trips **two** signatures
-(`ignore_previous` and `exfiltrate_secrets`), not the one the earlier row named.
+The sponsor control resolves to `https://github.com/mrpkk`, not GitHub Sponsors, which is not enabled
+on the account; the page states that in the open next to the button instead of implying a checkout
+that would fail.
+
+The injection artifact trips **two** signatures (`ignore_previous` and `exfiltrate_secrets`) —
+measured, not carried over from an earlier run.
 
 The headline criterion — *paste an artifact, get a verdict* — measured on the **downloaded
 production files** (`curl` the two scripts, run the engine over three artifacts):
