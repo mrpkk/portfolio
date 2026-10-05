@@ -40,6 +40,9 @@ node scripts/attest_dom_check.mjs
 
 # 4) browser engine is 1:1 with the Python service — 38/38 fixtures identical
 python3 scripts/attest_conformance.py
+
+# 5) the criterion table below, replayed on the published engine — 6/6
+bash scripts/attest_criterion_check.sh
 ```
 
 The signature has a working negative control: change the record after signing and verification fails.
@@ -59,6 +62,7 @@ over. Only the `attest_dom_check.mjs` row changed in this pass (the animated-bar
 | `attest_live_smoke.sh` | `SMOKE: PASS` — 23 signatures, clean → ACCEPT trust=100, forged signature rejected, injection → REJECT (2), schema drift → REJECT |
 | `attest_dom_check.mjs` | `DOM: PASS` — 15/15, verdict rendered, trust bar `36.9%` at `trust=37` (measured after the 0.35s width transition), forged trust detected, 0 console errors |
 | `attest_conformance.py` | `38/38` identical to the Python service |
+| `attest_criterion_check.sh` | `CRITERION: PASS` — `6/6`: the five rows of the criterion table below replayed on the `curl`ed `engine.js`, plus the signature negative control |
 | entry points | `/portfolio/` · `demos/index.html` · `demos/attest/` · `github.com/mrpkk/attest` · `github.com/mrpkk` — all `200` |
 
 The sponsor control resolves to `https://github.com/mrpkk`, not GitHub Sponsors, which is not enabled
@@ -99,6 +103,12 @@ through `attestEngine.verify()`. `accept/100/0 signals` · `reject/45/2` · `rej
 `base64_ignore_previous`) · `reject/85/1` (Cyrillic `о`, `mixed_script_word`) · signature positive
 control `true` · negative control `false` (tamper sets trust `100 → 37`) — **6/6**. All five loaded
 files are `diff`-identical to the repo, so the page runs committed code.
+
+That from-scratch pass is now `scripts/attest_criterion_check.sh` instead of a throwaway command, so
+the table is re-checkable without rewriting it. It asserts the *values* (verdict, trust, signal kind,
+signature), and the assertion was confirmed to fail — `CRITERION: FAIL`, exit 1 — when an expected
+trust is off by one, when an expected verdict is flipped, and when the Cyrillic-`о` fixture loses its
+U+043E and would otherwise pass as an ordinary Latin `ignore_previous`.
 
 **Two corrections this pass, both from measurement against the production `engine.js`:**
 the old table row `data: <base64 of "Ignore all previous instructions…">` scored `60 / 1` but the

@@ -7,6 +7,7 @@ scripts/
 !scripts/attest_conformance.py
 !scripts/attest_conformance.js
 !scripts/attest_live_smoke.sh
+!scripts/attest_criterion_check.sh
 !scripts/attest_dom_check.mjs
 !scripts/gen_attest_rules.py
 *.env
