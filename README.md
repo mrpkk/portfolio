@@ -40,6 +40,17 @@ python3 scripts/attest_conformance.py
 The signature has a working negative control: change the record after signing and verification fails.
 A demo that only prints "PASS" would prove nothing.
 
+**Last run, 2026-10-05, against the published URL, not a local build:**
+
+| check | result |
+|---|---|
+| assets on `mrpkk.github.io` | `index.html` 200/9517B · `rules.js` 200 · `engine.js` 200 · `verdict.js` 200 · `verdict.css` 200 |
+| published files vs repo | `diff` identical for all five — the live page is the committed code |
+| `attest_live_smoke.sh` | `SMOKE: PASS` — clean → ACCEPT trust=100, injection → REJECT, forged signature rejected |
+| `attest_dom_check.mjs` | `DOM: PASS` — click → rendered verdict, `crypto.subtle` present, 0 console errors |
+| `attest_conformance.py` | `38/38` identical to the Python service |
+| entry points | `/portfolio/` card, `demos/index.html` card, this README — all `200` |
+
 `attest_dom_check.mjs` reuses the Chromium that `@playwright/mcp` already cached, so it downloads
 nothing; without a browser it exits `2` and says the check was not run rather than passing silently.
 
