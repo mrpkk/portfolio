@@ -6,16 +6,64 @@ I build production systems that run 24/7. From idea to working product — no mo
 
 | Project | Live Demo | Presentation | Stack |
 |---|---|---|---|
-| **Telegram AI Bot** | [Demo](demos/telegram-bot.html) | [Deck](decks/telegram-ai-bot.html) | Python · FastAPI · Mistral AI · aiogram 3.x · RAG · Streamlit · ChromaDB |
-| **RAG Corp Bot** | [Demo](demos/agent-dashboard.html) | [Deck](decks/rag-corp-bot.html) | Python · FastAPI · Mistral AI · BM25 · Vector Search |
-| **DeFi One** | — | [Deck](decks/defi-one.html) | React · FastAPI · WalletConnect · Mistral AI |
-| **Solidity Portfolio** | — | [Deck](decks/solidity-portfolio.html) | Solidity · Foundry · OpenZeppelin · React |
+| **ṚTA** | [Repo](https://github.com/mrpkk/rta) | — | Groth16 · circom/snarkjs · Python · FastAPI · x402 · 31 tests |
+| **attest** | [Demo](demos/attest/) · [live](https://mrpkk.github.io/portfolio/demos/attest/) | — | Python · Web Crypto (HMAC-SHA-256) · JSON Schema · Apache-2.0 |
+| **agentpay** | [Repo](https://github.com/mrpkk/agentpay) | — | Python · x402 · EVM · 160 tests |
+| **drift** | [Repo](https://github.com/mrpkk/drift) | — | Python · MCP server · stdlib only · 145 tests |
+| **verity** | [Repo](https://github.com/mrpkk/verity) | — | Python · verified-platform registry · 56 tests |
+| **indra-memory** | [Repo](https://github.com/mrpkk/indra-memory) | — | Python · agent memory · no dependencies · 28 tests |
+| **Nivritti** | [Repo](https://github.com/mrpkk/nivritti) | — | Python · aiogram 3.x · FastAPI · VK API · 5 channels · 897 posts |
+| **Pravritti** | [Repo](https://github.com/mrpkk/pravritti-v3) | — | Python · aiogram 3.x · VK API · content pipeline |
+| **Telegram AI Bot** | [Demo](demos/telegram-bot.html) | [Deck](decks/telegram-ai-bot.html) | Python · FastAPI · GigaChat + Mistral fallback · aiogram 3.x · RAG · ChromaDB |
+| **RAG Corp Bot** | [Demo](demos/agent-dashboard.html) | [Deck](decks/rag-corp-bot.html) | Python · FastAPI · GigaChat + Mistral fallback · BM25 · Vector Search |
 | **Crypto MCP Server** | [Demo](demos/crypto-mcp.html) | [Deck](decks/crypto-mcp-server.html) | Python · MCP SDK · CoinGecko · DeFiLlama |
 | **On-Chain AI Agent** | [Demo](demos/onchain-agent.html) | [Deck](decks/onchain-ai-agent.html) | Solidity · Python · FastAPI · Docker |
-| **AIRealty** | — | [Deck](decks/airealty.html) | React · FastAPI · Mistral AI · Monte Carlo |
-| **AIBiz** | — | [Deck](decks/aibiz.html) | React · FastAPI · Mistral AI · Recharts |
-| **AILegal** | — | [Deck](decks/ailegal.html) | React · FastAPI · Mistral AI · Framer Motion |
-| **attest** | [Demo](demos/attest/) · [live](https://mrpkk.github.io/portfolio/demos/attest/) | — | Python · Web Crypto (HMAC-SHA-256) · JSON Schema · Apache-2.0 |
+| **AILegal** | — | [Deck](decks/ailegal.html) | React · FastAPI · GigaChat + Mistral fallback · Framer Motion |
+| **AIBiz** | — | [Deck](decks/aibiz.html) | React · FastAPI · GigaChat + Mistral fallback · Recharts |
+| **AIRealty** | — | [Deck](decks/airealty.html) | React · FastAPI · GigaChat + Mistral fallback · Monte Carlo |
+| **DeFi One** | — | [Deck](decks/defi-one.html) | React · FastAPI · WalletConnect · GigaChat |
+| **Solidity Portfolio** | — | [Deck](decks/solidity-portfolio.html) | Solidity · Foundry · OpenZeppelin · React |
+
+### ṚTA — prove a fact without revealing it
+
+Most "verification" products answer *does this look right to you*. ṚTA answers a
+stronger question: **does this consequence follow from that action, by rule, with no
+other outcome possible?**
+
+A buyer proves a predicate about their own state and sends only the proof. The verifier
+learns the threshold is met. It never learns the balance, the stake, the age. That is
+what a zero-knowledge proof is, and it is why the verifier does not need to trust the
+buyer.
+
+The five circuits, named for the threshold each one enforces:
+
+| circuit | proves |
+|---|---|
+| `balance_1000` | balance ≥ 1000 |
+| `balance_100000` | balance ≥ 100000 |
+| `stake_10000` | stake ≥ 10000 |
+| `account_age_180` | account age ≥ 180 days |
+| `tx_count_50` | transaction count ≥ 50 |
+
+```bash
+pip install -e . && npm ci        # snarkjs / circom deps live in node_modules
+python -m pytest tests/ -q         # 31 passed
+```
+
+Replay protection on the service, and an x402 challenge so a proof can be metered per
+verification instead of per seat.
+
+**Named for what it does.** *Ṛta* is the Vedic principle of **order, truth, and right
+correspondence between action and consequence**. A proof is exactly that: the
+consequence follows from the action by rule, and no alternative exists. One assertion,
+one truth — that is the word doing real work in the name, not decoration.
+
+### indra-memory — the agent forgets everything between sessions
+
+Context-resident memory degrades with length. indra-memory moves facts, decisions and
+project context into a durable store the agent reads back at session start. Pure
+Python, no dependencies, 28 tests. The repository ships `memory.example.json` — never a
+real memory file, because a memory file is personal data.
 
 ### attest — the live demo is checkable, not just clickable
 
