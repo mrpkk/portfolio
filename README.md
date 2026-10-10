@@ -6,14 +6,14 @@ I build production systems that run 24/7. From idea to working product — no mo
 
 | Project | Live Demo | Presentation | Stack |
 |---|---|---|---|
-| **ṚTA** | [Repo](https://github.com/mrpkk/rta) | — | Groth16 · circom/snarkjs · Python · FastAPI · x402 · 31 tests |
+| **ṚTA** | [Repo](https://github.com/mrpkk/rta) | — | Groth16 · circom/snarkjs · Python · FastAPI · x402 · 45 tests |
 | **attest** | [Demo](demos/attest/) · [live](https://mrpkk.github.io/portfolio/demos/attest/) | — | Python · Web Crypto (HMAC-SHA-256) · JSON Schema · Apache-2.0 |
 | **agentpay** | [Repo](https://github.com/mrpkk/agentpay) | — | Python · x402 · EVM · 160 tests |
 | **drift** | [Repo](https://github.com/mrpkk/drift) | — | Python · MCP server · stdlib only · 145 tests |
 | **verity** | [Repo](https://github.com/mrpkk/verity) | — | Python · verified-platform registry · 56 tests |
 | **indra-memory** | [Repo](https://github.com/mrpkk/indra-memory) | — | Python · agent memory · no dependencies · 28 tests |
-| **Nivritti** | [Repo](https://github.com/mrpkk/nivritti) | — | Python · aiogram 3.x · FastAPI · VK API · 5 channels · 897 posts |
-| **Pravritti** | [Repo](https://github.com/mrpkk/pravritti-v3) | — | Python · aiogram 3.x · VK API · content pipeline |
+| **Nivritti** | private | — | Python · aiogram 3.x · FastAPI · VK API · 5 channels · 897 posts |
+| **Pravritti** | private | — | Python · aiogram 3.x · VK API · content pipeline |
 | **Telegram AI Bot** | [Demo](demos/telegram-bot.html) | [Deck](decks/telegram-ai-bot.html) | Python · FastAPI · GigaChat + Mistral fallback · aiogram 3.x · RAG · ChromaDB |
 | **RAG Corp Bot** | [Demo](demos/agent-dashboard.html) | [Deck](decks/rag-corp-bot.html) | Python · FastAPI · GigaChat + Mistral fallback · BM25 · Vector Search |
 | **Crypto MCP Server** | [Demo](demos/crypto-mcp.html) | [Deck](decks/crypto-mcp-server.html) | Python · MCP SDK · CoinGecko · DeFiLlama |
