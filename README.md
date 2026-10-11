@@ -6,10 +6,10 @@ I build production systems that run 24/7. From idea to working product — no mo
 
 | Project | Live Demo | Presentation | Stack |
 |---|---|---|---|
-| **ṚTA** | [Repo](https://github.com/mrpkk/rta) | — | Groth16 · circom/snarkjs · Python · FastAPI · x402 · 45 tests |
+| **ṚTA** | [Live](https://rta.lat) · [Repo](https://github.com/mrpkk/rta) | — | Groth16 · circom/snarkjs · Python · FastAPI · x402 · 62 tests |
 | **attest** | [Demo](demos/attest/) · [live](https://mrpkk.github.io/portfolio/demos/attest/) | — | Python · Web Crypto (HMAC-SHA-256) · JSON Schema · Apache-2.0 |
 | **agentpay** | [Repo](https://github.com/mrpkk/agentpay) | — | Python · x402 · EVM · 160 tests |
-| **drift** | [Repo](https://github.com/mrpkk/drift) | — | Python · MCP server · stdlib only · 145 tests |
+| **drift** | [Live](https://drift.rta.lat) · [Repo](https://github.com/mrpkk/drift) | — | Python · MCP server · stdlib only · 147 tests |
 | **verity** | [Repo](https://github.com/mrpkk/verity) | — | Python · verified-platform registry · 56 tests |
 | **indra-memory** | [Repo](https://github.com/mrpkk/indra-memory) | — | Python · agent memory · no dependencies · 28 tests |
 | **Nivritti** | private | — | Python · aiogram 3.x · FastAPI · VK API · 5 channels · 897 posts |
