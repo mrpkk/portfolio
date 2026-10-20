@@ -355,17 +355,97 @@ footer { text-align: center; padding: 40px 24px; color: #484f58; font-size: 0.8r
         <div class="project-card-image-placeholder">🔏</div>
         <div class="project-card-body">
           <h3>attest <span class="cat">AI</span></h3>
-          <p class="project-card-tagline">Agent artifact verifier: paste a tool response, get a verdict — contract, poison scan, signed provenance.</p>
+          <p class="project-card-tagline">Artifact verifier for AI agents — schema, emptiness, provenance and authority in one signed verdict.</p>
           <ul class="project-card-features">
-            <li>3 layers — schema contract, 23 poisoning signatures, provenance</li>
-            <li>HMAC-SHA-256 attestation with a working negative control</li>
-            <li>JS engine 1:1 with the Python service — 38/38 conformance cases</li>
-            <li>Apache-2.0, runs fully client-side, zero requests</li>
+            <li>4 layers: schema contract, emptiness, generation provenance, mandate authority</li>
+            <li>Ed25519-signed receipt — verifiable offline, no trust in the service</li>
+            <li>Live API + MCP endpoint — free 20 checks/day, then $0.005 per call, x402 (USDC)</li>
+            <li>Listed on Glama, api.market, Apify Store, mcpservers.org — 510 tests</li>
           </ul>
-          <div class="project-card-tags"><span>Python</span><span>Web Crypto</span><span>JSON Schema</span><span>Security</span><span>Apache-2.0</span></div>
+          <div class="project-card-tags"><span>Python</span><span>Ed25519</span><span>MCP</span><span>x402</span><span>JSON Schema</span><span>Security</span></div>
           <div class="project-card-actions">
-            <a href="demos/attest/" class="btn-demo">▶ Live Demo</a>
+            <a href="https://attest.rta.lat/" class="btn-demo" target="_blank" rel="noopener">▶ Live Demo</a>
             <a href="https://github.com/mrpkk/attest" class="btn-deck" target="_blank" rel="noopener">📦 Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ṚTA -->
+      <div class="project-card" data-cat="defi" style="animation-delay:0.26s">
+        <div class="project-card-image-placeholder">🧾</div>
+        <div class="project-card-body">
+          <h3>ṚTA <span class="cat">Blockchain</span></h3>
+          <p class="project-card-tagline">Zero-knowledge proofs as a service — prove a fact without revealing it.</p>
+          <ul class="project-card-features">
+            <li>Groth16 circuits with threshold splits: the buyer proves a balance ≥ X and the verifier never learns the balance</li>
+            <li>Replay protection, deterministic verification, no setup for the caller</li>
+            <li>Pay per call over x402 (USDC, Base) — no subscription, no account</li>
+            <li>Live at rta.lat — 74 tests green</li>
+          </ul>
+          <div class="project-card-tags"><span>Python</span><span>Groth16</span><span>circom</span><span>x402</span><span>Zero-Knowledge</span></div>
+          <div class="project-card-actions">
+            <a href="https://rta.lat/" class="btn-demo" target="_blank" rel="noopener">▶ Live Demo</a>
+            <a href="https://github.com/mrpkk/rta" class="btn-deck" target="_blank" rel="noopener">📦 Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- drift -->
+      <div class="project-card" data-cat="infra" style="animation-delay:0.28s">
+        <div class="project-card-image-placeholder">🛡️</div>
+        <div class="project-card-body">
+          <h3>drift <span class="cat">Infra</span></h3>
+          <p class="project-card-tagline">Continuous mandate enforcement for AI agents — every action is checked against the signed mandate <em>before</em> it happens.</p>
+          <ul class="project-card-features">
+            <li>Six rules on a signed mandate: amount, payee, audience, currency, validity window, allowlisted intent</li>
+            <li>Default is DENY — a refusal names the most important reason, not an incidental one</li>
+            <li>MCP server, standard library only — no dependencies</li>
+            <li>Live at drift.rta.lat — listed on mcpservers.org and Glama, 181 tests</li>
+          </ul>
+          <div class="project-card-tags"><span>Python</span><span>MCP</span><span>x402</span><span>Policy</span><span>Zero-Dependencies</span></div>
+          <div class="project-card-actions">
+            <a href="https://drift.rta.lat/" class="btn-demo" target="_blank" rel="noopener">▶ Live Demo</a>
+            <a href="https://github.com/mrpkk/drift" class="btn-deck" target="_blank" rel="noopener">📦 Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- mitracore -->
+      <div class="project-card" data-cat="infra" style="animation-delay:0.3s">
+        <div class="project-card-image-placeholder">🛕</div>
+        <div class="project-card-body">
+          <h3>mitracore <span class="cat">Infra</span></h3>
+          <p class="project-card-tagline">Trust layer for agent work: verify the artifact, meter what it cost, enforce the mandate — one call.</p>
+          <ul class="project-card-features">
+            <li>verify: four layers over an agent artifact, Ed25519 receipt, verifiable offline</li>
+            <li>quote: price what the call actually consumed — tokens, CPU seconds, bytes out, storage writes</li>
+            <li>mandates: limits, allowlist and kill switch for what an agent may do</li>
+            <li>MCP server — approved and healthy on Glama</li>
+          </ul>
+          <div class="project-card-tags"><span>Python</span><span>MCP</span><span>Ed25519</span><span>x402</span><span>Trust Layer</span></div>
+          <div class="project-card-actions">
+            <a href="https://glama.ai/mcp/servers/mrpkk/mitracore" class="btn-demo" target="_blank" rel="noopener">▶ Live Listing</a>
+            <a href="https://github.com/mrpkk/mitracore" class="btn-deck" target="_blank" rel="noopener">📦 Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- skilllint -->
+      <div class="project-card" data-cat="ai" style="animation-delay:0.32s">
+        <div class="project-card-image-placeholder">🧪</div>
+        <div class="project-card-body">
+          <h3>skilllint <span class="cat">AI</span></h3>
+          <p class="project-card-tagline">Vet an agent skill before you install it — structure, triggers, secrets. Nothing leaves the machine.</p>
+          <ul class="project-card-features">
+            <li>11 rules: missing frontmatter, dead instructions, unbounded autonomy, files that do not exist</li>
+            <li>Secret-shaped literals and exfiltration markers — checked before the skill ever runs</li>
+            <li>Only a verdict, a score and a sha256 leave the machine — the file content stays local</li>
+            <li>Verdict PASS / WARN / FAIL — MCP connector approved and healthy on Glama</li>
+          </ul>
+          <div class="project-card-tags"><span>Python</span><span>MCP</span><span>Security</span><span>Static-Analysis</span><span>Privacy</span></div>
+          <div class="project-card-actions">
+            <a href="https://glama.ai/mcp/connectors/lat.rta/skilllint" class="btn-demo" target="_blank" rel="noopener">▶ Live Listing</a>
+            <a href="https://github.com/mrpkk/skilllint" class="btn-deck" target="_blank" rel="noopener">📦 Source</a>
           </div>
         </div>
       </div>
